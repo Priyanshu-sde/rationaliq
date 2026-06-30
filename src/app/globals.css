@@ -7,7 +7,7 @@
   --color-brand-accent: #C09858; /* Deep gold */
   --color-brand-muted: #F3F4F6;
   --color-brand-border: #E5E7EB;
-  
+
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-playfair), ui-serif, Georgia, serif;
 }
@@ -17,16 +17,70 @@
   --foreground: var(--color-brand-fg);
 }
 
+html {
+  /* Lenis handles smoothing; keep native fallback off to avoid double-easing. */
+  scroll-behavior: auto;
+}
+
 body {
   background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 /* Base heading styles */
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-serif);
   font-weight: 600;
+}
+
+/* SplitText masking — each word/char rises from behind a clip mask */
+.split-word,
+.split-char {
+  will-change: transform;
+}
+
+/* Animated gradient utility for the hero aurora */
+@keyframes aurora-drift {
+  0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+  50% { transform: translate3d(3%, -4%, 0) scale(1.08); }
+}
+.aurora {
+  animation: aurora-drift 18s ease-in-out infinite;
+}
+
+/* Subtle animated underline used for inline links */
+.link-underline {
+  position: relative;
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 1px;
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: right center;
+  background: currentColor;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.link-underline:hover::after {
+  transform: scaleX(1);
+  transform-origin: left center;
+}
+
+/* Honor reduced motion: neutralise decorative motion */
+@media (prefers-reduced-motion: reduce) {
+  .aurora {
+    animation: none;
+  }
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+  }
 }

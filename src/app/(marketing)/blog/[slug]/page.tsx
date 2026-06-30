@@ -7,16 +7,18 @@ import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import { Metadata } from "next"
 import { JsonLd } from "@/components/JsonLd"
+import { Reveal, AnimatedText, Parallax } from "@/components/anim"
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   let post = null
   try {
-    post = await client.fetch(getPostBySlugQuery, { slug: params.slug })
+    const resolvedParams = await params;
+    post = await client.fetch(getPostBySlugQuery, { slug: resolvedParams.slug })
   } catch (error) {
     console.warn('Could not fetch post metadata')
   }
   if (!post) return { title: 'RationalIQ' }
-  
+
   return {
     title: post.seoTitle || `${post.title} | RationalIQ`,
     description: post.seoDescription || post.excerpt,
@@ -40,10 +42,11 @@ export async function generateStaticParams() {
 
 export const revalidate = 3600
 
-export default async function BlogPostPage({ params }: { params: { slug: string } }) {
+export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   let post = null
   try {
-    post = await client.fetch(getPostBySlugQuery, { slug: params.slug })
+    const resolvedParams = await params;
+    post = await client.fetch(getPostBySlugQuery, { slug: resolvedParams.slug })
   } catch (error) {
     console.warn('Could not fetch post')
   }
@@ -59,51 +62,64 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
     "image": post.mainImage ? [urlForImage(post.mainImage)?.url()] : [],
     "datePublished": post.publishedAt,
     "author": [{
-        "@type": "Person",
-        "name": "Hitesh Saiswani",
-        "url": "https://rationaliq.com/team"
-      }]
+      "@type": "Person",
+      "name": "Hitesh Saiswani",
+      "url": "https://rationaliq.com/team"
+    }]
   }
 
   return (
-    <div className="py-20 md:py-32">
+    <div className="py-28 md:py-36">
       <JsonLd data={articleData} />
       <div className="container mx-auto px-4 md:px-6">
-        <div className="max-w-3xl mx-auto">
-          <Link href="/blog" className="inline-flex items-center text-sm font-medium text-brand-fg/70 hover:text-brand-primary mb-8 transition-colors">
-            <ArrowLeft className="mr-2 h-4 w-4" /> Back to blog
-          </Link>
-          
+        <div className="mx-auto max-w-3xl">
+          <Reveal direction="up" distance={12}>
+            <Link href="/blog" className="link-underline mb-8 inline-flex items-center text-sm font-medium text-brand-fg/70 transition-colors hover:text-brand-primary">
+              <ArrowLeft className="mr-2 h-4 w-4" /> Back to blog
+            </Link>
+          </Reveal>
+
           <div className="mb-12">
-            <div className="text-sm text-brand-fg/60 mb-4">
-              {new Date(post.publishedAt).toLocaleDateString('en-US', {
-                month: 'long',
-                day: 'numeric',
-                year: 'numeric'
-              })}
-            </div>
-            <h1 className="text-4xl font-bold tracking-tight text-brand-fg md:text-5xl lg:text-6xl font-serif">
+            <Reveal direction="up">
+              <div className="mb-4 text-sm text-brand-fg/60">
+                {new Date(post.publishedAt).toLocaleDateString('en-US', {
+                  month: 'long',
+                  day: 'numeric',
+                  year: 'numeric',
+                })}
+              </div>
+            </Reveal>
+            <AnimatedText
+              as="h1"
+              by="word"
+              stagger={0.04}
+              className="font-serif text-4xl font-bold tracking-tight text-brand-fg md:text-5xl lg:text-6xl"
+            >
               {post.title}
-            </h1>
+            </AnimatedText>
           </div>
 
           {post.mainImage && (
-            <div className="mb-12 rounded-2xl overflow-hidden aspect-video bg-brand-muted">
-              <img 
-                src={urlForImage(post.mainImage)?.url()} 
-                alt={post.mainImage.alt || post.title}
-                className="w-full h-full object-cover"
-              />
-            </div>
+            <Reveal direction="up" scale distance={24}>
+              <div className="mb-12 aspect-video overflow-hidden rounded-2xl bg-brand-muted">
+                <Parallax speed={-0.1} className="h-full w-full">
+                  <img
+                    src={urlForImage(post.mainImage)?.url()}
+                    alt={post.mainImage.alt || post.title}
+                    className="h-[115%] w-full object-cover"
+                  />
+                </Parallax>
+              </div>
+            </Reveal>
           )}
 
-          <div className="prose prose-lg prose-headings:font-serif prose-headings:text-brand-fg prose-p:text-brand-fg/80 prose-a:text-brand-primary hover:prose-a:text-brand-primary/80 max-w-none">
+          <Reveal direction="up" className="prose prose-lg max-w-none prose-headings:font-serif prose-headings:text-brand-fg prose-p:text-brand-fg/80 prose-a:text-brand-primary hover:prose-a:text-brand-primary/80">
             {post.body ? (
               <PortableText value={post.body} />
             ) : (
               <p>No content available.</p>
             )}
-          </div>
+          </Reveal>
         </div>
       </div>
     </div>

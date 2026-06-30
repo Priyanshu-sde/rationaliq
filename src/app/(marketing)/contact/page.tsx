@@ -6,6 +6,7 @@ import { Card, CardContent } from '@/components/ui/Card'
 import { Input } from '@/components/ui/Input'
 import { Textarea } from '@/components/ui/Textarea'
 import { Calendar } from 'lucide-react'
+import { Reveal, AnimatedText, Magnetic, FloatingShape } from '@/components/anim'
 
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -55,18 +56,38 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="py-20 md:py-32">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-16">
-            <h1 className="text-4xl font-bold tracking-tight text-brand-fg sm:text-5xl font-serif">Get in Touch</h1>
-            <p className="mt-4 text-lg text-brand-fg/70">
-              Ready to professionalize your business or elevate your firm's strategy? Let's talk.
-            </p>
+    <div className="relative overflow-hidden py-28 md:py-36">
+      <FloatingShape
+        className="pointer-events-none absolute -right-24 top-10 h-80 w-80 rounded-full bg-brand-primary/8 blur-3xl"
+        amplitude={26}
+        duration={11}
+      />
+      <div className="container relative mx-auto px-4 md:px-6">
+        <div className="mx-auto max-w-4xl">
+          <div className="mb-16 text-center">
+            <Reveal direction="up" distance={14}>
+              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-accent">
+                Contact
+              </span>
+            </Reveal>
+            <AnimatedText
+              as="h1"
+              by="word"
+              stagger={0.06}
+              className="mt-4 font-serif text-4xl tracking-tight text-brand-fg sm:text-5xl md:text-6xl"
+            >
+              Let's get in touch.
+            </AnimatedText>
+            <Reveal direction="up" delay={0.1}>
+              <p className="mt-5 text-lg text-brand-fg/70">
+                Ready to professionalize your business or elevate your firm's
+                strategy? Let's talk.
+              </p>
+            </Reveal>
           </div>
 
-          <div className="grid gap-12 md:grid-cols-2 items-start">
-            <div>
+          <div className="grid items-start gap-12 md:grid-cols-2">
+            <Reveal direction="up">
               <Card>
                 <CardContent className="p-8">
                   <h2 className="text-2xl font-bold text-brand-fg mb-6">Send a Message</h2>
@@ -116,34 +137,39 @@ export default function ContactPage() {
                   )}
                 </CardContent>
               </Card>
-            </div>
+            </Reveal>
 
-            <div className="flex flex-col gap-8">
-              <div className="bg-brand-muted/30 p-8 rounded-2xl border border-brand-border">
-                <div className="w-12 h-12 bg-white rounded-full flex items-center justify-center mb-6 shadow-sm">
-                  <Calendar className="text-brand-primary h-6 w-6" />
+            <Reveal direction="up" delay={0.12} className="flex flex-col gap-8">
+              <div className="rounded-2xl border border-brand-border bg-brand-muted/30 p-8">
+                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-sm">
+                  <Calendar className="h-6 w-6 text-brand-primary" />
                 </div>
-                <h3 className="text-2xl font-bold text-brand-fg mb-4">Book a Consultation</h3>
-                <p className="text-brand-fg/80 mb-6">
+                <h3 className="mb-4 text-2xl font-bold text-brand-fg">Book a Consultation</h3>
+                <p className="mb-6 text-brand-fg/80">
                   Prefer to speak directly? Schedule a discovery call at a time that works best for you.
                 </p>
-                <Button variant="outline" className="w-full bg-white hover:bg-white/90" asChild>
-                  <a href={calendlyUrl} target="_blank" rel="noopener noreferrer">
-                    Open Calendly
-                  </a>
-                </Button>
+                <Magnetic strength={0.2} className="w-full">
+                  <Button variant="outline" className="w-full bg-white hover:bg-white/90" asChild>
+                    <a href={calendlyUrl} target="_blank" rel="noopener noreferrer">
+                      Open Calendly
+                    </a>
+                  </Button>
+                </Magnetic>
               </div>
-              
+
               <div className="p-8">
-                <h3 className="text-xl font-bold text-brand-fg mb-4">Direct Contact</h3>
+                <h3 className="mb-4 text-xl font-bold text-brand-fg">Direct Contact</h3>
                 <div className="space-y-4 text-brand-fg/80">
                   <p>
-                    <strong>Email:</strong><br />
-                    <a href="mailto:hello@rationaliq.com" className="text-brand-primary hover:underline">hello@rationaliq.com</a>
+                    <strong>Email:</strong>
+                    <br />
+                    <a href="mailto:hello@rationaliq.in" className="link-underline text-brand-primary">
+                      hello@rationaliq.in
+                    </a>
                   </p>
                 </div>
               </div>
-            </div>
+            </Reveal>
           </div>
         </div>
       </div>
