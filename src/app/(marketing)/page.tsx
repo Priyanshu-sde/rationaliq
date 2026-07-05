@@ -8,6 +8,7 @@ import { LandingHero } from "@/components/landing/LandingHero"
 import { TrustBar } from "@/components/landing/TrustBar"
 import { ServicesPreview } from "@/components/landing/ServicesPreview"
 import { FounderJourney } from "@/components/landing/FounderJourney"
+import { FounderProfile } from "@/components/landing/FounderProfile"
 import { HowWeWork } from "@/components/landing/HowWeWork"
 import { ImpactStats } from "@/components/landing/ImpactStats"
 import { Testimonials } from "@/components/landing/Testimonials"
@@ -47,6 +48,7 @@ export default async function Home() {
         <TrustBar />
         <ServicesPreview />
         <FounderJourney />
+        <FounderProfile />
         <HowWeWork />
         <ImpactStats />
         <Testimonials />

@@ -121,7 +121,6 @@ export function JourneyTimeline({ milestones, theme = 'brand' }: JourneyTimeline
 
     const ctx = gsap.context(() => {
       gsap.set(path, { strokeDasharray: length, strokeDashoffset: length })
-      gsap.set(marker, { opacity: 1 })
       gsap.set(dotRefs.current, { transformOrigin: "center", scale: 0.4, opacity: 0.35 })
 
       const tl = gsap.timeline({
@@ -138,7 +137,10 @@ export function JourneyTimeline({ milestones, theme = 'brand' }: JourneyTimeline
       tl.to(
         marker,
         {
-          motionPath: { path, align: path, alignOrigin: [0.5, 0.5] },
+          motionPath: {
+            path: path,
+            alignOrigin: [0.5, 0.5],
+          },
           ease: "none",
         },
         0
@@ -238,7 +240,7 @@ export function JourneyTimeline({ milestones, theme = 'brand' }: JourneyTimeline
               ))}
 
               {/* travelling marker */}
-              <g ref={markerRef} style={{ opacity: 0 }} filter="url(#markerGlow)">
+              <g ref={markerRef} filter="url(#markerGlow)">
                 <circle r={12} fill={primaryColor} />
                 <circle r={6} fill={dotColor} />
                 <circle r={3} fill={primaryColor} opacity={0.6} />
@@ -257,13 +259,14 @@ export function JourneyTimeline({ milestones, theme = 'brand' }: JourneyTimeline
                     nodeRefs.current[i] = el
                   }}
                   className={[
-                    "relative flex py-8 pl-16 md:py-10 md:pl-0",
+                    "relative flex py-6 pl-16 md:py-8 md:pl-0",
+                    i > 0 ? "md:-mt-32" : "",
                     right ? "md:justify-end" : "md:justify-start",
                   ].join(" ")}
                 >
                   <article
                     className={[
-                      "group relative flex min-h-[360px] w-full flex-col justify-end overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-sm md:w-[44%]",
+                      "group relative flex min-h-[300px] w-full flex-col justify-end overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-sm md:w-[46%]",
                       right ? "md:ml-auto" : "md:mr-auto",
                     ].join(" ")}
                   >
