@@ -1,6 +1,6 @@
 'use client'
 
-import { CinematicJourney, type Milestone } from '@/components/sections/CinematicJourney'
+import { JourneyTimeline, type Milestone } from '@/components/sections/JourneyTimeline'
 
 const MILESTONES: Milestone[] = [
   {
@@ -56,10 +56,10 @@ const MILESTONES: Milestone[] = [
 
 export function FounderJourney() {
   return (
-    <section className="relative overflow-hidden bg-brand-fg text-white">
+    <section className="relative overflow-hidden bg-transparent text-white">
       <div className="container mx-auto px-4 md:px-6 pt-20 md:pt-28 pb-12">
         <div className="mb-8 text-center md:mb-12">
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-accent">
+          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
             The Origin Story
           </span>
           <h2 className="mt-3 font-serif text-3xl tracking-tight text-white sm:text-4xl md:text-5xl">
@@ -73,7 +73,7 @@ export function FounderJourney() {
         </div>
       </div>
 
-      <CinematicJourney milestones={MILESTONES} />
+      <JourneyTimeline milestones={MILESTONES} theme="landing" />
     </section>
   )
 }
