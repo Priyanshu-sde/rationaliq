@@ -29,11 +29,8 @@ export function ScrollProgress() {
   }, [])
 
   return (
-    <div className="fixed inset-x-0 top-0 z-[60] h-[3px]">
-      <div
-        ref={ref}
-        className="h-full w-full bg-gradient-to-r from-brand-primary via-brand-accent to-brand-primary"
-      />
+    <div className="fixed inset-x-0 top-0 z-[200] h-[2px]">
+      <div ref={ref} className="h-full w-full bg-(--indigo)" />
     </div>
   )
 }

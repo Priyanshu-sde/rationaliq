@@ -44,13 +44,18 @@ export function Navbar() {
     pathname === link.href ||
     (link.name === 'Services' && pathname.startsWith('/services'))
 
+  // The landing page is dark; the rest of the site is light.
+  const dark = pathname === '/'
+
   return (
     <nav
       className={cn(
         'fixed inset-x-0 top-0 z-50 w-full transition-all duration-500 will-change-transform',
         hidden && !isOpen ? '-translate-y-full' : 'translate-y-0',
         scrolled
-          ? 'border-b border-brand-border bg-white/80 backdrop-blur-md shadow-[0_1px_20px_rgba(28,36,52,0.05)]'
+          ? dark
+            ? 'border-b border-white/[0.07] bg-[#07080F]/80 backdrop-blur-md'
+            : 'border-b border-brand-border bg-white/80 backdrop-blur-md shadow-[0_1px_20px_rgba(28,36,52,0.05)]'
           : 'border-b border-transparent bg-transparent'
       )}
     >
@@ -62,8 +67,13 @@ export function Navbar() {
           )}
         >
           <Link href="/" className="group flex items-center space-x-2">
-            <span className="font-serif text-2xl font-bold tracking-tight text-brand-fg">
-              Rational<span className="text-brand-accent">IQ</span>
+            <span
+              className={cn(
+                'font-serif text-2xl font-bold tracking-tight',
+                dark ? 'text-[#F1F5F9]' : 'text-brand-fg'
+              )}
+            >
+              Rational<span className={dark ? 'text-[#D4A853]' : 'text-brand-accent'}>IQ</span>
             </span>
           </Link>
 
@@ -75,8 +85,14 @@ export function Navbar() {
                   key={link.name}
                   href={link.href}
                   className={cn(
-                    'link-underline text-sm font-medium transition-colors hover:text-brand-primary',
-                    isActive(link) ? 'text-brand-primary' : 'text-brand-fg/80'
+                    'link-underline text-sm font-medium transition-colors',
+                    dark
+                      ? isActive(link)
+                        ? 'text-[#F1F5F9]'
+                        : 'text-[#94A3B8] hover:text-[#F1F5F9]'
+                      : isActive(link)
+                        ? 'text-brand-primary'
+                        : 'text-brand-fg/80 hover:text-brand-primary'
                   )}
                 >
                   {link.name}
@@ -84,7 +100,10 @@ export function Navbar() {
               ))}
             </div>
             <Magnetic strength={0.3}>
-              <Button asChild>
+              <Button
+                asChild
+                className={cn(dark && 'bg-[#6366F1] text-white hover:bg-[#6366F1]/90')}
+              >
                 <Link href="/contact">Contact Us</Link>
               </Button>
             </Magnetic>
@@ -92,7 +111,7 @@ export function Navbar() {
 
           {/* Mobile Menu Toggle */}
           <button
-            className="p-2 text-brand-fg md:hidden"
+            className={cn('p-2 md:hidden', dark ? 'text-[#F1F5F9]' : 'text-brand-fg')}
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle Menu"
             aria-expanded={isOpen}
@@ -105,7 +124,10 @@ export function Navbar() {
       {/* Mobile Nav */}
       <div
         className={cn(
-          'overflow-hidden border-brand-border bg-white/95 backdrop-blur-md transition-[max-height,opacity] duration-400 md:hidden',
+          'overflow-hidden transition-[max-height,opacity] duration-400 md:hidden',
+          dark
+            ? 'border-white/[0.07] bg-[#07080F]/95 backdrop-blur-md'
+            : 'border-brand-border bg-white/95 backdrop-blur-md',
           isOpen ? 'max-h-96 border-t opacity-100' : 'max-h-0 opacity-0'
         )}
       >
@@ -116,7 +138,13 @@ export function Navbar() {
               href={link.href}
               className={cn(
                 'text-base font-medium transition-colors',
-                isActive(link) ? 'text-brand-primary' : 'text-brand-fg/80'
+                dark
+                  ? isActive(link)
+                    ? 'text-[#F1F5F9]'
+                    : 'text-[#94A3B8]'
+                  : isActive(link)
+                    ? 'text-brand-primary'
+                    : 'text-brand-fg/80'
               )}
               onClick={() => setIsOpen(false)}
             >

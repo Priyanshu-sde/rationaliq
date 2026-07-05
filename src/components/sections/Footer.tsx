@@ -1,62 +1,131 @@
 import Link from 'next/link'
-import { ArrowUpRight } from 'lucide-react'
-import { Reveal } from '@/components/anim'
+import { Calendar, Mail } from 'lucide-react'
+
+/* lucide-react v1 removed brand icons — inline SVGs instead. */
+function YoutubeIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+      <path d="m10 15 5-3-5-3z" />
+    </svg>
+  )
+}
+
+function InstagramIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+      <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
+    </svg>
+  )
+}
+
+const QUICK_LINKS = [
+  { name: 'Services', href: '/services' },
+  { name: 'About', href: '/team' },
+  { name: 'Blog', href: '/blog' },
+  { name: 'Contact', href: '/contact' },
+]
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden bg-brand-fg py-16 text-brand-bg">
-      <div className="container mx-auto px-4 md:px-6">
-        <Reveal stagger={0.1} className="grid gap-10 md:grid-cols-3">
+    <footer className="relative border-t border-white/[0.07] bg-[#07080F] py-16 text-[#94A3B8]">
+      <div className="mx-auto max-w-[1200px] px-6 md:px-12">
+        <div className="grid gap-12 md:grid-cols-3">
+          {/* Column 1 — brand */}
           <div>
-            <h3 className="mb-4 font-serif text-2xl font-bold">
-              Rational<span className="text-brand-accent">IQ</span>
-            </h3>
-            <p className="max-w-xs text-brand-bg/70">
-              Premium consulting for startups, VCs, and traditional family
-              businesses navigating complex growth and governance challenges.
+            <Link href="/" className="tier-1 font-display inline-block text-2xl text-[#F1F5F9]">
+              Rational<span className="italic text-[#D4A853]">IQ</span>
+            </Link>
+            <p className="mt-4 max-w-xs text-sm leading-relaxed">
+              The governance, content, and strategy practice for leaders who
+              intend to stay leaders.
             </p>
+            <div className="mt-6 flex gap-3">
+              <a
+                href="https://youtube.com/@ca.hiteshsaiswani"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="RationalIQ on YouTube"
+                className="tier-2 press flex h-10 w-10 items-center justify-center rounded-xl border border-white/[0.07] text-[#94A3B8] hover:border-white/[0.14] hover:text-[#F1F5F9]"
+              >
+                <YoutubeIcon className="h-4.5 w-4.5" />
+              </a>
+              <a
+                href="https://instagram.com/ca.hiteshsaiswani"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="RationalIQ on Instagram"
+                className="tier-2 press flex h-10 w-10 items-center justify-center rounded-xl border border-white/[0.07] text-[#94A3B8] hover:border-white/[0.14] hover:text-[#F1F5F9]"
+              >
+                <InstagramIcon className="h-4.5 w-4.5" />
+              </a>
+            </div>
           </div>
-          <div>
-            <h4 className="mb-4 text-lg font-semibold">Services</h4>
-            <ul className="space-y-2 text-sm text-brand-bg/80">
-              <li><Link href="/services/thought-leadership" className="link-underline transition-colors hover:text-white">Thought Leadership</Link></li>
-              <li><Link href="/services/family-business-consulting" className="link-underline transition-colors hover:text-white">Family Business Consulting</Link></li>
-              <li><Link href="/services/d2c-retail-strategy" className="link-underline transition-colors hover:text-white">D2C Retail Strategy</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="mb-4 text-lg font-semibold">Company</h4>
-            <ul className="space-y-2 text-sm text-brand-bg/80">
-              <li><Link href="/team" className="link-underline transition-colors hover:text-white">Team & Founder</Link></li>
-              <li><Link href="/impact" className="link-underline transition-colors hover:text-white">Impact & Success Stories</Link></li>
-              <li><Link href="/blog" className="link-underline transition-colors hover:text-white">Blog</Link></li>
-              <li><Link href="/contact" className="link-underline transition-colors hover:text-white">Contact Us</Link></li>
-            </ul>
-          </div>
-        </Reveal>
 
-        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-brand-bg/20 pt-8 text-sm text-brand-bg/60 md:flex-row">
-          <p>&copy; {new Date().getFullYear()} RationalIQ. All rights reserved.</p>
-          <div className="flex gap-6">
-            <a
-              href="https://youtube.com/@ca.hiteshsaiswani"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-1 transition-colors hover:text-white"
-            >
-              YouTube
-              <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </a>
-            <a
-              href="https://instagram.com/ca.hiteshsaiswani"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-1 transition-colors hover:text-white"
-            >
-              Instagram
-              <ArrowUpRight className="h-3.5 w-3.5 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-            </a>
+          {/* Column 2 — quick links */}
+          <div>
+            <h3 className="text-label text-[#F1F5F9]">Quick links</h3>
+            <ul className="mt-5 space-y-3 text-sm">
+              {QUICK_LINKS.map((l) => (
+                <li key={l.name}>
+                  <Link href={l.href} className="tier-1 hover:text-[#F1F5F9]">
+                    {l.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
+
+          {/* Column 3 — work with us */}
+          <div>
+            <h3 className="text-label text-[#F1F5F9]">Work with us</h3>
+            <p className="mt-5 max-w-xs text-sm leading-relaxed">
+              One conversation is enough to know whether we can help.
+            </p>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+              <Link
+                href="/contact"
+                className="tier-2 press inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-[#6366F1] px-5 text-sm font-semibold text-white hover:shadow-[0_8px_30px_rgba(99,102,241,0.35)]"
+              >
+                <Calendar className="h-4 w-4" aria-hidden="true" />
+                Book a call
+              </Link>
+              <Link
+                href="/contact"
+                className="tier-2 press inline-flex h-11 items-center justify-center gap-2 rounded-xl border border-white/[0.07] px-5 text-sm font-medium hover:border-white/[0.14] hover:text-[#F1F5F9]"
+              >
+                <Mail className="h-4 w-4" aria-hidden="true" />
+                Send a message
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/[0.07] pt-8 text-xs text-[rgba(148,163,184,0.5)] md:flex-row">
+          <p>&copy; {new Date().getFullYear()} RationalIQ &middot; All rights reserved</p>
+          <Link href="/privacy" className="tier-1 hover:text-[#F1F5F9]">
+            Privacy Policy
+          </Link>
         </div>
       </div>
     </footer>

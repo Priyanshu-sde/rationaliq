@@ -42,7 +42,7 @@ export default function ContactPage() {
 
       if (res.ok) {
         setSubmitStatus('success')
-        ;(e.target as HTMLFormElement).reset()
+          ; (e.target as HTMLFormElement).reset()
       } else {
         setSubmitStatus('error')
         setErrorMessage(result.error || 'Something went wrong. Please try again.')
@@ -99,7 +99,7 @@ export default function ContactPage() {
                     <form onSubmit={onSubmit} className="space-y-4">
                       {/* Honeypot field - hidden from users */}
                       <input type="text" name="website" className="hidden" tabIndex={-1} autoComplete="off" />
-                      
+
                       <div>
                         <label htmlFor="name" className="block text-sm font-medium text-brand-fg mb-1">Name</label>
                         <Input id="name" name="name" required placeholder="John Doe" />
@@ -110,9 +110,9 @@ export default function ContactPage() {
                       </div>
                       <div>
                         <label htmlFor="service" className="block text-sm font-medium text-brand-fg mb-1">Service of Interest</label>
-                        <select 
-                          id="service" 
-                          name="service" 
+                        <select
+                          id="service"
+                          name="service"
                           className="flex h-10 w-full rounded-md border border-brand-border bg-white px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary"
                         >
                           <option value="Thought Leadership">Thought Leadership</option>
@@ -125,7 +125,7 @@ export default function ContactPage() {
                         <label htmlFor="message" className="block text-sm font-medium text-brand-fg mb-1">Message</label>
                         <Textarea id="message" name="message" required placeholder="How can we help you?" rows={5} />
                       </div>
-                      
+
                       {submitStatus === 'error' && (
                         <div className="text-red-500 text-sm">{errorMessage}</div>
                       )}
@@ -163,8 +163,8 @@ export default function ContactPage() {
                   <p>
                     <strong>Email:</strong>
                     <br />
-                    <a href="mailto:hello@rationaliq.in" className="link-underline text-brand-primary">
-                      hello@rationaliq.in
+                    <a href="mailto:hitesh@rationaliq.in" className="link-underline text-brand-primary">
+                      hitesh@rationaliq.in
                     </a>
                   </p>
                 </div>

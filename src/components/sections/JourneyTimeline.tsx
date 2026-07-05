@@ -1,6 +1,7 @@
 'use client'
 
 import { useRef, useState, useCallback } from "react"
+import Image from "next/image"
 import { gsap, ScrollTrigger, useIsomorphicLayoutEffect, prefersMotion } from "@/components/anim/gsap"
 import { MotionPathPlugin } from "gsap/MotionPathPlugin"
 
@@ -12,6 +13,8 @@ export interface Milestone {
   period: string
   title: string
   description: string
+  image?: string
+  imageAlt?: string
 }
 
 interface JourneyTimelineProps {
@@ -123,10 +126,8 @@ export function JourneyTimeline({ milestones }: JourneyTimelineProps) {
         },
       })
 
-      // Draw the line.
       tl.to(path, { strokeDashoffset: 0, ease: "none" }, 0)
 
-      // Marker rides the exact curve.
       tl.to(
         marker,
         {
@@ -136,13 +137,12 @@ export function JourneyTimeline({ milestones }: JourneyTimelineProps) {
         0
       )
 
-      // Light up each milestone dot as the marker passes it.
-      const ys = geo.dots.map((p) => p.y)
-      const maxY = geo.h || 1
+      const maxY = geo.dots.length > 0 ? geo.dots[geo.dots.length - 1].y : 1
       dotRefs.current.forEach((dot, i) => {
         if (!dot) return
-        const at = (ys[i] / maxY) * tl.duration()
-        tl.to(dot, { scale: 1, opacity: 1, duration: 0.001 }, Math.max(0, at - 0.05))
+        const triggerPoint = geo.dots[i] ? geo.dots[i].y : 0
+        const progress = triggerPoint / maxY
+        tl.to(dot, { scale: 1, opacity: 1, duration: 0.01 }, progress * tl.duration())
       })
 
       // Reveal each milestone card.
@@ -172,18 +172,8 @@ export function JourneyTimeline({ milestones }: JourneyTimelineProps) {
   }, [geo])
 
   return (
-    <section className="relative overflow-hidden bg-brand-fg py-20 text-white md:py-28">
-      <div className="container mx-auto px-4 md:px-6">
-        <div className="mb-12 text-center md:mb-16">
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-accent">
-            The journey
-          </span>
-          <h2 className="mt-3 font-serif text-3xl tracking-tight text-white sm:text-4xl md:text-5xl">
-            From the shop floor to the boardroom.
-          </h2>
-        </div>
-
-        <div ref={wrapRef} className="relative mx-auto max-w-5xl">
+    <div className="relative overflow-hidden py-20 md:py-28">
+      <div ref={wrapRef} className="relative mx-auto max-w-5xl px-4 md:px-6">
           {/* Serpentine path + marker */}
           {geo && (
             <svg
@@ -242,8 +232,9 @@ export function JourneyTimeline({ milestones }: JourneyTimelineProps) {
 
               {/* travelling marker */}
               <g ref={markerRef} style={{ opacity: 0 }} filter="url(#markerGlow)">
-                <circle r={9} fill="#C09858" />
-                <circle r={4} fill="#FBFBF9" />
+                <circle r={12} fill="#C09858" />
+                <circle r={6} fill="#FBFBF9" />
+                <circle r={3} fill="#C09858" opacity={0.6} />
               </g>
             </svg>
           )}
@@ -265,24 +256,38 @@ export function JourneyTimeline({ milestones }: JourneyTimelineProps) {
                 >
                   <article
                     className={[
-                      "w-full rounded-2xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur-sm md:w-[44%] md:p-8",
+                      "group w-full overflow-hidden rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-sm md:w-[44%]",
                       right ? "md:ml-auto" : "md:mr-auto",
                     ].join(" ")}
                   >
-                    <div className="mb-4 flex items-center gap-3">
-                      <span className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-accent/15 font-serif text-base font-bold text-brand-accent ring-1 ring-brand-accent/30">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
-                      <span className="text-sm font-medium uppercase tracking-wider text-brand-accent">
-                        {m.period}
-                      </span>
+                    {m.image && (
+                      <div className="relative h-48 w-full overflow-hidden md:h-56">
+                        <Image
+                          src={m.image}
+                          alt={m.imageAlt || m.title}
+                          fill
+                          className="object-cover transition-transform duration-700 group-hover:scale-110"
+                          sizes="(max-width: 768px) 100vw, 44vw"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-brand-fg/90 via-brand-fg/20 to-transparent" />
+                      </div>
+                    )}
+                    <div className="p-6 md:p-8">
+                      <div className="mb-4 flex items-center gap-3">
+                        <span className="flex h-10 w-10 items-center justify-center rounded-full bg-brand-accent/15 font-serif text-base font-bold text-brand-accent ring-1 ring-brand-accent/30">
+                          {String(i + 1).padStart(2, "0")}
+                        </span>
+                        <span className="text-sm font-medium uppercase tracking-wider text-brand-accent">
+                          {m.period}
+                        </span>
+                      </div>
+                      <h3 className="font-serif text-xl font-semibold text-white md:text-2xl">
+                        {m.title}
+                      </h3>
+                      <p className="mt-2 leading-relaxed text-white/70">
+                        {m.description}
+                      </p>
                     </div>
-                    <h3 className="font-serif text-xl font-semibold text-white md:text-2xl">
-                      {m.title}
-                    </h3>
-                    <p className="mt-2 leading-relaxed text-white/70">
-                      {m.description}
-                    </p>
                   </article>
                 </div>
               )
@@ -290,6 +295,5 @@ export function JourneyTimeline({ milestones }: JourneyTimelineProps) {
           </div>
         </div>
       </div>
-    </section>
   )
 }

@@ -3,7 +3,7 @@
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/Button"
-import { AnimatedText, Reveal, Magnetic, FloatingShape } from "@/components/anim"
+import { AnimatedText, Reveal, Magnetic, FloatingShape, RotatingWords } from "@/components/anim"
 
 const credentials = ["Grant Thornton", "EY", "Sunicon VC", "Chartered Accountant"]
 
@@ -55,18 +55,23 @@ export function Hero() {
             </span>
           </Reveal>
 
-          <AnimatedText
-            as="h1"
-            by="word"
-            stagger={0.06}
-            delay={0.15}
-            className="mt-7 font-serif text-[2.6rem] leading-[1.05] tracking-tight text-brand-fg sm:text-6xl md:text-7xl"
-          >
-            Clarity & growth for{" "}
-            <span className="text-brand-primary">startups</span>,{" "}
-            <span className="text-brand-accent">VCs</span>, and{" "}
-            <span className="text-brand-primary">family businesses</span>.
-          </AnimatedText>
+          <h1 className="mt-7 font-serif text-[2.6rem] leading-[1.05] tracking-tight text-brand-fg sm:text-6xl md:text-7xl">
+            <AnimatedText as="span" by="word" stagger={0.06} delay={0.15} className="block">
+              Clarity & growth for
+            </AnimatedText>
+            <span className="mt-1 flex items-baseline gap-x-3">
+              <RotatingWords
+                interval={2}
+                duration={0.6}
+                words={[
+                  { text: "startups", className: "text-brand-primary" },
+                  { text: "VCs", className: "text-brand-accent" },
+                  { text: "family businesses", className: "text-brand-primary" },
+                ]}
+              />
+              <span aria-hidden>.</span>
+            </span>
+          </h1>
 
           <Reveal direction="up" delay={0.2} className="mt-7 max-w-2xl">
             <p className="text-lg leading-8 text-brand-fg/75 md:text-xl">
