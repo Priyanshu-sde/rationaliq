@@ -27,14 +27,35 @@ export function Navbar() {
     const onScroll = () => {
       const y = window.scrollY
       setScrolled(y > 12)
-      // Hide when scrolling down past the hero, show on scroll up.
-      if (y > lastY.current && y > 240) setHidden(true)
-      else setHidden(false)
+      
+      if (pathname === '/') {
+        const wh = window.innerHeight
+        if (y < wh * 0.5) {
+          // Hide while in PathSelector
+          setHidden(true)
+        } else if (y < wh * 1.2) {
+          // Show when Hero is in view
+          setHidden(false)
+        } else {
+          // Normal behavior past Hero
+          if (y > lastY.current) setHidden(true)
+          else setHidden(false)
+        }
+      } else {
+        // Normal behavior for other pages
+        if (y > lastY.current && y > 240) setHidden(true)
+        else setHidden(false)
+      }
+      
       lastY.current = y
     }
+    
+    // Initial check
+    onScroll()
+
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
-  }, [])
+  }, [pathname])
 
   React.useEffect(() => {
     setIsOpen(false)
@@ -44,8 +65,8 @@ export function Navbar() {
     pathname === link.href ||
     (link.name === 'Services' && pathname.startsWith('/services'))
 
-  // The landing page is dark; the rest of the site is light.
-  const dark = pathname === '/'
+  // The whole site is dark theme now.
+  const dark = true
 
   return (
     <nav

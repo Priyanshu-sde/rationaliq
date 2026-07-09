@@ -58,7 +58,7 @@ export default function ContactPage() {
   return (
     <div className="relative overflow-hidden py-28 md:py-36">
       <FloatingShape
-        className="pointer-events-none absolute -right-24 top-10 h-80 w-80 rounded-full bg-brand-primary/8 blur-3xl"
+        className="pointer-events-none absolute -right-24 top-10 h-80 w-80 rounded-full bg-[#6366f1]/20 blur-3xl"
         amplitude={26}
         duration={11}
       />
@@ -66,7 +66,7 @@ export default function ContactPage() {
         <div className="mx-auto max-w-4xl">
           <div className="mb-16 text-center">
             <Reveal direction="up" distance={14}>
-              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-accent">
+              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#d4a853]">
                 Contact
               </span>
             </Reveal>
@@ -74,12 +74,12 @@ export default function ContactPage() {
               as="h1"
               by="word"
               stagger={0.06}
-              className="mt-4 font-serif text-4xl tracking-tight text-brand-fg sm:text-5xl md:text-6xl"
+              className="mt-4 font-serif text-4xl tracking-tight text-[#f1f5f9] sm:text-5xl md:text-6xl"
             >
               Let's get in touch.
             </AnimatedText>
             <Reveal direction="up" delay={0.1}>
-              <p className="mt-5 text-lg text-brand-fg/70">
+              <p className="mt-5 text-lg text-[#94a3b8]">
                 Ready to professionalize your business or elevate your firm's
                 strategy? Let's talk.
               </p>
@@ -88,11 +88,11 @@ export default function ContactPage() {
 
           <div className="grid items-start gap-12 md:grid-cols-2">
             <Reveal direction="up">
-              <Card>
+              <Card className="border-white/[0.07] bg-white/[0.02]">
                 <CardContent className="p-8">
-                  <h2 className="text-2xl font-bold text-brand-fg mb-6">Send a Message</h2>
+                  <h2 className="text-2xl font-bold text-[#f1f5f9] mb-6">Send a Message</h2>
                   {submitStatus === 'success' ? (
-                    <div className="bg-green-50 text-green-800 p-4 rounded-md border border-green-200">
+                    <div className="bg-green-900/30 text-green-400 p-4 rounded-md border border-green-800/50">
                       Thank you! Your message has been sent successfully. We will get back to you soon.
                     </div>
                   ) : (
@@ -101,19 +101,19 @@ export default function ContactPage() {
                       <input type="text" name="website" className="hidden" tabIndex={-1} autoComplete="off" />
 
                       <div>
-                        <label htmlFor="name" className="block text-sm font-medium text-brand-fg mb-1">Name</label>
-                        <Input id="name" name="name" required placeholder="John Doe" />
+                        <label htmlFor="name" className="block text-sm font-medium text-[#f1f5f9] mb-1">Name</label>
+                        <Input id="name" name="name" required placeholder="John Doe" className="bg-white/[0.03] border-white/[0.07] text-[#f1f5f9] placeholder:text-[#94a3b8]/50" />
                       </div>
                       <div>
-                        <label htmlFor="email" className="block text-sm font-medium text-brand-fg mb-1">Email</label>
-                        <Input id="email" name="email" type="email" required placeholder="john@example.com" />
+                        <label htmlFor="email" className="block text-sm font-medium text-[#f1f5f9] mb-1">Email</label>
+                        <Input id="email" name="email" type="email" required placeholder="john@example.com" className="bg-white/[0.03] border-white/[0.07] text-[#f1f5f9] placeholder:text-[#94a3b8]/50" />
                       </div>
                       <div>
-                        <label htmlFor="service" className="block text-sm font-medium text-brand-fg mb-1">Service of Interest</label>
+                        <label htmlFor="service" className="block text-sm font-medium text-[#f1f5f9] mb-1">Service of Interest</label>
                         <select
                           id="service"
                           name="service"
-                          className="flex h-10 w-full rounded-md border border-brand-border bg-white px-3 py-2 text-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary"
+                          className="flex h-10 w-full rounded-md border border-white/[0.07] bg-[#0f111a] px-3 py-2 text-sm text-[#f1f5f9] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6366f1]"
                         >
                           <option value="Thought Leadership">Thought Leadership</option>
                           <option value="Family Business Consulting">Family Business Consulting</option>
@@ -122,15 +122,15 @@ export default function ContactPage() {
                         </select>
                       </div>
                       <div>
-                        <label htmlFor="message" className="block text-sm font-medium text-brand-fg mb-1">Message</label>
-                        <Textarea id="message" name="message" required placeholder="How can we help you?" rows={5} />
+                        <label htmlFor="message" className="block text-sm font-medium text-[#f1f5f9] mb-1">Message</label>
+                        <Textarea id="message" name="message" required placeholder="How can we help you?" rows={5} className="bg-white/[0.03] border-white/[0.07] text-[#f1f5f9] placeholder:text-[#94a3b8]/50" />
                       </div>
 
                       {submitStatus === 'error' && (
-                        <div className="text-red-500 text-sm">{errorMessage}</div>
+                        <div className="text-red-400 text-sm">{errorMessage}</div>
                       )}
 
-                      <Button type="submit" className="w-full" disabled={isSubmitting}>
+                      <Button type="submit" className="w-full btn-shimmer bg-[#6366f1] text-white hover:bg-[#6366f1]/90" disabled={isSubmitting}>
                         {isSubmitting ? 'Sending...' : 'Send Message'}
                       </Button>
                     </form>
@@ -140,16 +140,16 @@ export default function ContactPage() {
             </Reveal>
 
             <Reveal direction="up" delay={0.12} className="flex flex-col gap-8">
-              <div className="rounded-2xl border border-brand-border bg-brand-muted/30 p-8">
-                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-white shadow-sm">
-                  <Calendar className="h-6 w-6 text-brand-primary" />
+              <div className="rounded-2xl border border-white/[0.07] bg-white/[0.02] p-8">
+                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-white/[0.05]">
+                  <Calendar className="h-6 w-6 text-[#6366f1]" />
                 </div>
-                <h3 className="mb-4 text-2xl font-bold text-brand-fg">Book a Consultation</h3>
-                <p className="mb-6 text-brand-fg/80">
+                <h3 className="mb-4 text-2xl font-bold text-[#f1f5f9]">Book a Consultation</h3>
+                <p className="mb-6 text-[#94a3b8]">
                   Prefer to speak directly? Schedule a discovery call at a time that works best for you.
                 </p>
                 <Magnetic strength={0.2} className="w-full">
-                  <Button variant="outline" className="w-full bg-white hover:bg-white/90" asChild>
+                  <Button variant="outline" className="w-full border-white/[0.07] text-[#f1f5f9] hover:bg-white/[0.04]" asChild>
                     <a href={calendlyUrl} target="_blank" rel="noopener noreferrer">
                       Open Calendly
                     </a>
@@ -158,12 +158,12 @@ export default function ContactPage() {
               </div>
 
               <div className="p-8">
-                <h3 className="mb-4 text-xl font-bold text-brand-fg">Direct Contact</h3>
-                <div className="space-y-4 text-brand-fg/80">
+                <h3 className="mb-4 text-xl font-bold text-[#f1f5f9]">Direct Contact</h3>
+                <div className="space-y-4 text-[#94a3b8]">
                   <p>
                     <strong>Email:</strong>
                     <br />
-                    <a href="mailto:hitesh@rationaliq.in" className="link-underline text-brand-primary">
+                    <a href="mailto:hitesh@rationaliq.in" className="link-underline text-[#6366f1]">
                       hitesh@rationaliq.in
                     </a>
                   </p>

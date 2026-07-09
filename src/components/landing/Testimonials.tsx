@@ -1,11 +1,12 @@
 'use client'
 
-import { motion, useReducedMotion } from 'framer-motion'
+import { useRef } from 'react'
+import { DraggableCardContainer, DraggableCardBody } from '@/components/ui/draggable-card'
 
 const TESTIMONIALS = [
   {
     quote:
-      'Working with Hitesh gave our family business a governance framework we actually understand and use. The family constitution process alone resolved conflicts we\u2019d been avoiding for years.',
+      'Working with Hitesh gave our family business a governance framework we actually understand and use. The family constitution process alone resolved conflicts we’d been avoiding for years.',
     name: 'Business Owner',
     role: '3rd-gen Manufacturing Family',
     gradient: 'linear-gradient(135deg, var(--amber), var(--gold))',
@@ -19,24 +20,61 @@ const TESTIMONIALS = [
   },
   {
     quote:
-      'Hitesh\u2019s understanding of the VC ecosystem made him invaluable when we were preparing our fundraising materials. He knows what investors are actually looking for.',
+      'Hitesh’s understanding of the VC ecosystem made him invaluable when we were preparing our fundraising materials. He knows what investors are actually looking for.',
     name: 'Founder',
     role: 'D2C Brand',
     gradient: 'linear-gradient(135deg, var(--emerald), var(--blue))',
   },
+  {
+    quote:
+      'RationalIQ helped us navigate a complex intergenerational transition. Hitesh’s neutral, structured approach saved our family dynamic while ensuring business continuity.',
+    name: 'Managing Director',
+    role: '2nd-gen Retail Chain',
+    gradient: 'linear-gradient(135deg, var(--blue), var(--indigo))',
+  },
+  {
+    quote:
+      'The depth of insight Hitesh brings to offline expansion strategy is unparalleled. We successfully launched our physical footprint without the common pitfalls D2C brands face.',
+    name: 'CEO',
+    role: 'D2C FMCG Brand',
+    gradient: 'linear-gradient(135deg, var(--gold), var(--emerald))',
+  },
+  {
+    quote:
+      'Our next-gen leaders went through Hitesh’s coaching program. The shift in their strategic thinking and operational maturity has been incredible.',
+    name: 'Chairman',
+    role: 'Family Conglomerate',
+    gradient: 'linear-gradient(135deg, var(--purple), var(--amber))',
+  },
+  {
+    quote:
+      'His guidance on our M&A strategy was spot-on. RationalIQ doesn’t just give advice; they provide actionable frameworks that directly impact the bottom line.',
+    name: 'Partner',
+    role: 'Private Equity Firm',
+    gradient: 'linear-gradient(135deg, var(--emerald), var(--amber))',
+  },
+]
+
+const CARD_POSITIONS = [
+  'absolute top-12 left-[2%] md:left-[5%] rotate-[-4deg] w-80 md:w-[28rem]',
+  'absolute top-6 left-[40%] md:left-[35%] rotate-[3deg] w-80 md:w-[28rem]',
+  'absolute top-20 right-[2%] md:right-[5%] rotate-[5deg] w-80 md:w-[28rem]',
+  'absolute top-64 left-[10%] md:left-[15%] rotate-[-6deg] w-80 md:w-[28rem]',
+  'absolute top-72 right-[10%] md:right-[20%] rotate-[-3deg] w-80 md:w-[28rem]',
+  'absolute top-96 left-[20%] md:left-[40%] rotate-[4deg] w-80 md:w-[28rem]',
+  'absolute top-[32rem] right-[5%] md:right-[5%] rotate-[6deg] w-80 md:w-[28rem]',
 ]
 
 /**
- * Section 6 — Testimonials. Three quiet cards, the middle one slightly
- * elevated. Anonymised placeholders until real testimonials arrive.
+ * Section 6 — Testimonials. Now using scattered draggable cards.
  */
 export function Testimonials() {
-  const reduce = useReducedMotion()
+  const containerRef = useRef<any>(null)
 
   return (
-    <section className="relative bg-(--bg-base) py-24 md:py-36">
-      <div className="mx-auto max-w-[1200px] px-6 md:px-12">
-        <div className="mb-16 max-w-2xl md:mb-20">
+    <section className="relative bg-(--bg-base) py-24 md:py-36 overflow-hidden">
+      <div className="mx-auto max-w-[1200px] px-6 md:px-12 relative z-10">
+        <div className="mb-8 max-w-2xl md:mb-12">
           <p className="text-label text-(--gold)">What clients say</p>
           <h2 className="font-display text-section mt-5 text-(--text-primary)">
             Results that
@@ -44,28 +82,30 @@ export function Testimonials() {
             speak first.
           </h2>
         </div>
+      </div>
 
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
-          {TESTIMONIALS.map((t, i) => (
-            <motion.div
-              key={t.role}
-              className={i === 1 ? 'md:-mt-3' : ''}
-              initial={reduce ? undefined : { opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-80px' }}
-              transition={{ duration: 0.7, delay: i * 0.12, ease: [0.16, 1, 0.3, 1] }}
-            >
-            <figure className="tier-2 relative flex h-full flex-col rounded-2xl border border-(--border) bg-(--bg-card) p-8 hover:border-(--border-hover) hover:shadow-[0_16px_48px_rgba(0,0,0,0.35)]">
+      <DraggableCardContainer ref={containerRef} className="relative flex min-h-[70vh] w-full items-center justify-center overflow-visible px-6 md:px-12">
+        <p className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-xl md:text-3xl font-display text-(--text-secondary) opacity-20 pointer-events-none select-none">
+          Drag to explore
+        </p>
+        
+        {TESTIMONIALS.map((t, i) => (
+          <DraggableCardBody
+            key={t.role}
+            containerRef={containerRef}
+            className={CARD_POSITIONS[i % CARD_POSITIONS.length]}
+          >
+            <figure className="tier-2 relative flex h-full min-h-[300px] flex-col rounded-3xl border border-(--border-hover) bg-[#11131c] p-10 shadow-[0_24px_54px_rgba(0,0,0,0.6)]">
               <span
-                className="font-display pointer-events-none absolute -top-2 left-5 select-none text-[6rem] leading-none text-(--indigo) opacity-20"
+                className="font-display pointer-events-none absolute -top-4 left-6 select-none text-[7rem] leading-none text-(--indigo) opacity-30"
                 aria-hidden="true"
               >
                 &ldquo;
               </span>
-              <blockquote className="relative mt-10 flex-1 text-base italic leading-[1.75] text-(--text-primary)">
+              <blockquote className="relative mt-8 flex-1 text-lg font-medium tracking-wide leading-[1.8] text-white pointer-events-none select-none">
                 {t.quote}
               </blockquote>
-              <figcaption className="mt-8 flex items-center gap-3.5">
+              <figcaption className="mt-8 flex items-center gap-3.5 pointer-events-none select-none">
                 <span
                   className="h-11 w-11 shrink-0 rounded-full"
                   style={{ background: t.gradient }}
@@ -77,10 +117,9 @@ export function Testimonials() {
                 </span>
               </figcaption>
             </figure>
-            </motion.div>
-          ))}
-        </div>
-      </div>
+          </DraggableCardBody>
+        ))}
+      </DraggableCardContainer>
     </section>
   )
 }

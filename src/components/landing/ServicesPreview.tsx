@@ -7,31 +7,40 @@ import { TiltCard } from '@/components/anim'
 
 const SERVICES = [
   {
-    accent: 'var(--blue)',
-    glow: 'rgba(59, 130, 246, 0.13)',
-    icon: Mic,
-    tag: 'Startups & VC Funds',
-    title: 'Thought Leadership Content',
-    body: 'Content that makes you the voice people quote — not the one playing catch-up.',
-    href: '/services/thought-leadership',
-  },
-  {
-    accent: 'var(--amber)',
+    accent: '#f59e0b', // amber-500
     glow: 'rgba(245, 158, 11, 0.13)',
     icon: Landmark,
-    tag: 'Family-Owned Businesses',
-    title: 'Business Professionalisation',
-    body: 'Governance, succession planning, and family constitutions that protect what you\u2019ve built across generations.',
-    href: '/services/family-business-consulting',
+    tag: 'ALLOCATORS',
+    title: 'Venture Capital',
+    body: 'Sharpened deal flow, portfolio intelligence, and thesis instrumentation for funds moving at the speed of conviction.',
+    href: '/services/venture-capital',
   },
   {
-    accent: 'var(--emerald)',
-    glow: 'rgba(16, 185, 129, 0.13)',
+    accent: '#e879f9', // fuchsia-400
+    glow: 'rgba(232, 121, 249, 0.13)',
+    icon: Mic,
+    tag: 'FOUNDERS',
+    title: 'Startups',
+    body: 'From first hire to Series C — infrastructure, playbooks, and momentum for teams building the next category.',
+    href: '/services/startups',
+  },
+  {
+    accent: '#fcd34d', // amber-300
+    glow: 'rgba(252, 211, 77, 0.13)',
     icon: Store,
-    tag: 'D2C Startups',
-    title: 'Retail Presence Strategy',
-    body: 'From shelf placement to sales training — everything you need to turn online momentum into physical market share.',
-    href: '/services/d2c-retail-strategy',
+    tag: 'STEWARDS',
+    title: 'Family Businesses',
+    body: 'Modernization without erasure. Digital operations that honor legacy while unlocking the next generation of growth.',
+    href: '/services/family-businesses',
+  },
+  {
+    accent: '#99f6e4', // teal-200
+    glow: 'rgba(153, 246, 228, 0.13)',
+    icon: Landmark, // Reusing Landmark or some other icon
+    tag: 'INSTITUTIONS',
+    title: 'Educational Companies',
+    body: 'Learning systems, cohort infrastructure, and outcomes analytics for teams shaping how the world studies.',
+    href: '/services/educational-companies',
   },
 ]
 
@@ -68,7 +77,7 @@ export function ServicesPreview() {
           </motion.h2>
         </div>
 
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {SERVICES.map((s, i) => {
             const Icon = s.icon
             return (

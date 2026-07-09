@@ -44,14 +44,14 @@ export default async function ImpactPage() {
   return (
     <div className="relative overflow-hidden py-28 md:py-36">
       <FloatingShape
-        className="pointer-events-none absolute -left-24 top-10 h-80 w-80 rounded-full bg-brand-accent/8 blur-3xl"
+        className="pointer-events-none absolute -left-24 top-10 h-80 w-80 rounded-full bg-[#d4a853]/20 blur-3xl"
         amplitude={28}
         duration={11}
       />
       <div className="container relative mx-auto px-4 md:px-6">
         <div className="mx-auto mb-20 max-w-3xl text-center">
           <Reveal direction="up" distance={14}>
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-accent">
+            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#d4a853]">
               Impact & Success Stories
             </span>
           </Reveal>
@@ -59,12 +59,12 @@ export default async function ImpactPage() {
             as="h1"
             by="word"
             stagger={0.06}
-            className="mt-4 font-serif text-4xl tracking-tight text-brand-fg sm:text-5xl md:text-6xl"
+            className="mt-4 font-serif text-4xl tracking-tight text-[#f1f5f9] sm:text-5xl md:text-6xl"
           >
             Proven impact.
           </AnimatedText>
           <Reveal direction="up" delay={0.1}>
-            <p className="mx-auto mt-5 max-w-2xl text-xl text-brand-fg/80">
+            <p className="mx-auto mt-5 max-w-2xl text-xl text-[#94a3b8]">
               We measure our success by the clarity we bring and the growth we
               enable for our clients.
             </p>
@@ -78,12 +78,12 @@ export default async function ImpactPage() {
               key={i}
               max={6}
               lift={6}
-              className="flex flex-col items-center rounded-2xl border border-brand-border/60 bg-brand-muted/30 p-6 text-center"
+              className="flex flex-col items-center rounded-2xl border border-white/[0.07] bg-white/[0.02] p-6 text-center"
             >
-              <span className="mb-3 font-serif text-5xl font-bold text-brand-accent">
+              <span className="mb-3 font-serif text-5xl font-bold text-[#d4a853]">
                 {metric.value}
               </span>
-              <span className="text-sm font-medium uppercase tracking-wider text-brand-fg/70">
+              <span className="text-sm font-medium uppercase tracking-wider text-[#94a3b8]">
                 {metric.label}
               </span>
             </TiltCard>
@@ -97,7 +97,7 @@ export default async function ImpactPage() {
             by="word"
             onScroll
             stagger={0.05}
-            className="mb-12 text-center font-serif text-3xl tracking-tight text-brand-fg sm:text-4xl"
+            className="mb-12 text-center font-serif text-3xl tracking-tight text-[#f1f5f9] sm:text-4xl"
           >
             Success Stories
           </AnimatedText>
@@ -107,10 +107,10 @@ export default async function ImpactPage() {
                 key={i}
                 max={5}
                 lift={6}
-                className="flex h-full flex-col rounded-2xl border border-brand-border bg-white p-8 shadow-sm"
+                className="flex h-full flex-col rounded-2xl border border-white/[0.07] bg-white/[0.04] p-8"
               >
-                <Quote className="mb-5 h-9 w-9 text-brand-primary/30" />
-                <p className="mb-8 flex-1 text-lg italic text-brand-fg/90">
+                <Quote className="mb-5 h-9 w-9 text-[#6366f1]/50" />
+                <p className="mb-8 flex-1 text-lg italic text-[#f1f5f9]">
                   {testimonial.quote}
                 </p>
                 <div className="mt-auto flex items-center gap-4">
@@ -121,16 +121,16 @@ export default async function ImpactPage() {
                       className="h-12 w-12 rounded-full object-cover"
                     />
                   ) : (
-                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-muted text-xs text-brand-fg/40">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white/[0.05] text-xs text-[#94a3b8]">
                       Photo
                     </div>
                   )}
                   <div>
-                    <p className="font-bold text-brand-fg">
+                    <p className="font-bold text-[#f1f5f9]">
                       {testimonial.clientName || "Anonymous Client"}
                     </p>
                     {testimonial.clientRoleCompany && (
-                      <p className="text-sm text-brand-fg/70">
+                      <p className="text-sm text-[#94a3b8]">
                         {testimonial.clientRoleCompany}
                       </p>
                     )}
@@ -143,7 +143,7 @@ export default async function ImpactPage() {
 
         {/* Client Logos Strip */}
         <Reveal direction="up" className="mx-auto max-w-5xl text-center">
-          <h2 className="mb-8 text-sm font-bold uppercase tracking-widest text-brand-fg/50">
+          <h2 className="mb-8 text-sm font-bold uppercase tracking-widest text-[#94a3b8]">
             Trusted By
           </h2>
           {logos?.length > 0 ? (
@@ -160,9 +160,9 @@ export default async function ImpactPage() {
             </div>
           ) : (
             <div className="flex flex-wrap justify-center gap-12 opacity-30">
-              <div className="h-8 w-32 rounded bg-brand-fg/20"></div>
-              <div className="h-8 w-24 rounded bg-brand-fg/20"></div>
-              <div className="h-8 w-28 rounded bg-brand-fg/20"></div>
+              <div className="h-8 w-32 rounded bg-white/[0.1]"></div>
+              <div className="h-8 w-24 rounded bg-white/[0.1]"></div>
+              <div className="h-8 w-28 rounded bg-white/[0.1]"></div>
             </div>
           )}
         </Reveal>

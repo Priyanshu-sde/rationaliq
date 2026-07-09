@@ -8,8 +8,8 @@ export const metadata: Metadata = {
 }
 
 const content: ServiceContent = {
-  eyebrow: "For Traditional Enterprises",
-  title: "Family Business Consulting",
+  eyebrow: "STEWARDS",
+  title: "Family Businesses",
   icon: Network,
   lead: "Family businesses form the backbone of the economy, but they face unique challenges. Intergenerational transitions, emotional dynamics, and the need to professionalize without losing core values require a delicate, structured approach.",
   challenge:

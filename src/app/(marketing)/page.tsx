@@ -2,7 +2,6 @@ import { PathSelector } from "@/components/sections/PathSelector"
 import { JsonLd } from "@/components/JsonLd"
 import { client } from "@/sanity/lib/client"
 import { getPostsQuery } from "@/sanity/lib/queries"
-import { Cursor } from "@/components/landing/Cursor"
 import { IntroLoader } from "@/components/landing/IntroLoader"
 import { LandingHero } from "@/components/landing/LandingHero"
 import { TrustBar } from "@/components/landing/TrustBar"
@@ -40,10 +39,9 @@ export default async function Home() {
     <>
       <JsonLd data={orgData} />
       <IntroLoader />
-      <Cursor />
       <PathSelector />
 
-      <div className="landing-content relative w-full bg-[#07080F]">
+      <>
         <LandingHero />
         <TrustBar />
         <ServicesPreview />
@@ -54,7 +52,7 @@ export default async function Home() {
         <Testimonials />
         <BlogPreview posts={posts ?? []} />
         <ContactSection />
-      </div>
+      </>
     </>
   )
 }

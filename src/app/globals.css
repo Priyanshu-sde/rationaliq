@@ -25,8 +25,8 @@
 }
 
 :root {
-  --background: var(--color-brand-bg);
-  --foreground: var(--color-brand-fg);
+  --background: var(--bg-base);
+  --foreground: var(--text-primary);
 
   /* Base */
   --bg-base: #07080f;
@@ -258,14 +258,6 @@ h1, h2, h3, h4, h5, h6 {
   animation: scroll-cue 2s cubic-bezier(0.65, 0, 0.35, 1) infinite;
 }
 
-/* Custom cursor active: hide native cursor on fine pointers only */
-@media (pointer: fine) {
-  .has-custom-cursor,
-  .has-custom-cursor * {
-    cursor: none !important;
-  }
-}
-
 /* Focus visibility on the dark landing theme */
 .landing-content :focus-visible {
   outline: 2px solid var(--indigo);
@@ -289,5 +281,53 @@ h1, h2, h3, h4, h5, h6 {
   *::before,
   *::after {
     scroll-behavior: auto !important;
+  }
+}
+
+/* ────────────────────────────────────────────────────────────
+   Marquee Animation (Moving Strip)
+   ──────────────────────────────────────────────────────────── */
+.marquee-container {
+  position: absolute;
+  bottom: 8%;
+  left: -4%;
+  width: 108%;
+  overflow: hidden;
+  white-space: nowrap;
+  transform: rotate(-4deg);
+  z-index: 1;
+  pointer-events: none;
+  user-select: none;
+}
+.marquee-track {
+  display: inline-flex;
+  align-items: center;
+  will-change: transform;
+  animation: marquee-scroll 26s linear infinite;
+}
+.marquee-item {
+  font-family: var(--font-sans);
+  font-weight: 500;
+  font-size: clamp(15px, 1.45vw, 20px);
+  letter-spacing: -0.015em;
+  color: var(--text-secondary);
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+}
+.marquee-dot {
+  color: var(--indigo);
+  margin: 0 0.42em;
+  font-size: 0.9em;
+  line-height: 1;
+}
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
   }
 }

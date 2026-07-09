@@ -10,10 +10,10 @@ export default function PrivacyPage() {
     <div className="py-28 md:py-36">
       <div className="container mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-3xl">
-          <h1 className="font-serif text-4xl tracking-tight text-brand-fg sm:text-5xl">
+          <h1 className="font-serif text-4xl tracking-tight text-[#f1f5f9] sm:text-5xl">
             Privacy Policy
           </h1>
-          <div className="mt-8 space-y-6 text-brand-fg/75">
+          <div className="mt-8 space-y-6 text-[#94a3b8]">
             <p>
               RationalIQ collects only the information you choose to share with
               us — typically your name, email address, and the details of your
@@ -32,7 +32,7 @@ export default function PrivacyPage() {
             </p>
             <p>
               For any privacy-related questions, contact us through the{" "}
-              <a href="/contact" className="text-brand-primary underline underline-offset-4">
+              <a href="/contact" className="text-[#6366f1] underline underline-offset-4">
                 contact page
               </a>
               .

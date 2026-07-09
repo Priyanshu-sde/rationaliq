@@ -74,14 +74,14 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       <div className="container mx-auto px-4 md:px-6">
         <div className="mx-auto max-w-3xl">
           <Reveal direction="up" distance={12}>
-            <Link href="/blog" className="link-underline mb-8 inline-flex items-center text-sm font-medium text-brand-fg/70 transition-colors hover:text-brand-primary">
+            <Link href="/blog" className="link-underline mb-8 inline-flex items-center text-sm font-medium text-[#94a3b8] transition-colors hover:text-[#6366f1]">
               <ArrowLeft className="mr-2 h-4 w-4" /> Back to blog
             </Link>
           </Reveal>
 
           <div className="mb-12">
             <Reveal direction="up">
-              <div className="mb-4 text-sm text-brand-fg/60">
+              <div className="mb-4 text-sm text-[#94a3b8]">
                 {new Date(post.publishedAt).toLocaleDateString('en-US', {
                   month: 'long',
                   day: 'numeric',
@@ -93,7 +93,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               as="h1"
               by="word"
               stagger={0.04}
-              className="font-serif text-4xl font-bold tracking-tight text-brand-fg md:text-5xl lg:text-6xl"
+              className="font-serif text-4xl font-bold tracking-tight text-[#f1f5f9] md:text-5xl lg:text-6xl"
             >
               {post.title}
             </AnimatedText>
@@ -101,7 +101,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
           {post.mainImage && (
             <Reveal direction="up" scale distance={24}>
-              <div className="mb-12 aspect-video overflow-hidden rounded-2xl bg-brand-muted">
+              <div className="mb-12 aspect-video overflow-hidden rounded-2xl bg-white/[0.05]">
                 <Parallax speed={-0.1} className="h-full w-full">
                   <img
                     src={urlForImage(post.mainImage)?.url()}
@@ -113,7 +113,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             </Reveal>
           )}
 
-          <Reveal direction="up" className="prose prose-lg max-w-none prose-headings:font-serif prose-headings:text-brand-fg prose-p:text-brand-fg/80 prose-a:text-brand-primary hover:prose-a:text-brand-primary/80">
+          <Reveal direction="up" className="prose prose-invert prose-lg max-w-none prose-headings:font-serif prose-headings:text-[#f1f5f9] prose-p:text-[#94a3b8] prose-a:text-[#6366f1] hover:prose-a:text-[#6366f1]/80">
             {post.body ? (
               <PortableText value={post.body} />
             ) : (

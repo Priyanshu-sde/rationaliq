@@ -74,14 +74,14 @@ export default function TeamPage() {
       {/* Intro */}
       <section className="relative overflow-hidden py-24 md:py-32">
         <FloatingShape
-          className="pointer-events-none absolute -right-20 top-10 h-80 w-80 rounded-full bg-brand-primary/8 blur-3xl"
+          className="pointer-events-none absolute -right-20 top-10 h-80 w-80 rounded-full bg-[#6366f1]/20 blur-3xl"
           amplitude={28}
           duration={10}
         />
         <div className="container mx-auto px-4 md:px-6">
           <div className="mx-auto max-w-4xl text-center">
             <Reveal direction="up" distance={14}>
-              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-accent">
+              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#d4a853]">
                 Team & Founder
               </span>
             </Reveal>
@@ -89,7 +89,7 @@ export default function TeamPage() {
               as="h1"
               by="word"
               stagger={0.06}
-              className="mt-4 font-serif text-4xl tracking-tight text-brand-fg sm:text-5xl md:text-6xl"
+              className="mt-4 font-serif text-4xl tracking-tight text-[#f1f5f9] sm:text-5xl md:text-6xl"
             >
               The mind behind the model.
             </AnimatedText>
@@ -98,7 +98,7 @@ export default function TeamPage() {
       </section>
 
       {/* Signature horizontal-scroll journey */}
-      <JourneyTimeline milestones={milestones} />
+      <JourneyTimeline milestones={milestones} theme="landing" />
 
       {/* Founder profile + bio */}
       <section className="py-24 md:py-32">
@@ -106,7 +106,7 @@ export default function TeamPage() {
           <div className="mx-auto flex max-w-5xl flex-col items-start gap-12 md:flex-row">
             <div className="w-full md:sticky md:top-28 md:w-1/3">
               <Reveal direction="up" scale distance={24}>
-                <div className="relative aspect-[3/4] w-full overflow-hidden rounded-[2rem] border border-brand-border bg-gradient-to-b from-white to-brand-muted/60">
+                <div className="relative aspect-[3/4] w-full overflow-hidden rounded-[2rem] border border-white/[0.07] bg-gradient-to-b from-white/[0.05] to-transparent">
                   <Parallax speed={-0.1} className="absolute inset-0 flex items-end justify-center">
                     <Image
                       src="/profile-cutout.png"
@@ -120,14 +120,14 @@ export default function TeamPage() {
                 </div>
               </Reveal>
               <Reveal direction="up" delay={0.1} className="mt-6 flex flex-col gap-2">
-                <h3 className="font-serif text-xl font-bold">Hitesh Saiswani</h3>
-                <p className="font-medium text-brand-primary">Founder &amp; CA</p>
+                <h3 className="font-serif text-xl font-bold text-[#f1f5f9]">Hitesh Saiswani</h3>
+                <p className="font-medium text-[#6366f1]">Founder &amp; CA</p>
                 <div className="mt-2 flex gap-5">
                   <a
                     href="https://youtube.com/@ca.hiteshsaiswani"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="link-underline text-sm text-brand-fg/70 hover:text-brand-primary"
+                    className="link-underline text-sm text-[#94a3b8] hover:text-[#6366f1]"
                   >
                     YouTube
                   </a>
@@ -135,7 +135,7 @@ export default function TeamPage() {
                     href="https://instagram.com/ca.hiteshsaiswani"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="link-underline text-sm text-brand-fg/70 hover:text-brand-primary"
+                    className="link-underline text-sm text-[#94a3b8] hover:text-[#6366f1]"
                   >
                     Instagram
                   </a>
@@ -143,7 +143,7 @@ export default function TeamPage() {
               </Reveal>
             </div>
 
-            <Reveal stagger={0.1} className="w-full space-y-6 text-lg leading-relaxed text-brand-fg/80 md:w-2/3">
+            <Reveal stagger={0.1} className="w-full space-y-6 text-lg leading-relaxed text-[#94a3b8] md:w-2/3">
               <p>
                 Born and raised in a business family in consumer goods retail,
                 Hitesh started working part-time in the family business at age
@@ -158,13 +158,13 @@ export default function TeamPage() {
               </p>
               <p>
                 His professional journey accelerated at global giants{" "}
-                <strong className="text-brand-fg">Grant Thornton and EY (2019–2022)</strong>,
+                <strong className="text-[#f1f5f9]">Grant Thornton and EY (2019–2022)</strong>,
                 where he focused on M&amp;A, due diligence, and facilitating
                 family-office investments into high-growth startups.
               </p>
               <p>
                 As one of the first employees at{" "}
-                <strong className="text-brand-fg">Sunicon Venture Capital Fund</strong>,
+                <strong className="text-[#f1f5f9]">Sunicon Venture Capital Fund</strong>,
                 Hitesh played a pivotal role investing in 3 startups and
                 supporting several others through fundraising. His content work
                 revealed a broader market need, leading to financial, fundraising,
@@ -176,7 +176,7 @@ export default function TeamPage() {
               </p>
               <p>
                 Today, through RationalIQ, Hitesh has worked with over{" "}
-                <strong className="text-brand-fg">250+ family business leaders</strong>{" "}
+                <strong className="text-[#f1f5f9]">250+ family business leaders</strong>{" "}
                 on succession planning, growth strategy, intergenerational
                 conflict resolution, family constitutions, and next-gen coaching —
                 while advising D2C startups on offline expansion.
@@ -187,14 +187,14 @@ export default function TeamPage() {
       </section>
 
       {/* Team grid */}
-      <section className="bg-brand-muted/30 py-24 md:py-32">
+      <section className="bg-white/[0.02] py-24 md:py-32">
         <div className="container mx-auto px-4 md:px-6">
           <AnimatedText
             as="h2"
             by="word"
             onScroll
             stagger={0.05}
-            className="mb-14 text-center font-serif text-3xl tracking-tight text-brand-fg sm:text-4xl"
+            className="mb-14 text-center font-serif text-3xl tracking-tight text-[#f1f5f9] sm:text-4xl"
           >
             The team behind the practice.
           </AnimatedText>
@@ -204,13 +204,13 @@ export default function TeamPage() {
                 key={i}
                 max={6}
                 lift={6}
-                className="relative flex flex-col items-center rounded-2xl border border-brand-border bg-white p-8 text-center shadow-sm"
+                className="relative flex flex-col items-center rounded-2xl border border-white/[0.07] bg-white/[0.04] p-8 text-center"
               >
-                <div className="mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-brand-muted">
-                  <span className="text-xs text-brand-fg/40">Photo</span>
+                <div className="mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-white/[0.05]">
+                  <span className="text-xs text-[#94a3b8]">Photo</span>
                 </div>
-                <h4 className="font-serif text-lg font-bold">TBD</h4>
-                <p className="text-sm text-brand-fg/70">Role Title</p>
+                <h4 className="font-serif text-lg font-bold text-[#f1f5f9]">TBD</h4>
+                <p className="text-sm text-[#94a3b8]">Role Title</p>
               </TiltCard>
             ))}
           </Reveal>

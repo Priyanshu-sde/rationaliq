@@ -24,7 +24,7 @@ export default async function BlogPage() {
   return (
     <div className="relative overflow-hidden py-28 md:py-36">
       <FloatingShape
-        className="pointer-events-none absolute -right-24 top-0 h-80 w-80 rounded-full bg-brand-primary/8 blur-3xl"
+        className="pointer-events-none absolute -right-24 top-0 h-80 w-80 rounded-full bg-[#6366f1]/20 blur-3xl"
         amplitude={26}
         duration={11}
       />
@@ -32,7 +32,7 @@ export default async function BlogPage() {
         <div className="mx-auto max-w-5xl">
           <div className="mb-14">
             <Reveal direction="up" distance={14}>
-              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-accent">
+              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#d4a853]">
                 The blog
               </span>
             </Reveal>
@@ -40,12 +40,12 @@ export default async function BlogPage() {
               as="h1"
               by="word"
               stagger={0.06}
-              className="mt-4 font-serif text-4xl tracking-tight text-brand-fg sm:text-5xl md:text-6xl"
+              className="mt-4 font-serif text-4xl tracking-tight text-[#f1f5f9] sm:text-5xl md:text-6xl"
             >
               Insights worth the read.
             </AnimatedText>
             <Reveal direction="up" delay={0.1}>
-              <p className="mt-5 text-lg text-brand-fg/70">
+              <p className="mt-5 text-lg text-[#94a3b8]">
                 Perspectives on navigating business transitions and growth.
               </p>
             </Reveal>
@@ -58,10 +58,10 @@ export default async function BlogPage() {
                   <TiltCard
                     max={5}
                     lift={6}
-                    className="flex h-full flex-col overflow-hidden rounded-2xl border border-brand-border bg-white shadow-sm transition-shadow duration-500 group-hover:shadow-xl"
+                    className="flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.07] bg-white/[0.02] transition-colors duration-500 hover:border-white/[0.14] hover:bg-white/[0.04]"
                   >
                     {post.mainImage && (
-                      <div className="aspect-video w-full overflow-hidden bg-brand-muted">
+                      <div className="aspect-video w-full overflow-hidden bg-white/[0.05]">
                         <img
                           src={urlForImage(post.mainImage)?.url()}
                           alt={post.mainImage.alt || post.title}
@@ -70,26 +70,26 @@ export default async function BlogPage() {
                       </div>
                     )}
                     <CardHeader>
-                      <div className="mb-2 text-xs text-brand-fg/50">
+                      <div className="mb-2 text-xs text-[#94a3b8]">
                         {new Date(post.publishedAt).toLocaleDateString('en-US', {
                           month: 'long',
                           day: 'numeric',
                           year: 'numeric',
                         })}
                       </div>
-                      <CardTitle className="text-xl transition-colors group-hover:text-brand-primary">
+                      <CardTitle className="text-xl text-[#f1f5f9] transition-colors group-hover:text-[#6366f1]">
                         {post.title}
                       </CardTitle>
                     </CardHeader>
                     <CardContent className="flex-1">
-                      <p className="line-clamp-3 text-brand-fg/80">{post.excerpt}</p>
+                      <p className="line-clamp-3 text-[#94a3b8]">{post.excerpt}</p>
                     </CardContent>
                   </TiltCard>
                 </Link>
               ))}
             </Reveal>
           ) : (
-            <Reveal direction="up" className="rounded-2xl border border-dashed border-brand-border bg-brand-muted/20 py-24 text-center text-brand-fg/60">
+            <Reveal direction="up" className="rounded-2xl border border-dashed border-white/[0.07] bg-white/[0.02] py-24 text-center text-[#94a3b8]">
               <p>No posts available yet. Check back soon.</p>
             </Reveal>
           )}

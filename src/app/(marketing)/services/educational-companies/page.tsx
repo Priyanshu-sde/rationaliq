@@ -8,8 +8,8 @@ export const metadata: Metadata = {
 }
 
 const content: ServiceContent = {
-  eyebrow: "For Education Companies",
-  title: "Educational Strategy & Scaling",
+  eyebrow: "INSTITUTIONS",
+  title: "Educational Companies",
   icon: BookOpen,
   lead: "In the rapidly evolving ed-tech and traditional education sectors, creating scalable, engaging, and outcome-driven learning experiences is critical to standing out.",
   challenge:

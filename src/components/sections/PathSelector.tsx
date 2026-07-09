@@ -11,7 +11,7 @@ const paths = [
     id: 'vc',
     name: 'Venture Capital',
     blurb: 'Sharpened deal flow, portfolio intelligence, and thesis instrumentation for funds moving at the speed of conviction.',
-    href: '/services/thought-leadership',
+    href: '/services/venture-capital',
     image: '/vc.jpg',
     color: '#f59e0b', // amber-500
     code: '01',
@@ -21,7 +21,7 @@ const paths = [
     id: 'startups',
     name: 'Startups',
     blurb: 'From first hire to Series C — infrastructure, playbooks, and momentum for teams building the next category.',
-    href: '/services/thought-leadership',
+    href: '/services/startups',
     image: '/startup.jpg',
     color: '#e879f9', // fuchsia-400
     code: '02',
@@ -31,7 +31,7 @@ const paths = [
     id: 'family',
     name: 'Family Businesses',
     blurb: 'Modernization without erasure. Digital operations that honor legacy while unlocking the next generation of growth.',
-    href: '/services/family-business-consulting',
+    href: '/services/family-businesses',
     image: '/family.jpg',
     color: '#fcd34d', // amber-300
     code: '03',
@@ -41,7 +41,7 @@ const paths = [
     id: 'education',
     name: 'Educational Companies',
     blurb: 'Learning systems, cohort infrastructure, and outcomes analytics for teams shaping how the world studies.',
-    href: '/services/education-company',
+    href: '/services/educational-companies',
     image: '/education.jpg',
     color: '#99f6e4', // teal-200
     code: '04',
@@ -151,7 +151,7 @@ export function PathSelector() {
                 src={a.image}
                 alt={a.name}
                 fill
-                priority={i === 0}
+                priority
                 className="absolute inset-0 object-cover transition-transform duration-1000 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, 33vw"
               />

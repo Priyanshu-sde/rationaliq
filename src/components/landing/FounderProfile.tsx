@@ -191,6 +191,22 @@ export function FounderProfile() {
           </div>
         </div>
 
+        {/* Moving Strip Marquee */}
+        <div className="marquee-container" aria-hidden="true">
+          <div className="marquee-track">
+            {[...Array(4)].map((_, i) => (
+              <div key={i} className="flex shrink-0">
+                {['Chartered Accountant', 'Business Consultant', 'Founder', 'Strategic Advisor', 'Investor'].map((role, j) => (
+                  <span key={`${i}-${j}`} className="marquee-item">
+                    {role}
+                    <span className="marquee-dot">&bull;</span>
+                  </span>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   )
