@@ -33,13 +33,13 @@ export function FounderProfile() {
       // Phase 1 (0 to 0.5)
       // Text scrolls up
       tl.to(textScrollRef.current, { yPercent: -150, ease: "none", duration: 0.5 }, 0)
-      
+
       // Phase 2 (0.5 to 0.75)
       // Blur fades out & image shrinks to rounded rectangle
-      tl.to([textPanelRef.current, nameRef.current], { 
-        opacity: 0, 
-        ease: "power2.inOut", 
-        duration: 0.25 
+      tl.to([textPanelRef.current, nameRef.current], {
+        opacity: 0,
+        ease: "power2.inOut",
+        duration: 0.25
       }, 0.5)
 
       tl.to(imageWrapperRef.current, {
@@ -79,9 +79,9 @@ export function FounderProfile() {
 
       // Quote fades in centered below the pill
       tl.fromTo(
-        quoteRef.current, 
-        { opacity: 0, y: 100 }, 
-        { opacity: 1, y: 50, ease: "power2.out", duration: 0.15 }, 
+        quoteRef.current,
+        { opacity: 0, y: 100 },
+        { opacity: 1, y: 50, ease: "power2.out", duration: 0.15 },
         0.85
       )
 
@@ -93,7 +93,7 @@ export function FounderProfile() {
   return (
     <section ref={containerRef} className="relative h-[400vh] bg-[#07080F]">
       <div className="sticky top-0 h-screen w-full overflow-hidden flex items-center justify-center">
-        
+
         {/* Animated Background Image Container */}
         <div
           ref={imageWrapperRef}
@@ -101,7 +101,7 @@ export function FounderProfile() {
           style={{ borderRadius: "0px" }}
         >
           <Image
-            src="/ted_talk.jpg"
+            src="/ted_talk(1).jpg"
             alt="CA Hitesh Saiswani Ted Talk"
             fill
             className="object-cover"
@@ -134,7 +134,7 @@ export function FounderProfile() {
           className="absolute right-0 top-0 h-full w-full md:w-[60vw] bg-[#07080F]/40 backdrop-blur-2xl z-10 overflow-hidden"
         >
           {/* Scrollable text container */}
-          <div 
+          <div
             ref={textScrollRef}
             className="absolute left-0 top-[50vh] w-full px-16 md:px-24 lg:px-32 flex flex-col gap-12"
           >
