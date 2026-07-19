@@ -9,20 +9,24 @@ export const metadata: Metadata = {
 
 const content: ServiceContent = {
   eyebrow: "FOUNDERS",
-  title: "Startups",
+  title: "D2C Startups",
   icon: Store,
-  lead: "From first hire to Series C — infrastructure, playbooks, and momentum for teams building the next category.",
+  lead: "If you've peaked at selling online and want fractional business intelligence for your offline retail strategy, you're at the right place.",
   challenge:
-    "Early stage founders often struggle with the transition to scale. The complexities of building operational infrastructure, managing growth, and navigating the VC ecosystem can quickly become overwhelming.",
+    "Many Direct-to-Consumer (D2C) brands experience a plateau in online customer acquisition. Transitioning from the digital space to physical retail presents entirely new challenges in operations, customer experience, and unit economics.",
   approach:
-    "Rooted in deep operational experience and refined by VC diligence frameworks, we provide the foundational architecture required for sustainable, hyper-growth scale.",
+    "We provide fractional business intelligence and end-to-end operational playbooks to bridge the gap between your online success and a robust, profitable offline retail footprint.",
   bullets: [
-    { strong: "Growth Playbooks", text: "Modeling profitability and growth flywheels." },
-    { strong: "Operational Infrastructure", text: "Structuring processes, team topologies, and core workflows." },
-    { strong: "Fundraising Narrative", text: "Strategic guidance on positioning, metrics, and investor relations." },
+    { strong: "Retail Store Design", text: "Crafting physical spaces that reflect your brand identity and optimize customer flow." },
+    { strong: "Display Strategy", text: "Visual merchandising to maximize engagement and drive in-store conversions." },
+    { strong: "Sales Trainings", text: "Equipping your team with the skills to close sales and enhance the customer experience." },
+    { strong: "In-Store Demonstration Staff Training", text: "Training staff for compelling product demonstrations that highlight key value propositions." },
+    { strong: "Product and Price Placement", text: "Strategic positioning of SKUs and pricing models to improve basket size and profitability." },
+    { strong: "Customer SOP Creation", text: "Standard Operating Procedures (SOPs) designed to ensure a consistent and delightful customer journey." },
+    { strong: "In-Store SOP Creation", text: "Comprehensive Standard Operating Procedures to streamline daily store operations and management." },
   ],
-  ctaTitle: "Ready to accelerate your growth?",
-  ctaText: "Ensure your scale-up journey is efficient and structured from day one.",
+  ctaTitle: "Ready to conquer offline retail?",
+  ctaText: "Let's build a profitable physical presence for your D2C brand.",
 }
 
 export default function StartupsService() {

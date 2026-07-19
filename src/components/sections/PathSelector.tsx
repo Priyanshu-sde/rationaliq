@@ -10,7 +10,7 @@ const paths = [
   {
     id: 'vc',
     name: 'Venture Capital',
-    blurb: 'Sharpened deal flow, portfolio intelligence, and thesis instrumentation for funds moving at the speed of conviction.',
+    blurb: 'Get seen my top 1% founders through thought leadership IPs. And yes, content creation is not thought leadership.',
     href: '/services/venture-capital',
     image: '/vc.jpg',
     color: '#f59e0b', // amber-500
@@ -19,8 +19,8 @@ const paths = [
   },
   {
     id: 'startups',
-    name: 'Startups',
-    blurb: 'From first hire to Series C — infrastructure, playbooks, and momentum for teams building the next category.',
+    name: 'D2C Startups',
+    blurb: "If you've peaked at selling online and want fractional business intelligence for your offline retail strategy, you're at the right place.",
     href: '/services/startups',
     image: '/startup.jpg',
     color: '#e879f9', // fuchsia-400
@@ -30,7 +30,7 @@ const paths = [
   {
     id: 'family',
     name: 'Family Businesses',
-    blurb: 'Modernization without erasure. Digital operations that honor legacy while unlocking the next generation of growth.',
+    blurb: 'Leverage the experience of a Chartered Accountant and Certified Family Business Advisor from FFI USA who was born in a business family as a one stop solution.',
     href: '/services/family-businesses',
     image: '/family.jpg',
     color: '#fcd34d', // amber-300
@@ -39,8 +39,8 @@ const paths = [
   },
   {
     id: 'education',
-    name: 'Educational Companies',
-    blurb: 'Learning systems, cohort infrastructure, and outcomes analytics for teams shaping how the world studies.',
+    name: 'Education',
+    blurb: 'Feel the transformation through education and training initiatives that are always hands on, directly translate to skills and change the way you think.',
     href: '/services/educational-companies',
     image: '/education.jpg',
     color: '#99f6e4', // teal-200
@@ -185,7 +185,7 @@ export function PathSelector() {
                     className="font-serif italic leading-[0.95] transition-all duration-500"
                     style={{
                       fontSize: isActive ? "clamp(3rem, 6vw, 5.5rem)" : "clamp(2rem, 3.2vw, 3.5rem)",
-                      color: isActive ? a.color : "white",
+                      color: "white",
                     }}
                   >
                     {a.name}
@@ -197,7 +197,7 @@ export function PathSelector() {
                       opacity: isActive ? 1 : 0,
                     }}
                   >
-                    <p className="mt-6 max-w-md text-white/70 leading-relaxed text-sm md:text-base">
+                    <p className="mt-6 max-w-md text-white font-medium drop-shadow-md leading-relaxed text-sm md:text-base">
                       {a.blurb}
                     </p>
                     <div

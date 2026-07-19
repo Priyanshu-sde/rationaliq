@@ -9,20 +9,21 @@ export const metadata: Metadata = {
 
 const content: ServiceContent = {
   eyebrow: "INSTITUTIONS",
-  title: "Educational Companies",
+  title: "Education",
   icon: BookOpen,
-  lead: "In the rapidly evolving ed-tech and traditional education sectors, creating scalable, engaging, and outcome-driven learning experiences is critical to standing out.",
+  lead: "Feel the transformation through education and training initiatives that are always hands-on, directly translate to skills, and change the way you think.",
   challenge:
-    "Education companies often struggle to balance pedagogical rigor with rapid growth. Scaling content creation, maintaining student engagement, and differentiating in a crowded market require specialized expertise.",
+    "Education often struggles to bridge the gap between theoretical knowledge and practical application. Delivering content that is engaging, actionable, and industry-relevant requires a deep understanding of both pedagogy and market demands.",
   approach:
-    "Drawing on extensive experience in the ed-tech ecosystem and curriculum design, RationalIQ partners with education companies to optimize learning outcomes, streamline content delivery, and build robust growth strategies.",
+    "We provide hands-on, goal-based training and curriculum development designed to transform students and teams into execution powerhouses with real-world skills.",
   bullets: [
-    { strong: "Curriculum Design", text: "Developing structured, engaging, and outcome-focused educational content." },
-    { strong: "Platform Optimization", text: "Enhancing the user experience and instructional delivery on digital platforms." },
-    { strong: "Growth & Audience", text: "Strategic positioning and scaling strategies to reach broader student demographics." },
+    { strong: "Industry Readiness Programs", text: "Programs for students covering finance, sales, soft skills and communication, family business management, and startup fundraising." },
+    { strong: "Corporate Training", text: "Customized and goal-based training programs to transform your team into an execution powerhouse or become more skilled." },
+    { strong: "Curriculum Development", text: "Developing practical and industry-ready educational content and curriculum for your education institute." },
+    { strong: "Content Distribution", text: "Distribution of education content on YouTube or learning management systems." },
   ],
-  ctaTitle: "Ready to scale your educational impact?",
-  ctaText: "Let's discuss how we can refine your curriculum and accelerate your growth.",
+  ctaTitle: "Ready to transform your educational impact?",
+  ctaText: "Let's discuss how we can build practical, skills-based training for your audience.",
 }
 
 export default function EducationCompanyService() {

@@ -88,7 +88,7 @@ export function Testimonials() {
         <p className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center text-xl md:text-3xl font-display text-(--text-secondary) opacity-20 pointer-events-none select-none">
           Drag to explore
         </p>
-        
+
         {TESTIMONIALS.map((t, i) => (
           <DraggableCardBody
             key={t.role}

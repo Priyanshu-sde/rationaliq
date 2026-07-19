@@ -16,7 +16,7 @@ const SERVICES = [
     title: 'Venture Capital',
     body: 'Sharpened deal flow, portfolio intelligence, and thesis instrumentation for funds moving at the speed of conviction.',
     href: '/services/venture-capital',
-    image: 'https://images.unsplash.com/photo-1556761175-5973dc0f32d7?auto=format&fit=crop&q=80',
+    image: '/venture.jpg',
   },
   {
     accent: '#e879f9', // fuchsia-400
@@ -136,13 +136,13 @@ export function ServicesPreview() {
                             <span className="text-sm font-semibold tracking-[0.2em] uppercase" style={{ color: s.accent }}>
                               {s.tag}
                             </span>
-                            <h3 className="font-display text-3xl md:text-4xl mt-5 text-(--text-primary)">
+                            <h3 className="font-display text-3xl md:text-4xl mt-5 text-white drop-shadow-md">
                               {s.title}
                             </h3>
-                            <p className="mt-5 text-base md:text-lg leading-relaxed text-(--text-primary) opacity-90 max-w-lg">
+                            <p className="mt-5 text-base md:text-lg leading-relaxed text-white/90 drop-shadow max-w-lg">
                               {s.body}
                             </p>
-                            <span className="mt-8 inline-flex items-center gap-2 text-base font-medium text-(--text-primary)">
+                            <span className="mt-8 inline-flex items-center gap-2 text-base font-medium text-white drop-shadow-md">
                               Explore practice
                               <ArrowRight
                                 className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-2"
@@ -169,7 +169,7 @@ export function ServicesPreview() {
                       className={`cursor-pointer transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] origin-left flex items-center ${isActive ? 'scale-110 -translate-y-3 opacity-100' : 'scale-100 translate-y-0 opacity-40 hover:opacity-70'
                         }`}
                     >
-                      <h3 className="text-3xl md:text-5xl lg:text-6xl font-display text-(--text-primary)">
+                      <h3 className="text-4xl md:text-5xl lg:text-6xl font-display text-white drop-shadow-xl">
                         {s.title}
                       </h3>
                     </div>
