@@ -39,11 +39,11 @@ const MILESTONES: Milestone[] = [
     imageAlt: 'Venture capital meeting room',
   },
   {
-    period: '2023',
-    title: '330K → 450K',
-    description: 'Content work for the fund opened doors with top education startups and a finance podcaster. Hitesh grew the channel by 120,000 subscribers — proving that the right content strategy is a measurable business lever.',
+    period: '2024',
+    title: 'Certified Family Business Advisor',
+    description: 'Became a certified family business advisor from FFI USA to understand international standards of family business advisory.',
     image: '/journey6.png',
-    imageAlt: 'Digital growth network',
+    imageAlt: 'Family Business Advisor Certification',
   },
   {
     period: 'Now',
