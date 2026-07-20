@@ -122,7 +122,7 @@ export function PathSelector() {
           Direction 01 / RationalIQ
         </p>
         <h1 className="mt-3 font-serif italic text-4xl md:text-5xl text-balance max-w-[14ch] text-white">
-          Move across. Feel the pull.
+          Choose your path.
         </h1>
       </div>
 
