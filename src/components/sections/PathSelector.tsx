@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { gsap } from '@/components/anim/gsap'
 import { useIsomorphicLayoutEffect } from '@/components/anim/gsap'
+import { cn } from '@/lib/utils'
 
 const paths = [
   {
@@ -115,7 +116,7 @@ export function PathSelector() {
   return (
     <section
       ref={containerRef}
-      className="relative z-[100] h-[100svh] w-full bg-[#0a0a0e] overflow-hidden font-sans"
+      className="relative z-[100] min-h-[100svh] md:h-[100svh] w-full bg-[#0a0a0e] overflow-hidden font-sans flex flex-col md:block"
     >
       <div className="absolute top-24 left-8 md:left-12 z-40 pointer-events-none">
         <p className="text-[10px] font-mono uppercase tracking-[0.3em] text-white/50">
@@ -127,7 +128,7 @@ export function PathSelector() {
       </div>
 
       <main
-        className="h-full w-full flex flex-col md:flex-row"
+        className="h-full w-full flex flex-col md:flex-row flex-1"
         onMouseLeave={() => setActive(null)}
       >
         {paths.map((a, i) => {
@@ -140,7 +141,10 @@ export function PathSelector() {
               data-panel
               data-i={i}
               onMouseEnter={() => setActive(i)}
-              className="group relative overflow-hidden border-r border-white/5 last:border-r-0 cursor-pointer transition-[flex-basis,filter,opacity] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]"
+              className={cn(
+                "group relative overflow-hidden border-b md:border-b-0 md:border-r border-white/5 last:border-b-0 md:last:border-r-0 cursor-pointer transition-[flex-basis,filter,opacity] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]",
+                "min-h-[250px] md:min-h-0" // Ensure they don't squash on mobile
+              )}
               style={{
                 flexBasis: isActive ? "48%" : isDim ? "17.33%" : "25%",
                 filter: isDim ? "grayscale(0.5)" : "none",
@@ -191,10 +195,10 @@ export function PathSelector() {
                     {a.name}
                   </h2>
                   <div
-                    className="overflow-hidden transition-[max-height,opacity] duration-700 ease-out"
+                    className="overflow-hidden transition-[max-height,opacity] duration-700 ease-out md:max-h-0 md:opacity-0 group-hover:md:max-h-[320px] group-hover:md:opacity-100"
                     style={{
-                      maxHeight: isActive ? 320 : 0,
-                      opacity: isActive ? 1 : 0,
+                      maxHeight: typeof window !== 'undefined' && window.innerWidth < 768 ? '320px' : (isActive ? 320 : 0),
+                      opacity: typeof window !== 'undefined' && window.innerWidth < 768 ? 1 : (isActive ? 1 : 0),
                     }}
                   >
                     <p className="mt-6 max-w-md font-medium drop-shadow-md leading-relaxed text-sm md:text-base"

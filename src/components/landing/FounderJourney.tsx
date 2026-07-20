@@ -7,7 +7,7 @@ const MILESTONES: Milestone[] = [
     period: 'Age 13',
     title: 'Born into Business',
     description: 'Growing up in a consumer goods retail family, Hitesh began working the floor at 13. Watching the business struggle with messy data management planted a seed: understanding numbers wasn\'t optional — it was survival.',
-    image: '/milestones/milestone_1_retail_1783281440492.png',
+    image: '/sony_head.jpg',
     imageAlt: 'Family retail business shop floor',
   },
   {
@@ -49,7 +49,7 @@ const MILESTONES: Milestone[] = [
     period: 'Now',
     title: '250+ Leaders. One Mission.',
     description: 'Today, RationalIQ advises family businesses, startups, and VC-backed companies on the governance, content, and strategy that build lasting authority. Not just for right now — for the next generation.',
-    image: '/journey7.png',
+    image: '/journey7.jpg',
     imageAlt: 'Strategic compass',
   },
 ]

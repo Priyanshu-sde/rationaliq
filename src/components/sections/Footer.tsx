@@ -48,7 +48,7 @@ const QUICK_LINKS = [
 
 export function Footer() {
   return (
-    <footer className="relative border-t border-white/[0.07] bg-[#07080F] py-16 text-[#94A3B8]">
+    <footer className="relative border-t border-white/[0.07] bg-[#07080F] py-12 md:py-16 text-[#94A3B8]">
       <div className="mx-auto max-w-[1200px] px-6 md:px-12">
         <div className="grid gap-12 md:grid-cols-3">
           {/* Column 1 — brand */}

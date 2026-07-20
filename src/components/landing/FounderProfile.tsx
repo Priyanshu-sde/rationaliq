@@ -136,7 +136,7 @@ export function FounderProfile() {
           {/* Scrollable text container */}
           <div
             ref={textScrollRef}
-            className="absolute left-0 top-[50vh] w-full px-16 md:px-24 lg:px-32 flex flex-col gap-12"
+            className="absolute left-0 top-[50vh] w-full px-6 md:px-16 lg:px-32 flex flex-col gap-12"
           >
             <div className="space-y-12 text-xl md:text-2xl leading-relaxed text-white/90 pb-[50vh]">
               <p>

@@ -145,11 +145,11 @@ export function Navbar() {
       {/* Mobile Nav */}
       <div
         className={cn(
-          'overflow-hidden transition-[max-height,opacity] duration-400 md:hidden',
+          'overflow-y-auto transition-[max-height,opacity] duration-400 md:hidden',
           dark
             ? 'border-white/[0.07] bg-[#07080F]/95 backdrop-blur-md'
             : 'border-brand-border bg-white/95 backdrop-blur-md',
-          isOpen ? 'max-h-96 border-t opacity-100' : 'max-h-0 opacity-0'
+          isOpen ? 'max-h-[100vh] border-t opacity-100' : 'max-h-0 opacity-0'
         )}
       >
         <div className="flex flex-col space-y-4 p-4">

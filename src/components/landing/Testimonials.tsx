@@ -56,13 +56,13 @@ const TESTIMONIALS = [
 ]
 
 const CARD_POSITIONS = [
-  'absolute top-12 left-[2%] md:left-[5%] rotate-[-4deg] w-80 md:w-[28rem]',
-  'absolute top-6 left-[40%] md:left-[35%] rotate-[3deg] w-80 md:w-[28rem]',
-  'absolute top-20 right-[2%] md:right-[5%] rotate-[5deg] w-80 md:w-[28rem]',
-  'absolute top-64 left-[10%] md:left-[15%] rotate-[-6deg] w-80 md:w-[28rem]',
-  'absolute top-72 right-[10%] md:right-[20%] rotate-[-3deg] w-80 md:w-[28rem]',
-  'absolute top-96 left-[20%] md:left-[40%] rotate-[4deg] w-80 md:w-[28rem]',
-  'absolute top-[32rem] right-[5%] md:right-[5%] rotate-[6deg] w-80 md:w-[28rem]',
+  'absolute top-12 left-[2%] md:left-[5%] rotate-[-4deg] w-[85vw] sm:w-80 md:w-[28rem]',
+  'absolute top-6 left-[40%] md:left-[35%] rotate-[3deg] w-[85vw] sm:w-80 md:w-[28rem]',
+  'absolute top-20 right-[2%] md:right-[5%] rotate-[5deg] w-[85vw] sm:w-80 md:w-[28rem]',
+  'absolute top-64 left-[10%] md:left-[15%] rotate-[-6deg] w-[85vw] sm:w-80 md:w-[28rem]',
+  'absolute top-72 right-[10%] md:right-[20%] rotate-[-3deg] w-[85vw] sm:w-80 md:w-[28rem]',
+  'absolute top-96 left-[20%] md:left-[40%] rotate-[4deg] w-[85vw] sm:w-80 md:w-[28rem]',
+  'absolute top-[32rem] right-[5%] md:right-[5%] rotate-[6deg] w-[85vw] sm:w-80 md:w-[28rem]',
 ]
 
 /**

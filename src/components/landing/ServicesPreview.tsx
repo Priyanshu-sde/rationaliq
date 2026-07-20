@@ -125,7 +125,7 @@ export function ServicesPreview() {
                         : 'opacity-0 translate-y-12 pointer-events-none scale-95'
                         }`}
                     >
-                      <div className="w-full max-w-md h-full md:h-auto">
+                      <div className="w-full max-w-md h-full md:h-auto px-4 md:px-0">
                         <TiltCard
                           max={4}
                           lift={0}
@@ -157,7 +157,7 @@ export function ServicesPreview() {
               </div>
 
               {/* Right Side: Headings */}
-              <div className="w-full md:w-1/2 flex flex-col justify-center pl-0 md:pl-16 gap-6 md:gap-10">
+              <div className="w-full md:w-1/2 flex flex-col justify-center pl-0 md:pl-16 gap-4 md:gap-10">
                 {SERVICES.map((s, i) => {
                   const isActive = activeIndex === i
 
@@ -168,7 +168,7 @@ export function ServicesPreview() {
                       className={`cursor-pointer transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] origin-left flex items-center ${isActive ? 'scale-110 -translate-y-3 opacity-100' : 'scale-100 translate-y-0 opacity-40 hover:opacity-70'
                         }`}
                     >
-                      <h3 className="text-4xl md:text-5xl lg:text-6xl font-display text-white drop-shadow-xl">
+                      <h3 className="text-3xl md:text-5xl lg:text-6xl font-display text-white drop-shadow-xl">
                         {s.title}
                       </h3>
                     </div>
