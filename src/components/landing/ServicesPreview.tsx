@@ -82,9 +82,8 @@ export function ServicesPreview() {
             alt={`${s.title} Background`}
             fill
             unoptimized
-            className={`object-cover transition-opacity duration-1000 ease-in-out ${
-              activeIndex === i ? 'opacity-100' : 'opacity-0'
-            }`}
+            className={`object-cover transition-opacity duration-1000 ease-in-out ${activeIndex === i ? 'opacity-100' : 'opacity-0'
+              }`}
             priority={i === 0}
           />
         ))}
@@ -103,7 +102,7 @@ export function ServicesPreview() {
                 What we do
               </p>
               <h2 className="font-display text-section mt-5 text-(--text-primary)">
-                Four practices.
+                Four segments.
                 <br />
                 One standard.
               </h2>
@@ -122,8 +121,8 @@ export function ServicesPreview() {
                     <div
                       key={s.title}
                       className={`absolute inset-0 flex items-center justify-center md:justify-start transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] ${isActive
-                          ? 'opacity-100 translate-y-0 pointer-events-auto scale-100'
-                          : 'opacity-0 translate-y-12 pointer-events-none scale-95'
+                        ? 'opacity-100 translate-y-0 pointer-events-auto scale-100'
+                        : 'opacity-0 translate-y-12 pointer-events-none scale-95'
                         }`}
                     >
                       <div className="w-full max-w-md h-full md:h-auto">

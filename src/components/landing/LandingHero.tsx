@@ -6,8 +6,9 @@ import { motion, useReducedMotion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 
 const HEADLINE: Array<Array<{ text: string; italic?: boolean }>> = [
-  [{ text: 'Rational', italic: true }, { text: 'thinking.' }],
-  [{ text: 'Undeniable' }, { text: 'authority.' }],
+  [{ text: 'Rational', italic: true }, { text: 'intelligence.' }],
+  [{ text: 'Undeniable' }],
+  [{ text: 'authority.' }],
 ]
 
 const wordVariants = {
@@ -105,12 +106,12 @@ export function LandingHero() {
           animate="visible"
           custom={0.2}
         >
-          Thought Leadership &middot; Family Business &middot; D2C Strategy
+          {/* Thought Leadership &middot; Family Business &middot; D2C Strategy */}
         </motion.p>
 
         <h1 ref={headRef} className="font-display text-hero mt-7 text-(--text-primary) will-change-transform">
           {HEADLINE.map((line, li) => (
-            <span key={li} className="block">
+            <span key={li} className="block whitespace-nowrap">
               {line.map((word) => {
                 wordIndex += 1
                 return (
@@ -131,18 +132,6 @@ export function LandingHero() {
           ))}
         </h1>
 
-        <motion.p
-          className="mt-8 max-w-[560px] text-lg leading-relaxed text-(--text-secondary)"
-          variants={fadeUp}
-          initial={reduce ? 'visible' : 'hidden'}
-          animate="visible"
-          custom={0.9}
-        >
-          RationalIQ turns deep expertise into the content, systems, and
-          strategy that position you as the undisputed leader in your field
-          &mdash; and keep you there.
-        </motion.p>
-
         <motion.div
           className="mt-11 flex flex-col items-center gap-4 sm:flex-row"
           variants={fadeUp}
@@ -150,19 +139,19 @@ export function LandingHero() {
           animate="visible"
           custom={1.1}
         >
-          <Link
-            href="/contact"
+          <a
+            href="mailto:hitesh@rationaliq.com"
             data-cursor-text="Click"
             className="btn-shimmer tier-2 press group inline-flex h-13 items-center gap-2.5 rounded-xl bg-(--indigo) px-8 text-sm font-semibold text-white shadow-[0_0_30px_rgba(99,102,241,0.25)] hover:shadow-[0_8px_40px_rgba(99,102,241,0.4)]"
           >
-            Book a consultation
+            Email Hitesh
             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
-          </Link>
+          </a>
           <Link
-            href="#services"
+            href="/contact"
             className="tier-2 press inline-flex h-13 items-center rounded-xl border border-(--border) px-8 text-sm font-medium text-(--text-secondary) hover:border-(--border-hover) hover:text-white"
           >
-            Explore services
+            Request a callback
           </Link>
         </motion.div>
       </div>

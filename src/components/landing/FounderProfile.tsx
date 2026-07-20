@@ -140,37 +140,22 @@ export function FounderProfile() {
           >
             <div className="space-y-12 text-xl md:text-2xl leading-relaxed text-white/90 pb-[50vh]">
               <p>
-                Born and raised in a business family in consumer goods retail,
-                Hitesh started working part-time in the family business at age
-                13. Witnessing firsthand the struggles of data management and
-                operational inefficiencies inspired his path into chartered
-                accountancy.
+                Born and raised in a business family, Hitesh started working part-time in his family's business at the age of 13. Founded by his grandfather in 1974, the business initially sold radios and black-and-white televisions before expanding to become a direct dealer for major brands like LG, Samsung, Blue Star, Godrej, and Panasonic.
               </p>
               <p>
-                Completing his CA articleship from 2016–2018, he immersed himself
-                in business, legal, and tax practices, officially qualifying as a
-                Chartered Accountant in 2019.
+                At 13, he learned the fundamentals of commerce—from interacting with customers and selling electronics, to processing consumer loan forms and managing logistics. Witnessing firsthand the complexities of understanding and managing financial data ultimately inspired his path into Chartered Accountancy.
               </p>
               <p>
-                His professional journey accelerated at global giants{" "}
-                <strong className="font-semibold text-white">Grant Thornton and EY (2019–2022)</strong>,
-                where he focused on M&A, due diligence, and facilitating
-                family-office investments into high-growth startups.
+                During his CA articleship (2015–2018), he immersed himself in business, legal, and tax practices, approaching them through the dual lens of an accountant and an entrepreneur. Seeking experience beyond the family enterprise, he joined <strong className="font-semibold text-white">Grant Thornton and EY (2019–2022)</strong>, specializing in M&A due diligence and family office investments into high-growth startups.
               </p>
               <p>
-                As one of the first employees at{" "}
-                <strong className="font-semibold text-white">Sunicon Venture Capital Fund</strong>,
-                Hitesh played a pivotal role investing in 3 startups and
-                supporting several others through fundraising. His content work
-                revealed a broader market need, leading to financial, fundraising,
-                and succession-planning content for top ed-tech startups.
+                This expertise led him to <strong className="font-semibold text-white">Sunicon Venture Capital Fund</strong> as an early investment team member. There, he facilitated startup funding and gained deep insight into how family business owners invest surplus capital. He also spearheaded content creation to establish the fund's thought leadership and attract top-tier founders.
               </p>
               <p>
-                Today, through RationalIQ, Hitesh has worked with over{" "}
-                <strong className="font-semibold text-gold">250+ family business leaders</strong>{" "}
-                on succession planning, growth strategy, intergenerational
-                conflict resolution, family constitutions, and next-gen coaching —
-                while advising D2C startups on offline expansion.
+                In early 2024, he founded RationalIQ. Partnering with top education companies, he has produced over 100 hours of educational content covering finance, sales, and family business succession, driven by his core belief that content and education are inherently inseparable today.
+              </p>
+              <p>
+                Hitesh is a <strong className="font-semibold text-gold">Certified Family Business Advisor from the Family Firm Institute, USA</strong>, and has trained over 250 family business leaders in live sessions on succession planning, growth strategy, intergenerational conflict resolution, family constitutions, and next-gen coaching.
               </p>
             </div>
           </div>

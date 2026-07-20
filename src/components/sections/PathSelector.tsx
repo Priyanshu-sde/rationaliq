@@ -52,11 +52,11 @@ const paths = [
 export function PathSelector() {
   const containerRef = useRef<HTMLElement>(null)
   const [active, setActive] = useState<number | null>(null)
-  
+
   useIsomorphicLayoutEffect(() => {
     const ctx = gsap.context(() => {
       // Simulate pinning the landing page content so PathSelector slides over it
-      gsap.fromTo('.landing-content', 
+      gsap.fromTo('.landing-content',
         { y: () => -window.innerHeight },
         {
           y: 0,
@@ -113,7 +113,7 @@ export function PathSelector() {
   }, [])
 
   return (
-    <section 
+    <section
       ref={containerRef}
       className="relative z-[100] h-[100svh] w-full bg-[#0a0a0e] overflow-hidden font-sans"
     >
@@ -197,7 +197,10 @@ export function PathSelector() {
                       opacity: isActive ? 1 : 0,
                     }}
                   >
-                    <p className="mt-6 max-w-md text-white font-medium drop-shadow-md leading-relaxed text-sm md:text-base">
+                    <p className="mt-6 max-w-md font-medium drop-shadow-md leading-relaxed text-sm md:text-base"
+                      style={{
+                        color: "white",
+                      }}>
                       {a.blurb}
                     </p>
                     <div

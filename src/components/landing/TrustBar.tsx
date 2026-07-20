@@ -1,53 +1,69 @@
 'use client'
 
 import { motion, useReducedMotion } from 'framer-motion'
-
-const CREDENTIALS = ['Grant Thornton', 'EY', 'Sunicon Venture Capital']
+import { urlForImage } from "@/sanity/lib/image"
 
 /**
- * Section 2.5 — Trust Bar. A quiet strip of institutional pedigree
- * directly beneath the hero. Deliberately the calmest element on the
- * page: no shimmer, no colour, just names that carry weight.
+ * Section 2.5 — Trust Bar. Infinite horizontal marquee of client logos.
  */
-export function TrustBar() {
+export function TrustBar({ logos = [] }: { logos?: any[] }) {
   const reduce = useReducedMotion()
+
+  if (!logos || logos.length === 0) {
+    return null
+  }
+
+  // Create a highly repeated array of logos so it easily exceeds any screen width
+  const repeatedLogos = [...Array(15)].flatMap(() => logos)
 
   return (
     <section
-      className="border-y border-(--border) bg-white/[0.02] py-10"
-      aria-label="Professional background"
+      className="border-y border-(--border) bg-white/[0.02] py-10 overflow-hidden"
+      aria-label="Trusted By"
     >
-      <div className="mx-auto max-w-[1200px] px-6 md:px-12">
-        <motion.p
-          className="text-label text-center text-(--text-muted)"
+      <div className="mx-auto px-6 md:px-12 mb-8">
+        <motion.h2
+          className="text-label text-center text-(--text-muted) uppercase tracking-widest"
           initial={reduce ? undefined : { opacity: 0, y: 12 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: '-40px' }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
-          Trained and tested at
-        </motion.p>
-        <motion.ul
-          className="mt-6 flex flex-wrap items-center justify-center gap-x-12 gap-y-4 md:gap-x-16"
-          initial={reduce ? undefined : 'hidden'}
-          whileInView="visible"
-          viewport={{ once: true, margin: '-40px' }}
-          variants={{ visible: { transition: { staggerChildren: 0.1, delayChildren: 0.15 } } }}
+          Trusted By
+        </motion.h2>
+      </div>
+
+      <div className="flex w-full overflow-hidden">
+        <motion.div
+          className="flex w-max items-center"
+          animate={reduce ? undefined : { x: ['0%', '-50%'] }}
+          transition={{ ease: 'linear', duration: 40, repeat: Infinity }}
         >
-          {CREDENTIALS.map((name) => (
-            <motion.li
-              key={name}
-              variants={{
-                hidden: { opacity: 0, y: 10 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: 'easeOut' } },
-              }}
-            >
-              <span className="inline-block select-none font-display text-xl text-white opacity-40 transition-[opacity,transform] duration-300 ease-out hover:-translate-y-0.5 hover:opacity-90 md:text-2xl">
-                {name}
-              </span>
-            </motion.li>
+          {/* Render exactly 2 identical halves to ensure a flawless -50% loop mathematically */}
+          {[1, 2].map((half) => (
+            <div key={half} className="flex items-center gap-16 md:gap-24 pr-16 md:pr-24">
+              {repeatedLogos.map((logo, i) => (
+                <div key={`${logo._id || i}-${half}-${i}`} className="flex-shrink-0 opacity-70 grayscale transition-all hover:grayscale-0">
+                  {logo.url ? (
+                    <a href={logo.url} target="_blank" rel="noopener noreferrer">
+                      <img
+                        src={urlForImage(logo.logo)?.url()}
+                        alt={logo.name}
+                        className="h-10 md:h-12 w-auto object-contain"
+                      />
+                    </a>
+                  ) : (
+                    <img
+                      src={urlForImage(logo.logo)?.url()}
+                      alt={logo.name}
+                      className="h-10 md:h-12 w-auto object-contain"
+                    />
+                  )}
+                </div>
+              ))}
+            </div>
           ))}
-        </motion.ul>
+        </motion.div>
       </div>
     </section>
   )
