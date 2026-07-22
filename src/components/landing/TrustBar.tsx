@@ -9,16 +9,19 @@ import { urlForImage } from "@/sanity/lib/image"
 export function TrustBar({ logos = [] }: { logos?: any[] }) {
   const reduce = useReducedMotion()
 
-  if (!logos || logos.length === 0) {
+  const validLogos = (logos || []).filter((l) => l && (l.logo || l.name || l.url))
+
+  if (validLogos.length === 0) {
     return null
   }
 
-  // Create a highly repeated array of logos so it easily exceeds any screen width
-  const repeatedLogos = [...Array(15)].flatMap(() => logos)
+  // Repeat enough times to span screen widths smoothly without bloat
+  const repeatCount = Math.max(6, Math.ceil(12 / validLogos.length))
+  const repeatedLogos = [...Array(repeatCount)].flatMap(() => validLogos)
 
   return (
     <section
-      className="border-y border-(--border) bg-white/[0.02] py-10 overflow-hidden"
+      className="border-y border-(--border) bg-zinc-900/70 py-10 overflow-hidden select-none"
       aria-label="Trusted By"
     >
       <div className="mx-auto px-6 md:px-12 mb-8">
@@ -35,32 +38,44 @@ export function TrustBar({ logos = [] }: { logos?: any[] }) {
 
       <div className="flex w-full overflow-hidden">
         <motion.div
-          className="flex w-max items-center"
+          className="flex w-max items-center shrink-0 will-change-transform transform-gpu"
           animate={reduce ? undefined : { x: ['0%', '-50%'] }}
           transition={{ ease: 'linear', duration: 120, repeat: Infinity }}
         >
           {/* Render exactly 2 identical halves to ensure a flawless -50% loop mathematically */}
           {[1, 2].map((half) => (
-            <div key={half} className="flex items-center gap-16 md:gap-24 pr-16 md:pr-24">
-              {repeatedLogos.map((logo, i) => (
-                <div key={`${logo._id || i}-${half}-${i}`} className="flex-shrink-0 opacity-100">
-                  {logo.url ? (
-                    <a href={logo.url} target="_blank" rel="noopener noreferrer">
+            <div key={half} className="flex shrink-0 items-center gap-16 md:gap-24 pr-16 md:pr-24">
+              {repeatedLogos.map((logo, i) => {
+                const imgUrl = logo.logo ? urlForImage(logo.logo)?.url() : null
+                if (!imgUrl) return null
+
+                return (
+                  <div
+                    key={`logo-h${half}-i${i}-${logo._id || logo.name || i}`}
+                    className="shrink-0 opacity-100 flex items-center justify-center"
+                  >
+                    {logo.url ? (
+                      <a href={logo.url} target="_blank" rel="noopener noreferrer" className="block shrink-0">
+                        <img
+                          src={imgUrl}
+                          alt={logo.name || 'Client logo'}
+                          loading="eager"
+                          decoding="async"
+                          className="h-10 md:h-12 w-auto max-w-none object-contain pointer-events-none"
+                        />
+                      </a>
+                    ) : (
                       <img
-                        src={urlForImage(logo.logo)?.url()}
-                        alt={logo.name}
-                        className="h-10 md:h-12 w-auto object-contain"
+                        src={imgUrl}
+                        alt={logo.name || 'Client logo'}
+                        loading="eager"
+                        decoding="async"
+                        className="h-10 md:h-12 w-auto max-w-none object-contain pointer-events-none"
                       />
-                    </a>
-                  ) : (
-                    <img
-                      src={urlForImage(logo.logo)?.url()}
-                      alt={logo.name}
-                      className="h-10 md:h-12 w-auto object-contain"
-                    />
-                  )}
-                </div>
-              ))}
+                    )}
+                  </div>
+                )
+              })}
             </div>
           ))}
         </motion.div>

@@ -20,6 +20,25 @@ function YoutubeIcon({ className }: { className?: string }) {
   )
 }
 
+function LinkedinIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+      <rect width="4" height="12" x="2" y="9" />
+      <circle cx="4" cy="4" r="2" />
+    </svg>
+  )
+}
+
 function InstagramIcon({ className }: { className?: string }) {
   return (
     <svg
@@ -61,6 +80,15 @@ export function Footer() {
               intend to stay leaders.
             </p>
             <div className="mt-6 flex gap-3">
+              <a
+                href="https://www.linkedin.com/in/hitesh-saiswani/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="RationalIQ on LinkedIn"
+                className="tier-2 press flex h-10 w-10 items-center justify-center rounded-xl border border-white/[0.07] text-[#94A3B8] hover:border-white/[0.14] hover:text-[#F1F5F9]"
+              >
+                <LinkedinIcon className="h-4.5 w-4.5" />
+              </a>
               <a
                 href="https://youtube.com/@ca.hiteshsaiswani"
                 target="_blank"

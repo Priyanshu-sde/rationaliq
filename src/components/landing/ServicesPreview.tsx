@@ -6,49 +6,7 @@ import Link from 'next/link'
 import { Mic, Landmark, Store, ArrowRight } from 'lucide-react'
 import { TiltCard } from '@/components/anim'
 import { gsap, ScrollTrigger, useIsomorphicLayoutEffect } from '@/components/anim/gsap'
-
-const SERVICES = [
-  {
-    accent: '#fcd34d', // amber-300
-    glow: 'rgba(252, 211, 77, 0.13)',
-    icon: Store,
-    tag: 'STEWARDS',
-    title: 'Family Business',
-    body: 'Leverage the experience of a Chartered Accountant and Certified Family Business Advisor from FFI USA who was born in a business family as a one stop solution.',
-    href: '/services/family-businesses',
-    image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&q=80',
-  },
-  {
-    accent: '#99f6e4', // teal-200
-    glow: 'rgba(153, 246, 228, 0.13)',
-    icon: Landmark, // Reusing Landmark or some other icon
-    tag: 'INSTITUTIONS',
-    title: 'Education & Training',
-    body: 'Feel the transformation through education and training initiatives that are always hands on, directly translate to skills and change the way you think.',
-    href: '/services/educational-companies',
-    image: 'https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&q=80',
-  },
-  {
-    accent: '#e879f9', // fuchsia-400
-    glow: 'rgba(232, 121, 249, 0.13)',
-    icon: Mic,
-    tag: 'FOUNDERS',
-    title: 'Startups',
-    body: "If you've peaked at selling online and want fractional business intelligence for your offline retail strategy, you're at the right place.",
-    href: '/services/startups',
-    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80',
-  },
-  {
-    accent: '#f59e0b', // amber-500
-    glow: 'rgba(245, 158, 11, 0.13)',
-    icon: Landmark,
-    tag: 'ALLOCATORS',
-    title: 'Venture Capital',
-    body: 'Get seen my top 1% founders through thought leadership IPs. And yes, content creation is not thought leadership.',
-    href: '/services/venture-capital',
-    image: '/venture.jpg',
-  },
-]
+import { SERVICES } from '@/data/services'
 
 export function ServicesPreview() {
   const [activeIndex, setActiveIndex] = useState(0)

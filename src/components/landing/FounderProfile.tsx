@@ -120,7 +120,6 @@ export function FounderProfile() {
           <h3 className="font-serif text-5xl md:text-6xl font-bold tracking-tight text-white mb-2">
             Hitesh Saiswani
           </h3>
-          <p className="text-2xl font-medium tracking-wide text-gold">Founder & CA</p>
         </div>
 
         {/* Phase 1: Right Text Panel */}

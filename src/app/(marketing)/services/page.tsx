@@ -1,50 +1,16 @@
 import { Metadata } from "next"
 import Link from "next/link"
-import { ArrowRight, LineChart, Network, Store } from "lucide-react"
+import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/Button"
 import { JsonLd } from "@/components/JsonLd"
 import { Reveal, AnimatedText, TiltCard, Magnetic, FloatingShape } from "@/components/anim"
+import { SERVICES as services } from "@/data/services"
 
 export const metadata: Metadata = {
   title: "Services | RationalIQ",
   description:
     "Specialized consulting from RationalIQ - thought leadership for startups & VCs, family business consulting, and D2C retail strategy.",
 }
-
-const services = [
-  {
-    title: "Family Business",
-    audience: "STEWARDS",
-    icon: Network,
-    href: "/services/family-businesses",
-    desc: "Modernization without erasure. Digital operations that honor legacy while unlocking the next generation of growth.",
-    points: ["Succession planning", "Family constitutions", "Digital modernization"],
-  },
-  {
-    title: "Education & Training",
-    audience: "INSTITUTIONS",
-    icon: Store,
-    href: "/services/educational-companies",
-    desc: "Learning systems, cohort infrastructure, and outcomes analytics for teams shaping how the world studies.",
-    points: ["Learning systems", "Cohort infrastructure", "Outcomes analytics"],
-  },
-  {
-    title: "Startups",
-    audience: "FOUNDERS",
-    icon: LineChart,
-    href: "/services/startups",
-    desc: "From first hire to Series C - infrastructure, playbooks, and momentum for teams building the next category.",
-    points: ["Growth playbooks", "Operational infrastructure", "Fundraising narrative"],
-  },
-  {
-    title: "Venture Capital",
-    audience: "ALLOCATORS",
-    icon: LineChart,
-    href: "/services/venture-capital",
-    desc: "Sharpened deal flow, portfolio intelligence, and thesis instrumentation for funds moving at the speed of conviction.",
-    points: ["Thesis articulation", "Deal flow positioning", "Portfolio intelligence"],
-  },
-]
 
 export default function ServicesPage() {
   const serviceData = {

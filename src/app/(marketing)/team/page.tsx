@@ -1,58 +1,12 @@
 import { Metadata } from "next"
 import Image from "next/image"
 import { JsonLd } from "@/components/JsonLd"
-import { JourneyTimeline, type Milestone } from "@/components/sections/JourneyTimeline"
 import { Reveal, AnimatedText, Parallax, TiltCard, FloatingShape } from "@/components/anim"
 
 export const metadata: Metadata = {
   title: "Team & Founder | RationalIQ",
   description: "Meet CA Hitesh Saiswani and the team behind RationalIQ.",
 }
-
-const milestones: Milestone[] = [
-  {
-    period: "Age 13",
-    title: "Born into business",
-    description:
-      "Raised in a consumer-goods retail family, Hitesh started working part-time in the family business - learning operations from the ground up.",
-  },
-  {
-    period: "2016 – 2018",
-    title: "CA Articleship",
-    description:
-      "Witnessing the family business's struggle with data inspired his path into chartered accountancy, immersing in business, legal, and tax best practices.",
-  },
-  {
-    period: "2019",
-    title: "Qualified Chartered Accountant",
-    description:
-      "Officially qualified as a CA, combining hands-on retail intuition with rigorous financial discipline.",
-  },
-  {
-    period: "2019 – 2022",
-    title: "Grant Thornton & EY",
-    description:
-      "Focused on M&A, family-office investments into startups, and due diligence - the intersection of traditional wealth and modern venture capital.",
-  },
-  {
-    period: "Sunicon VC",
-    title: "Early at a venture fund",
-    description:
-      "One of the first employees at Sunicon Venture Capital Fund - helped invest in 3 startups and supported many more through fundraising.",
-  },
-  {
-    period: "Content & Education",
-    title: "Educator at scale",
-    description:
-      "Designed finance, fundraising, and succession content for top ed-tech startups, and helped grow a finance channel from 330K to 450K subscribers.",
-  },
-  {
-    period: "Today",
-    title: "RationalIQ",
-    description:
-      "Has worked with 250+ family business leaders on succession, governance, growth strategy, and next-gen coaching - plus D2C retail strategy.",
-  },
-]
 
 export default function TeamPage() {
   const personData = {
@@ -62,6 +16,7 @@ export default function TeamPage() {
     "jobTitle": "Founder & CA",
     "url": "https://rationaliq.in/team",
     "sameAs": [
+      "https://www.linkedin.com/in/hitesh-saiswani/",
       "https://youtube.com/@ca.hiteshsaiswani",
       "https://instagram.com/ca.hiteshsaiswani",
     ],
@@ -97,9 +52,6 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* Signature horizontal-scroll journey */}
-      <JourneyTimeline milestones={milestones} theme="landing" />
-
       {/* Founder profile + bio */}
       <section className="py-24 md:py-32">
         <div className="container mx-auto px-4 md:px-6">
@@ -121,8 +73,15 @@ export default function TeamPage() {
               </Reveal>
               <Reveal direction="up" delay={0.1} className="mt-6 flex flex-col gap-2">
                 <h3 className="font-serif text-xl font-bold text-[#f1f5f9]">Hitesh Saiswani</h3>
-                <p className="font-medium text-[#6366f1]">Founder &amp; CA</p>
                 <div className="mt-2 flex gap-5">
+                  <a
+                    href="https://www.linkedin.com/in/hitesh-saiswani/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="link-underline text-sm text-[#94a3b8] hover:text-[#6366f1]"
+                  >
+                    LinkedIn
+                  </a>
                   <a
                     href="https://youtube.com/@ca.hiteshsaiswani"
                     target="_blank"
@@ -145,42 +104,31 @@ export default function TeamPage() {
 
             <Reveal stagger={0.1} className="w-full space-y-6 text-lg leading-relaxed text-[#94a3b8] md:w-2/3">
               <p>
-                Born and raised in a business family in consumer goods retail,
-                Hitesh started working part-time in the family business at age
-                13. Witnessing firsthand the struggles of data management and
-                operational inefficiencies inspired his path into chartered
-                accountancy.
+                Born and raised in a business family, Hitesh started working part-time in his family's business at the age of 13. Founded by his grandfather in 1974, the business initially sold radios and black-and-white televisions before expanding to become a direct dealer for major brands like LG, Samsung, Blue Star, Godrej, and Panasonic.
               </p>
               <p>
-                Completing his CA articleship from 2016–2018, he immersed himself
-                in business, legal, and tax practices, officially qualifying as a
-                Chartered Accountant in 2019.
+                At 13, he learned the fundamentals of commerce-from interacting with customers and selling electronics, to processing consumer loan forms and managing logistics. Witnessing firsthand the complexities of understanding and managing financial data ultimately inspired his path into Chartered Accountancy.
               </p>
               <p>
-                His professional journey accelerated at global giants{" "}
-                <strong className="text-[#f1f5f9]">Grant Thornton and EY (2019–2022)</strong>,
-                where he focused on M&amp;A, due diligence, and facilitating
-                family-office investments into high-growth startups.
+                During his CA articleship (2015–2018), he immersed himself in business, legal, and tax practices, approaching them through the dual lens of an accountant and an entrepreneur. Seeking experience beyond the family enterprise, he joined{" "}
+                <strong className="text-[#f1f5f9]">Grant Thornton and EY (2019–2022)</strong>, specializing in M&amp;A due diligence and family office investments into high-growth startups.
               </p>
               <p>
-                As one of the first employees at{" "}
-                <strong className="text-[#f1f5f9]">Sunicon Venture Capital Fund</strong>,
-                Hitesh played a pivotal role investing in 3 startups and
-                supporting several others through fundraising. His content work
-                revealed a broader market need, leading to financial, fundraising,
-                and succession-planning content for top ed-tech startups.
+                This expertise led him to{" "}
+                <strong className="text-[#f1f5f9]">Sunicon Venture Capital Fund</strong> as an early investment team member. There, he facilitated startup funding and gained deep insight into how family business owners invest surplus capital. He also spearheaded content creation to establish the fund's thought leadership and attract top-tier founders.
               </p>
               <p>
-                Notably, he helped architect the content strategy that grew a
-                finance podcaster's channel from 330K to over 450K subscribers.
+                In early 2024, he founded RationalIQ. Partnering with top education companies, he has produced over 100 hours of educational content covering finance, sales, and family business succession, driven by his core belief that content and education are inherently inseparable today.
               </p>
               <p>
-                Today, through RationalIQ, Hitesh has worked with over{" "}
-                <strong className="text-[#f1f5f9]">250+ family business leaders</strong>{" "}
-                on succession planning, growth strategy, intergenerational
-                conflict resolution, family constitutions, and next-gen coaching -
-                while advising D2C startups on offline expansion.
+                Hitesh is a{" "}
+                <strong className="text-[#d4a853]">Certified Family Business Advisor from the Family Firm Institute, USA</strong>, and has trained over 250 family business leaders in live sessions on succession planning, growth strategy, intergenerational conflict resolution, family constitutions, and next-gen coaching.
               </p>
+              <div className="mt-8 rounded-2xl border border-white/[0.07] bg-white/[0.02] p-6 italic text-[#f1f5f9]">
+                <p>
+                  "Notably, he helped architect the content strategy that grew a finance podcaster's channel from 330K to over 450K subscribers."
+                </p>
+              </div>
             </Reveal>
           </div>
         </div>

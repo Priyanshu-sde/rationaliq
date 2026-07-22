@@ -9,9 +9,9 @@ export const metadata: Metadata = {
 
 const content: ServiceContent = {
   eyebrow: "STEWARDS",
-  title: "Family Businesses",
+  title: "Family Business",
   icon: Network,
-  lead: "Family businesses form the backbone of the economy, but they face unique challenges. Intergenerational transitions, emotional dynamics, and the need to professionalize without losing core values require a delicate, structured approach.",
+  lead: "Leverage the experience of a Chartered Accountant and Certified Family Business Advisor from FFI USA who was born in a business family as a one stop solution.",
   challenge:
     "Many successful family businesses struggle when transitioning from the founder to the next generation. Undefined succession plans, lack of formal governance, intergenerational conflict, and outdated wealth management strategies can threaten decades of hard work.",
   approach:
@@ -23,7 +23,6 @@ const content: ServiceContent = {
     { strong: "Professionalisation Exercise", text: "Transitioning from family-run to professionally managed structures while preserving core values." },
     { strong: "Business Advisory", text: "Providing strategic insights for growth, scaling, and operational efficiency." },
     { strong: "Thought Leadership and Personal Branding", text: "Building the public profile of key family members to establish authority and trust in the market." },
-    { strong: "Conflict Management and Mediation", text: "Navigating sensitive intergenerational or sibling dynamics to preserve family harmony and business continuity." },
     { strong: "Estate and Wealth Planning", text: "Structuring trusts, wills, and wealth preservation mechanisms for seamless intergenerational wealth transfer." },
   ],
   ctaTitle: "Protect your legacy and plan for the future.",

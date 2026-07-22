@@ -3,8 +3,8 @@ import { Store } from "lucide-react"
 import { ServicePage, type ServiceContent } from "@/components/sections/ServicePage"
 
 export const metadata: Metadata = {
-  title: "Startups | RationalIQ",
-  description: "From first hire to Series C - infrastructure, playbooks, and momentum for teams building the next category.",
+  title: "D2C Startups Retail Strategy | RationalIQ",
+  description: "Fractional business intelligence for D2C brands transitioning from online success to offline retail strategy.",
 }
 
 const content: ServiceContent = {
@@ -13,7 +13,7 @@ const content: ServiceContent = {
   icon: Store,
   lead: "If you've peaked at selling online and want fractional business intelligence for your offline retail strategy, you're at the right place.",
   challenge:
-    "Many Direct-to-Consumer (D2C) brands experience a plateau in online customer acquisition. Transitioning from the digital space to physical retail presents entirely new challenges in operations, customer experience, and unit economics.",
+    "Many Direct-to-Consumer (D2C) brands experience a plateau in online customer acquisition. Transitioning from the digital space to physical retail presents entirely new challenges in store design, visual merchandising, staff training, and operational SOPs.",
   approach:
     "We provide fractional business intelligence and end-to-end operational playbooks to bridge the gap between your online success and a robust, profitable offline retail footprint.",
   bullets: [
@@ -23,7 +23,7 @@ const content: ServiceContent = {
     { strong: "In-Store Demonstration Staff Training", text: "Training staff for compelling product demonstrations that highlight key value propositions." },
     { strong: "Product and Price Placement", text: "Strategic positioning of SKUs and pricing models to improve basket size and profitability." },
     { strong: "Customer SOP Creation", text: "Standard Operating Procedures (SOPs) designed to ensure a consistent and delightful customer journey." },
-    { strong: "In-Store SOP Creation", text: "Comprehensive Standard Operating Procedures to streamline daily store operations and management." },
+    { strong: "In-Store SOP Creation", text: "Comprehensive Standard Operating Procedures to streamine daily store operations and management." },
   ],
   ctaTitle: "Ready to conquer offline retail?",
   ctaText: "Let's build a profitable physical presence for your D2C brand.",
