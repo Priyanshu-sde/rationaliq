@@ -170,7 +170,7 @@ export function FounderProfile() {
               <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
             </svg>
             <p className="text-3xl md:text-5xl font-serif italic leading-tight text-white">
-              "Notably, he helped architect the content strategy that grew a finance podcaster's channel from 330K to over 450K subscribers."
+              "Everything that is to be known already exists. We just need to talk to people who know it. Before ideas, comes knowledge. After knowledge, comes execution."
             </p>
           </div>
         </div>
@@ -178,9 +178,22 @@ export function FounderProfile() {
         {/* Moving Strip Marquee */}
         <div className="marquee-container" aria-hidden="true">
           <div className="marquee-track">
-            {[...Array(4)].map((_, i) => (
+            {[...Array(3)].map((_, i) => (
               <div key={i} className="flex shrink-0">
-                {['Chartered Accountant', 'Business Consultant', 'Founder', 'Strategic Advisor', 'Investor'].map((role, j) => (
+                {[
+                  'Chartered Accountant',
+                  'Certified Family Business Advisor',
+                  'Educator',
+                  'Family Business Expert',
+                  'SOP Strategist',
+                  'Governance Systems Architect',
+                  'Next-Generation Family Business Trainer',
+                  'Content Strategist',
+                  'Thought Leader',
+                  'Fractional CXO',
+                  'Growth Advisor',
+                  'Entrepreneur',
+                ].map((role, j) => (
                   <span key={`${i}-${j}`} className="marquee-item">
                     {role}
                     <span className="marquee-dot">&bull;</span>
