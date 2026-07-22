@@ -21,7 +21,16 @@ const dmSerif = DM_Serif_Display({
 
 export const metadata: Metadata = {
   title: "RationalIQ | Consulting for Startups, VCs & Family Businesses",
-  description: "RationalIQ is a consulting practice founded by Hitesh Saiswani, serving startups/VCs, traditional family businesses, and D2C startups.",
+  description: "RationalIQ | NextGen IQ for Family Businesses, Founders and Funders",
+  openGraph: {
+    title: "RationalIQ | Consulting for Startups, VCs & Family Businesses",
+    description: "RationalIQ | NextGen IQ for Family Businesses, Founders and Funders",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "RationalIQ | Consulting for Startups, VCs & Family Businesses",
+    description: "RationalIQ | NextGen IQ for Family Businesses, Founders and Funders",
+  },
 };
 
 export default function RootLayout({

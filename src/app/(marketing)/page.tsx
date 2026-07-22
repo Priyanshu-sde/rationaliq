@@ -36,6 +36,7 @@ export default async function Home() {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "RationalIQ",
+    description: "RationalIQ | NextGen IQ for Family Businesses, Founders and Funders",
     url: "https://rationaliq.in",
     logo: "https://rationaliq.in/logo.png",
     founder: { "@type": "Person", name: "Hitesh Saiswani" },

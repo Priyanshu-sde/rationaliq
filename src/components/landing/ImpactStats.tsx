@@ -4,10 +4,10 @@ import { motion, useReducedMotion } from 'framer-motion'
 import { CountUp } from '@/components/anim'
 
 const STATS = [
-  { value: 250, suffix: '+', label: 'Family & business leaders advised' },
-  { value: 7, suffix: '+', label: 'Years of hands-on practice' },
-  { value: 2, suffix: '', label: 'Big-4 consulting firms trained under' },
-  { value: 120, suffix: 'K', label: 'Podcast subscribers grown for a finance creator' },
+  { value: 250, suffix: '+', label: 'Family Business Leaders Trained' },
+  { value: 5, suffix: 'M+', label: 'Impressions generated on social media' },
+  { value: 10, suffix: '+', label: 'Years of experience' },
+  { value: 700, suffix: '+', label: 'Hours of training content delivered' },
 ]
 
 /** Faint network-graph texture behind the stat grid. */

@@ -31,9 +31,10 @@ export default async function ImpactPage() {
 
   // Fallback placeholder data if Sanity is empty
   const displayMetrics = metrics?.length > 0 ? metrics : [
-    { label: "Family business leaders served", value: "250+" },
-    { label: "VC Investments Led", value: "3" },
-    { label: "Audience Reached", value: "120K+" }
+    { label: "Family Business Leaders Trained", value: "250+" },
+    { label: "Impressions generated on social media", value: "5M+" },
+    { label: "Years of experience", value: "10+" },
+    { label: "Hours of training content delivered", value: "700+" }
   ]
 
   const displayTestimonials = testimonials?.length > 0 ? testimonials : [
