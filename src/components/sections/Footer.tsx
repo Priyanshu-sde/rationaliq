@@ -138,13 +138,13 @@ export function Footer() {
                 <Calendar className="h-4 w-4" aria-hidden="true" />
                 Book a call
               </Link>
-              <Link
-                href="/contact"
+              <a
+                href="mailto:hitesh@rationaliq.in"
                 className="tier-2 press inline-flex h-11 items-center justify-center gap-2 rounded-xl border border-white/[0.07] px-5 text-sm font-medium hover:border-white/[0.14] hover:text-[#F1F5F9]"
               >
                 <Mail className="h-4 w-4" aria-hidden="true" />
-                Send a message
-              </Link>
+                Email Hitesh
+              </a>
             </div>
           </div>
         </div>
