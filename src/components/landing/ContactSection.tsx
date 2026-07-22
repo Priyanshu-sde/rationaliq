@@ -18,7 +18,7 @@ const inputClasses =
   'w-full rounded-xl border border-(--border) bg-white/[0.04] px-4 py-3.5 text-sm text-(--text-primary) placeholder:text-(--text-muted) transition-[border-color,box-shadow] duration-300 focus:border-(--indigo) focus:shadow-[0_0_0_3px_var(--indigo-muted)] focus:outline-none'
 
 /**
- * Section 8 — CTA + Contact. A radial indigo bloom behind the closing
+ * Section 8 - CTA + Contact. A radial indigo bloom behind the closing
  * ask, then a compact form that posts to /api/contact. Inline
  * validation on blur; the submit button morphs in place while sending.
  */
@@ -39,7 +39,7 @@ export function ContactSection() {
     if (field === 'name' && !value.trim()) return 'Please tell us your name.'
     if (field === 'email') {
       if (!value.trim()) return 'Please add your email so we can reply.'
-      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) return 'That email doesn\u2019t look right — please check it.'
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) return 'That email doesn\u2019t look right - please check it.'
     }
     if (field === 'message' && !value.trim()) return 'A short message helps us prepare for the call.'
     return ''
@@ -109,7 +109,7 @@ export function ContactSection() {
             your <span className="italic">authority?</span>
           </h2>
           <p className="mx-auto mt-7 max-w-lg text-lg text-(--text-secondary)">
-            Book a free 30-minute strategy call — or send a message. Hitesh
+            Book a free 30-minute strategy call - or send a message. Hitesh
             reads every enquiry personally.
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -245,7 +245,7 @@ export function ContactSection() {
                 )}
               </div>
 
-              {/* Honeypot — hidden from humans and screen readers */}
+              {/* Honeypot - hidden from humans and screen readers */}
               <input
                 type="text"
                 name="company_website"
@@ -272,7 +272,7 @@ export function ContactSection() {
               {status === 'error' && (
                 <p role="alert" className="text-center text-sm text-red-400">
                   Something went wrong sending your message. Please retry, or
-                  email us directly — we answer everything.
+                  email us directly - we answer everything.
                 </p>
               )}
             </form>

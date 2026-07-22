@@ -9,44 +9,44 @@ import { cn } from '@/lib/utils'
 
 const paths = [
   {
+    id: 'family',
+    name: 'Family Business',
+    blurb: 'Leverage the experience of a Chartered Accountant and Certified Family Business Advisor from FFI USA who was born in a business family as a one stop solution.',
+    href: '/services/family-businesses',
+    image: '/family.jpg',
+    color: '#fcd34d', // amber-300
+    code: '01',
+    tag: 'STEWARDS'
+  },
+  {
+    id: 'education',
+    name: 'Education & Training',
+    blurb: 'Feel the transformation through education and training initiatives that are always hands on, directly translate to skills and change the way you think.',
+    href: '/services/educational-companies',
+    image: '/education.jpg',
+    color: '#99f6e4', // teal-200
+    code: '02',
+    tag: 'INSTITUTIONS'
+  },
+  {
+    id: 'startups',
+    name: 'Startups',
+    blurb: "If you've peaked at selling online and want fractional business intelligence for your offline retail strategy, you're at the right place.",
+    href: '/services/startups',
+    image: '/startup.jpg',
+    color: '#e879f9', // fuchsia-400
+    code: '03',
+    tag: 'FOUNDERS'
+  },
+  {
     id: 'vc',
     name: 'Venture Capital',
     blurb: 'Get seen my top 1% founders through thought leadership IPs. And yes, content creation is not thought leadership.',
     href: '/services/venture-capital',
     image: '/vc.jpg',
     color: '#f59e0b', // amber-500
-    code: '01',
-    tag: 'ALLOCATORS'
-  },
-  {
-    id: 'startups',
-    name: 'D2C Startups',
-    blurb: "If you've peaked at selling online and want fractional business intelligence for your offline retail strategy, you're at the right place.",
-    href: '/services/startups',
-    image: '/startup.jpg',
-    color: '#e879f9', // fuchsia-400
-    code: '02',
-    tag: 'FOUNDERS'
-  },
-  {
-    id: 'family',
-    name: 'Family Businesses',
-    blurb: 'Leverage the experience of a Chartered Accountant and Certified Family Business Advisor from FFI USA who was born in a business family as a one stop solution.',
-    href: '/services/family-businesses',
-    image: '/family.jpg',
-    color: '#fcd34d', // amber-300
-    code: '03',
-    tag: 'STEWARDS'
-  },
-  {
-    id: 'education',
-    name: 'Education',
-    blurb: 'Feel the transformation through education and training initiatives that are always hands on, directly translate to skills and change the way you think.',
-    href: '/services/educational-companies',
-    image: '/education.jpg',
-    color: '#99f6e4', // teal-200
     code: '04',
-    tag: 'INSTITUTIONS'
+    tag: 'ALLOCATORS'
   },
 ]
 

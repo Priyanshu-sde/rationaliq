@@ -2,6 +2,7 @@
 
 import * as React from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/Button'
 import { Magnetic } from '@/components/anim'
@@ -87,15 +88,14 @@ export function Navbar() {
             scrolled ? 'h-16' : 'h-20'
           )}
         >
-          <Link href="/" className="group flex items-center space-x-2">
-            <span
-              className={cn(
-                'font-serif text-2xl font-bold tracking-tight',
-                dark ? 'text-[#F1F5F9]' : 'text-brand-fg'
-              )}
-            >
-              Rational<span className={dark ? 'text-[#D4A853]' : 'text-brand-accent'}>IQ</span>
-            </span>
+          <Link href="/" className="group flex items-center">
+            <Image 
+              src="/logo_with_name.png" 
+              alt="RationalIQ" 
+              width={200} 
+              height={50} 
+              className="h-10 w-auto object-contain" 
+            />
           </Link>
 
           {/* Desktop Nav */}

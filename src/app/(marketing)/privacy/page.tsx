@@ -16,7 +16,7 @@ export default function PrivacyPage() {
           <div className="mt-8 space-y-6 text-[#94a3b8]">
             <p>
               RationalIQ collects only the information you choose to share with
-              us — typically your name, email address, and the details of your
+              us - typically your name, email address, and the details of your
               enquiry submitted through our contact form.
             </p>
             <p>

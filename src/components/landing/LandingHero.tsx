@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion, useReducedMotion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 
@@ -30,7 +31,7 @@ const fadeUp = {
 }
 
 /**
- * Section 2 — Hero / Manifesto. Full-viewport dark hero with a slow
+ * Section 2 - Hero / Manifesto. Full-viewport dark hero with a slow
  * gradient mesh, word-staggered serif headline, and two CTAs.
  * Subtle mouse parallax on fine pointers; static under reduced motion.
  */
@@ -41,7 +42,7 @@ export function LandingHero() {
   const blobBRef = useRef<HTMLDivElement | null>(null)
   const headRef = useRef<HTMLHeadingElement | null>(null)
 
-  // Mouse parallax — blobs drift against the cursor, headline with it.
+  // Mouse parallax - blobs drift against the cursor, headline with it.
   useEffect(() => {
     if (reduce) return
     if (!window.matchMedia('(pointer: fine)').matches) return
@@ -99,15 +100,22 @@ export function LandingHero() {
       />
 
       <div className="relative mx-auto flex max-w-[860px] flex-col items-center px-6 py-32 text-center md:px-12">
-        <motion.p
-          className="text-label text-(--gold)"
+        <motion.div
           variants={fadeUp}
           initial={reduce ? 'visible' : 'hidden'}
           animate="visible"
           custom={0.2}
+          className="mb-6 md:mb-8"
         >
-          {/* Thought Leadership &middot; Family Business &middot; D2C Strategy */}
-        </motion.p>
+          <Image 
+            src="/logo_with_name.png" 
+            alt="RationalIQ" 
+            width={300} 
+            height={80} 
+            className="h-12 md:h-16 w-auto object-contain mx-auto" 
+            priority
+          />
+        </motion.div>
 
         <h1 ref={headRef} className="font-display text-hero mt-7 text-(--text-primary) will-change-transform">
           {HEADLINE.map((line, li) => (

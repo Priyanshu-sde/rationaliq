@@ -9,7 +9,7 @@ export const testimonial = defineType({
       name: 'clientName',
       title: 'Client Name',
       type: 'string',
-      description: 'Optional — allow blank/anonymized',
+      description: 'Optional - allow blank/anonymized',
     }),
     defineField({
       name: 'clientRoleCompany',

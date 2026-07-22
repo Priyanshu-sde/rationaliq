@@ -6,7 +6,7 @@ const MILESTONES: Milestone[] = [
   {
     period: 'Age 13',
     title: 'Born into Business',
-    description: 'Growing up in a consumer goods retail family, Hitesh began working the floor at 13. Watching the business struggle with messy data management planted a seed: understanding numbers wasn\'t optional — it was survival.',
+    description: 'Growing up in a consumer goods retail family, Hitesh began working the floor at 13. Watching the business struggle with messy data management planted a seed: understanding numbers wasn\'t optional - it was survival.',
     image: '/sony_head.jpg',
     imageAlt: 'Family retail business shop floor',
   },
@@ -20,14 +20,14 @@ const MILESTONES: Milestone[] = [
   {
     period: '2019',
     title: 'Chartered Accountant',
-    description: 'Qualifying as a CA wasn\'t the destination — it was the credential that opened the door to the country\'s most complex corporate transactions.',
+    description: 'Qualifying as a CA wasn\'t the destination - it was the credential that opened the door to the country\'s most complex corporate transactions.',
     image: '/journey3.png',
     imageAlt: 'Professional credential and seal',
   },
   {
     period: '2019–22',
     title: 'Inside the Big Four',
-    description: 'M&A advisory, family office investments into startups, due diligence on multi-crore deals — three years at two of the world\'s most respected consulting firms showed Hitesh exactly how high-stakes decisions get made.',
+    description: 'M&A advisory, family office investments into startups, due diligence on multi-crore deals - three years at two of the world\'s most respected consulting firms showed Hitesh exactly how high-stakes decisions get made.',
     image: '/journey4.png',
     imageAlt: 'Corporate skyscrapers at night',
   },
@@ -48,7 +48,7 @@ const MILESTONES: Milestone[] = [
   {
     period: 'Now',
     title: '250+ Leaders. One Mission.',
-    description: 'Today, RationalIQ advises family businesses, startups, and VC-backed companies on the governance, content, and strategy that build lasting authority. Not just for right now — for the next generation.',
+    description: 'Today, RationalIQ advises family businesses, startups, and VC-backed companies on the governance, content, and strategy that build lasting authority. Not just for right now - for the next generation.',
     image: '/journey7.jpg',
     imageAlt: 'Strategic compass',
   },

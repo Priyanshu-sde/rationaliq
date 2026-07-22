@@ -14,7 +14,7 @@ const milestones: Milestone[] = [
     period: "Age 13",
     title: "Born into business",
     description:
-      "Raised in a consumer-goods retail family, Hitesh started working part-time in the family business — learning operations from the ground up.",
+      "Raised in a consumer-goods retail family, Hitesh started working part-time in the family business - learning operations from the ground up.",
   },
   {
     period: "2016 – 2018",
@@ -32,13 +32,13 @@ const milestones: Milestone[] = [
     period: "2019 – 2022",
     title: "Grant Thornton & EY",
     description:
-      "Focused on M&A, family-office investments into startups, and due diligence — the intersection of traditional wealth and modern venture capital.",
+      "Focused on M&A, family-office investments into startups, and due diligence - the intersection of traditional wealth and modern venture capital.",
   },
   {
     period: "Sunicon VC",
     title: "Early at a venture fund",
     description:
-      "One of the first employees at Sunicon Venture Capital Fund — helped invest in 3 startups and supported many more through fundraising.",
+      "One of the first employees at Sunicon Venture Capital Fund - helped invest in 3 startups and supported many more through fundraising.",
   },
   {
     period: "Content & Education",
@@ -50,7 +50,7 @@ const milestones: Milestone[] = [
     period: "Today",
     title: "RationalIQ",
     description:
-      "Has worked with 250+ family business leaders on succession, governance, growth strategy, and next-gen coaching — plus D2C retail strategy.",
+      "Has worked with 250+ family business leaders on succession, governance, growth strategy, and next-gen coaching - plus D2C retail strategy.",
   },
 ]
 
@@ -178,7 +178,7 @@ export default function TeamPage() {
                 Today, through RationalIQ, Hitesh has worked with over{" "}
                 <strong className="text-[#f1f5f9]">250+ family business leaders</strong>{" "}
                 on succession planning, growth strategy, intergenerational
-                conflict resolution, family constitutions, and next-gen coaching —
+                conflict resolution, family constitutions, and next-gen coaching -
                 while advising D2C startups on offline expansion.
               </p>
             </Reveal>

@@ -37,7 +37,7 @@ function NetworkTexture() {
 }
 
 /**
- * Section 5 — Impact Numbers. A 2×2 grid of counters with hairline
+ * Section 5 - Impact Numbers. A 2×2 grid of counters with hairline
  * dividers and a soft indigo bloom. Suffixes appear only after each
  * count settles.
  */

@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { Calendar, Mail } from 'lucide-react'
 
-/* lucide-react v1 removed brand icons — inline SVGs instead. */
+/* lucide-react v1 removed brand icons - inline SVGs instead. */
 function YoutubeIcon({ className }: { className?: string }) {
   return (
     <svg
@@ -51,7 +51,7 @@ export function Footer() {
     <footer className="relative border-t border-white/[0.07] bg-[#07080F] py-12 md:py-16 text-[#94A3B8]">
       <div className="mx-auto max-w-[1200px] px-6 md:px-12">
         <div className="grid gap-12 md:grid-cols-3">
-          {/* Column 1 — brand */}
+          {/* Column 1 - brand */}
           <div>
             <Link href="/" className="tier-1 font-display inline-block text-2xl text-[#F1F5F9]">
               Rational<span className="italic text-[#D4A853]">IQ</span>
@@ -82,7 +82,7 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Column 2 — quick links */}
+          {/* Column 2 - quick links */}
           <div>
             <h3 className="text-label text-[#F1F5F9]">Quick links</h3>
             <ul className="mt-5 space-y-3 text-sm">
@@ -96,7 +96,7 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Column 3 — work with us */}
+          {/* Column 3 - work with us */}
           <div>
             <h3 className="text-label text-[#F1F5F9]">Work with us</h3>
             <p className="mt-5 max-w-xs text-sm leading-relaxed">

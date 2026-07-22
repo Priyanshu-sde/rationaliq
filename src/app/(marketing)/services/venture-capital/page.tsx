@@ -18,7 +18,7 @@ const content: ServiceContent = {
     "Thought leadership is an extension of your IQ and EQ. It forces you to lead your industry by speaking the blunt truth and by expanding the boundaries set by your peers. When you create content that is unique, counter-intuitive, different, and superior, people follow you, believe in you, and remember you by name.",
   bullets: [
     { strong: "Insight-Driven IPs", text: "We do thought leadership for investors with insight. We translate your deep expertise into powerful intellectual properties." },
-    { strong: "Attracting the Top 1%", text: "By establishing true authority and trust, everything else follows—including the top 1% of founders preferring you." },
+    { strong: "Attracting the Top 1%", text: "By establishing true authority and trust, everything else follows-including the top 1% of founders preferring you." },
     { strong: "Beyond Content Creation", text: "We don't just write scripts that sell; we build a narrative that fosters long-term believers and followers." },
   ],
   ctaTitle: "Ready to build true thought leadership?",

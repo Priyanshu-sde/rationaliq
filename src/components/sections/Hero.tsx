@@ -76,7 +76,7 @@ export function Hero() {
           <Reveal direction="up" delay={0.2} className="mt-7 max-w-2xl">
             <p className="text-lg leading-8 text-brand-fg/75 md:text-xl">
               RationalIQ is a specialized consulting practice led by CA Hitesh
-              Saiswani — bringing rigorous professionalization, governance, and
+              Saiswani - bringing rigorous professionalization, governance, and
               retail strategy to businesses navigating their most critical
               transitions.
             </p>

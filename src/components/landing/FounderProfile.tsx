@@ -143,7 +143,7 @@ export function FounderProfile() {
                 Born and raised in a business family, Hitesh started working part-time in his family's business at the age of 13. Founded by his grandfather in 1974, the business initially sold radios and black-and-white televisions before expanding to become a direct dealer for major brands like LG, Samsung, Blue Star, Godrej, and Panasonic.
               </p>
               <p>
-                At 13, he learned the fundamentals of commerce—from interacting with customers and selling electronics, to processing consumer loan forms and managing logistics. Witnessing firsthand the complexities of understanding and managing financial data ultimately inspired his path into Chartered Accountancy.
+                At 13, he learned the fundamentals of commerce-from interacting with customers and selling electronics, to processing consumer loan forms and managing logistics. Witnessing firsthand the complexities of understanding and managing financial data ultimately inspired his path into Chartered Accountancy.
               </p>
               <p>
                 During his CA articleship (2015–2018), he immersed himself in business, legal, and tax practices, approaching them through the dual lens of an accountant and an entrepreneur. Seeking experience beyond the family enterprise, he joined <strong className="font-semibold text-white">Grant Thornton and EY (2019–2022)</strong>, specializing in M&A due diligence and family office investments into high-growth startups.

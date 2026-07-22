@@ -7,7 +7,7 @@ const STEPS = [
   {
     num: '01',
     title: 'Listen',
-    body: 'A confidential conversation to understand where you are — no pitch, no pressure.',
+    body: 'A confidential conversation to understand where you are - no pitch, no pressure.',
     deskX: 15, deskY: 83.33,
     mobX: 15, mobY: 15,
     deskStyle: { top: '30px', left: '50%', transform: 'translateX(-50%)', textAlign: 'center' as const },
@@ -25,7 +25,7 @@ const STEPS = [
   {
     num: '03',
     title: 'Build',
-    body: 'A tailored plan — governance framework, content system, or retail strategy.',
+    body: 'A tailored plan - governance framework, content system, or retail strategy.',
     deskX: 67.5, deskY: 53.11,
     mobX: 49, mobY: 67.5,
     deskStyle: { bottom: '30px', left: '50%', transform: 'translateX(-50%)', textAlign: 'center' as const },

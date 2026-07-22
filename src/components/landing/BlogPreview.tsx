@@ -20,7 +20,7 @@ const PLACEHOLDERS: BlogPreviewPost[] = [
     _id: 'ph-1',
     title: 'Why Every Family Business Needs a Constitution Before It Needs a CFO',
     excerpt:
-      'The document that prevents the disputes no spreadsheet can fix — and how to start writing one.',
+      'The document that prevents the disputes no spreadsheet can fix - and how to start writing one.',
   },
   {
     _id: 'ph-2',
@@ -47,7 +47,7 @@ function readTime(post: BlogPreviewPost) {
 }
 
 /**
- * Section 7 — Blog preview. Featured post (7 cols) + two stacked
+ * Section 7 - Blog preview. Featured post (7 cols) + two stacked
  * smaller posts (5 cols). Falls back to styled placeholders when
  * Sanity has no posts yet.
  */

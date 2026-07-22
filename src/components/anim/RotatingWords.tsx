@@ -19,7 +19,7 @@ interface RotatingWordsProps {
 
 /**
  * Shows one word at a time, cycling through the list. Each word slides up
- * and out while the next slides up into its place — a vertical scroll loop.
+ * and out while the next slides up into its place - a vertical scroll loop.
  */
 export function RotatingWords({
   words,

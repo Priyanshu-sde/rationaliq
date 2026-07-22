@@ -4,7 +4,7 @@ import { ServicePage, type ServiceContent } from "@/components/sections/ServiceP
 
 export const metadata: Metadata = {
   title: "Startups | RationalIQ",
-  description: "From first hire to Series C — infrastructure, playbooks, and momentum for teams building the next category.",
+  description: "From first hire to Series C - infrastructure, playbooks, and momentum for teams building the next category.",
 }
 
 const content: ServiceContent = {

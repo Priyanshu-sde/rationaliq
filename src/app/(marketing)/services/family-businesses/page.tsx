@@ -15,7 +15,7 @@ const content: ServiceContent = {
   challenge:
     "Many successful family businesses struggle when transitioning from the founder to the next generation. Undefined succession plans, lack of formal governance, intergenerational conflict, and outdated wealth management strategies can threaten decades of hard work.",
   approach:
-    "With firsthand experience growing up in a family business and having advised over 250+ family business leaders, CA Hitesh Saiswani brings deep empathy and rigorous financial acumen to your enterprise — bridging legacy and modern practices.",
+    "With firsthand experience growing up in a family business and having advised over 250+ family business leaders, CA Hitesh Saiswani brings deep empathy and rigorous financial acumen to your enterprise - bridging legacy and modern practices.",
   bullets: [
     { strong: "Succession Planning", text: "Designing clear, actionable roadmaps for leadership and ownership transitions." },
     { strong: "Constitution and Family Board Assistance", text: "Drafting formal agreements to govern family involvement, conflict resolution, and dividend policies, along with family board setup." },

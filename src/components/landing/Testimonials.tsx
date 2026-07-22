@@ -66,7 +66,7 @@ const CARD_POSITIONS = [
 ]
 
 /**
- * Section 6 — Testimonials. Now using scattered draggable cards.
+ * Section 6 - Testimonials. Now using scattered draggable cards.
  */
 export function Testimonials() {
   const containerRef = useRef<any>(null)

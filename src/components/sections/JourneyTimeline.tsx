@@ -50,7 +50,7 @@ function buildPath(cx: number, amp: number, ys: number[]): string {
  * Signature scroll effect: a vertical serpentine line is "drawn" as the
  * user scrolls, while a glowing marker travels along the exact curve and
  * each milestone reveals on alternating sides. Degrades to a fully-drawn,
- * static timeline when reduced motion is requested. No pinning — plays
+ * static timeline when reduced motion is requested. No pinning - plays
  * nicely with smooth scrolling.
  */
 export function JourneyTimeline({ milestones, theme = 'brand' }: JourneyTimelineProps) {

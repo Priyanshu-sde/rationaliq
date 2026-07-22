@@ -4,7 +4,7 @@ import { motion, useReducedMotion } from 'framer-motion'
 import { urlForImage } from "@/sanity/lib/image"
 
 /**
- * Section 2.5 — Trust Bar. Infinite horizontal marquee of client logos.
+ * Section 2.5 - Trust Bar. Infinite horizontal marquee of client logos.
  */
 export function TrustBar({ logos = [] }: { logos?: any[] }) {
   const reduce = useReducedMotion()

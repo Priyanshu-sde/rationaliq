@@ -80,7 +80,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
 
-/* SplitText masking — each word/char rises from behind a clip mask */
+/* SplitText masking - each word/char rises from behind a clip mask */
 .split-word,
 .split-char {
   will-change: transform;
@@ -117,7 +117,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ────────────────────────────────────────────────────────────
-   Landing design system — typography scale
+   Landing design system - typography scale
    ──────────────────────────────────────────────────────────── */
 .font-display {
   font-family: var(--font-display);
@@ -148,12 +148,12 @@ h1, h2, h3, h4, h5, h6 {
    Interaction system (Section 0 primitives)
    ──────────────────────────────────────────────────────────── */
 
-/* Tier 1 — text links: color shift only */
+/* Tier 1 - text links: color shift only */
 .tier-1 {
   transition: color 0.25s ease;
 }
 
-/* Tier 2 — cards & buttons: lift + border brighten + shadow */
+/* Tier 2 - cards & buttons: lift + border brighten + shadow */
 .tier-2 {
   transition:
     transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
@@ -167,7 +167,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Press state — every clickable element acknowledges the click */
+/* Press state - every clickable element acknowledges the click */
 .press {
   transition: transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -178,7 +178,7 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(-2px) scale(0.98);
 }
 
-/* Tier 3 — shimmer sweep for the 2–3 key conversion CTAs only */
+/* Tier 3 - shimmer sweep for the 2–3 key conversion CTAs only */
 .btn-shimmer {
   position: relative;
   overflow: hidden;
@@ -228,7 +228,7 @@ h1, h2, h3, h4, h5, h6 {
   background-size: 72px 72px;
 }
 
-/* Premium grain — 3% SVG noise */
+/* Premium grain - 3% SVG noise */
 .noise::before {
   content: "";
   position: absolute;
@@ -247,7 +247,7 @@ h1, h2, h3, h4, h5, h6 {
   animation: node-pulse 2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
 
-/* Scroll cue — thin line pulsing downward */
+/* Scroll cue - thin line pulsing downward */
 @keyframes scroll-cue {
   0% { transform: scaleY(0); transform-origin: top; }
   45% { transform: scaleY(1); transform-origin: top; }

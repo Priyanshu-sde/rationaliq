@@ -8,28 +8,12 @@ import { Reveal, AnimatedText, TiltCard, Magnetic, FloatingShape } from "@/compo
 export const metadata: Metadata = {
   title: "Services | RationalIQ",
   description:
-    "Specialized consulting from RationalIQ — thought leadership for startups & VCs, family business consulting, and D2C retail strategy.",
+    "Specialized consulting from RationalIQ - thought leadership for startups & VCs, family business consulting, and D2C retail strategy.",
 }
 
 const services = [
   {
-    title: "Venture Capital",
-    audience: "ALLOCATORS",
-    icon: LineChart,
-    href: "/services/venture-capital",
-    desc: "Sharpened deal flow, portfolio intelligence, and thesis instrumentation for funds moving at the speed of conviction.",
-    points: ["Thesis articulation", "Deal flow positioning", "Portfolio intelligence"],
-  },
-  {
-    title: "Startups",
-    audience: "FOUNDERS",
-    icon: LineChart,
-    href: "/services/startups",
-    desc: "From first hire to Series C — infrastructure, playbooks, and momentum for teams building the next category.",
-    points: ["Growth playbooks", "Operational infrastructure", "Fundraising narrative"],
-  },
-  {
-    title: "Family Businesses",
+    title: "Family Business",
     audience: "STEWARDS",
     icon: Network,
     href: "/services/family-businesses",
@@ -37,12 +21,28 @@ const services = [
     points: ["Succession planning", "Family constitutions", "Digital modernization"],
   },
   {
-    title: "Educational Companies",
+    title: "Education & Training",
     audience: "INSTITUTIONS",
     icon: Store,
     href: "/services/educational-companies",
     desc: "Learning systems, cohort infrastructure, and outcomes analytics for teams shaping how the world studies.",
     points: ["Learning systems", "Cohort infrastructure", "Outcomes analytics"],
+  },
+  {
+    title: "Startups",
+    audience: "FOUNDERS",
+    icon: LineChart,
+    href: "/services/startups",
+    desc: "From first hire to Series C - infrastructure, playbooks, and momentum for teams building the next category.",
+    points: ["Growth playbooks", "Operational infrastructure", "Fundraising narrative"],
+  },
+  {
+    title: "Venture Capital",
+    audience: "ALLOCATORS",
+    icon: LineChart,
+    href: "/services/venture-capital",
+    desc: "Sharpened deal flow, portfolio intelligence, and thesis instrumentation for funds moving at the speed of conviction.",
+    points: ["Thesis articulation", "Deal flow positioning", "Portfolio intelligence"],
   },
 ]
 
@@ -92,7 +92,7 @@ export default function ServicesPage() {
             </AnimatedText>
             <Reveal direction="up" delay={0.15}>
               <p className="mx-auto mt-6 max-w-2xl text-lg text-[#94a3b8]">
-                Four focused practices — each grounded in CA Hitesh Saiswani's
+                Four focused practices - each grounded in CA Hitesh Saiswani's
                 experience across retail, M&amp;A, and venture capital.
               </p>
             </Reveal>
@@ -164,7 +164,7 @@ export default function ServicesPage() {
                 Not sure which fits your situation?
               </h2>
               <p className="relative mx-auto mt-4 max-w-xl text-[#94a3b8]">
-                Start with a conversation — we'll point you to the right path.
+                Start with a conversation - we'll point you to the right path.
               </p>
               <div className="relative mt-9 flex justify-center">
                 <Magnetic strength={0.35}>
