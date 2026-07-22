@@ -74,10 +74,19 @@ export function ContactSection() {
 
     setStatus('loading')
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch('https://formspree.io/f/xwvgnodq', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(values),
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          name: values.name,
+          email: values.email,
+          service: values.service,
+          message: values.message,
+          _gotcha: values.honeypot,
+        }),
       })
       if (!res.ok) throw new Error('Request failed')
       setStatus('success')
@@ -155,13 +164,14 @@ export function ContactSection() {
               <p className="mt-2 text-(--text-secondary)">Hitesh will be in touch shortly.</p>
             </div>
           ) : (
-            <form onSubmit={onSubmit} noValidate className="space-y-5">
+            <form action="https://formspree.io/f/xwvgnodq" method="POST" onSubmit={onSubmit} noValidate className="space-y-5">
               <div>
                 <label htmlFor="contact-name" className="mb-2 block text-sm font-medium text-(--text-primary)">
                   Name <span className="text-(--gold)" aria-hidden="true">*</span>
                 </label>
                 <input
                   id="contact-name"
+                  name="name"
                   type="text"
                   autoComplete="name"
                   required
@@ -186,6 +196,7 @@ export function ContactSection() {
                 </label>
                 <input
                   id="contact-email"
+                  name="email"
                   type="email"
                   autoComplete="email"
                   required
@@ -210,6 +221,7 @@ export function ContactSection() {
                 </label>
                 <select
                   id="contact-service"
+                  name="service"
                   value={values.service}
                   onChange={(e) => setValues((v) => ({ ...v, service: e.target.value }))}
                   className={`${inputClasses} appearance-none bg-[url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%2394A3B8' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E")] bg-[position:right_1rem_center] bg-no-repeat pr-10`}
@@ -228,6 +240,7 @@ export function ContactSection() {
                 </label>
                 <textarea
                   id="contact-message"
+                  name="message"
                   rows={4}
                   required
                   value={values.message}
@@ -248,7 +261,7 @@ export function ContactSection() {
               {/* Honeypot - hidden from humans and screen readers */}
               <input
                 type="text"
-                name="company_website"
+                name="_gotcha"
                 tabIndex={-1}
                 autoComplete="off"
                 aria-hidden="true"

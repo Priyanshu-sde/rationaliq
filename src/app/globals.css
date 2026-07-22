@@ -289,15 +289,21 @@ h1, h2, h3, h4, h5, h6 {
    ──────────────────────────────────────────────────────────── */
 .marquee-container {
   position: absolute;
-  bottom: 8%;
+  bottom: 2.5%;
   left: -4%;
   width: 108%;
   overflow: hidden;
   white-space: nowrap;
-  transform: rotate(-4deg);
+  transform: rotate(-2.5deg);
   z-index: 1;
   pointer-events: none;
   user-select: none;
+}
+@media (max-width: 767px) {
+  .marquee-container {
+    bottom: 1%;
+    transform: rotate(-1.5deg);
+  }
 }
 .marquee-track {
   display: inline-flex;

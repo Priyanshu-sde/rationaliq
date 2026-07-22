@@ -26,14 +26,15 @@ export default function ContactPage() {
       email: formData.get('email'),
       service: formData.get('service'),
       message: formData.get('message'),
-      honeypot: formData.get('website'), // honeypot field
+      _gotcha: formData.get('_gotcha') || formData.get('website'),
     }
 
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch('https://formspree.io/f/xwvgnodq', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json',
         },
         body: JSON.stringify(data),
       })
@@ -42,12 +43,16 @@ export default function ContactPage() {
 
       if (res.ok) {
         setSubmitStatus('success')
-          ; (e.target as HTMLFormElement).reset()
+        ;(e.target as HTMLFormElement).reset()
       } else {
         setSubmitStatus('error')
-        setErrorMessage(result.error || 'Something went wrong. Please try again.')
+        const errText =
+          result?.errors?.map((err: { message: string }) => err.message).join(', ') ||
+          result?.error ||
+          'Something went wrong. Please try again.'
+        setErrorMessage(errText)
       }
-    } catch (err) {
+    } catch {
       setSubmitStatus('error')
       setErrorMessage('Failed to send message. Please try again.')
     } finally {
@@ -96,9 +101,9 @@ export default function ContactPage() {
                       Thank you! Your message has been sent successfully. We will get back to you soon.
                     </div>
                   ) : (
-                    <form onSubmit={onSubmit} className="space-y-4">
+                    <form action="https://formspree.io/f/xwvgnodq" method="POST" onSubmit={onSubmit} className="space-y-4">
                       {/* Honeypot field - hidden from users */}
-                      <input type="text" name="website" className="hidden" tabIndex={-1} autoComplete="off" />
+                      <input type="text" name="_gotcha" className="hidden" tabIndex={-1} autoComplete="off" />
 
                       <div>
                         <label htmlFor="name" className="block text-sm font-medium text-[#f1f5f9] mb-1">Name</label>

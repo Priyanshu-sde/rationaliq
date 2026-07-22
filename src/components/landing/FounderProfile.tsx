@@ -14,76 +14,85 @@ export function FounderProfile() {
 
   useIsomorphicLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      // Create a timeline linked to the container scroll
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: containerRef.current,
-          start: "top top",
-          end: "bottom bottom",
-          scrub: 1, // Smooth scrubbing
-        },
-      })
+      const mm = gsap.matchMedia()
 
-      const imgTarget = imageWrapperRef.current?.querySelector('img')
-      if (imgTarget) {
-        // Initial setup for the image (shifted 20% left)
-        gsap.set(imgTarget, { objectPosition: "30% 50%" })
-      }
+      mm.add({
+        isMobile: "(max-width: 767px)",
+        isDesktop: "(min-width: 768px)",
+      }, (context) => {
+        const { isMobile } = context.conditions as { isMobile: boolean }
 
-      // Phase 1 (0 to 0.5)
-      // Text scrolls up
-      tl.to(textScrollRef.current, { yPercent: -150, ease: "none", duration: 0.5 }, 0)
+        // Create a timeline linked to the container scroll
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top top",
+            end: "bottom bottom",
+            scrub: 1, // Smooth scrubbing
+          },
+        })
 
-      // Phase 2 (0.5 to 0.75)
-      // Blur fades out & image shrinks to rounded rectangle
-      tl.to([textPanelRef.current, nameRef.current], {
-        opacity: 0,
-        ease: "power2.inOut",
-        duration: 0.25
-      }, 0.5)
+        const imgTarget = imageWrapperRef.current?.querySelector('img')
+        if (imgTarget) {
+          // Initial setup for the image (shifted 30% left)
+          gsap.set(imgTarget, { objectPosition: "30% 50%" })
+        }
 
-      tl.to(imageWrapperRef.current, {
-        width: "90vw",
-        height: "80vh",
-        borderRadius: "2rem", // Rounded rectangle
-        ease: "power2.inOut",
-        duration: 0.25,
-      }, 0.5)
+        // Phase 1 (0 to 0.5)
+        // Text scrolls up
+        tl.to(textScrollRef.current, { yPercent: -150, ease: "none", duration: 0.5 }, 0)
 
-      if (imgTarget) {
-        tl.to(imgTarget, {
-          objectPosition: "50% 50%", // Re-center image
+        // Phase 2 (0.5 to 0.75)
+        // Blur fades out & image shrinks to rounded rectangle
+        tl.to([textPanelRef.current, nameRef.current], {
+          opacity: 0,
           ease: "power2.inOut",
           duration: 0.25
         }, 0.5)
-      }
 
-      // Phase 3 (0.75 to 1)
-      // Pill shape (rectangle with half circle on sides), staying centered (but shifted up for quote)
-      tl.to(imageWrapperRef.current, {
-        width: "50vw",
-        height: "300px",
-        borderRadius: "999px", // 999px creates the perfect pill/half-circle shape
-        yPercent: -80, // Shift up from center to make room for the quote
-        ease: "power2.inOut",
-        duration: 0.25,
-      }, 0.75)
-
-      if (imgTarget) {
-        tl.to(imgTarget, {
-          objectPosition: "50% 25%", // Crop to founder's face
+        tl.to(imageWrapperRef.current, {
+          width: isMobile ? "88vw" : "90vw",
+          height: isMobile ? "70vh" : "80vh",
+          borderRadius: isMobile ? "1.5rem" : "2rem", // Rounded rectangle
           ease: "power2.inOut",
-          duration: 0.25
-        }, 0.75)
-      }
+          duration: 0.25,
+        }, 0.5)
 
-      // Quote fades in centered below the pill
-      tl.fromTo(
-        quoteRef.current,
-        { opacity: 0, y: 100 },
-        { opacity: 1, y: 50, ease: "power2.out", duration: 0.15 },
-        0.85
-      )
+        if (imgTarget) {
+          tl.to(imgTarget, {
+            objectPosition: "50% 50%", // Re-center image
+            ease: "power2.inOut",
+            duration: 0.25
+          }, 0.5)
+        }
+
+        // Phase 3 (0.75 to 1)
+        // Pill shape (rectangle with half circle on sides), staying centered (but shifted up for quote)
+        tl.to(imageWrapperRef.current, {
+          width: isMobile ? "200px" : "50vw",
+          height: isMobile ? "140px" : "300px",
+          borderRadius: "999px", // 999px creates the perfect pill/half-circle shape
+          yPercent: isMobile ? -135 : -80, // Shift up from center to make room for the quote
+          ease: "power2.inOut",
+          duration: 0.25,
+        }, 0.75)
+
+        if (imgTarget) {
+          tl.to(imgTarget, {
+            objectPosition: "50% 25%", // Crop to founder's face
+            ease: "power2.inOut",
+            duration: 0.25
+          }, 0.75)
+        }
+
+        // Quote fades in centered below the pill
+        tl.fromTo(
+          quoteRef.current,
+          { opacity: 0, y: isMobile ? 20 : 60 },
+          { opacity: 1, y: isMobile ? 0 : 10, ease: "power2.out", duration: 0.15 },
+          0.85
+        )
+      })
 
     }, containerRef)
 
@@ -163,13 +172,13 @@ export function FounderProfile() {
         {/* Phase 3: Quote Section */}
         <div
           ref={quoteRef}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full px-8 md:px-24 flex justify-center z-20 pointer-events-none opacity-0 mt-32"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full px-6 md:px-24 flex justify-center z-20 pointer-events-none opacity-0 mt-0 sm:mt-4 md:mt-12"
         >
-          <div className="max-w-4xl text-center space-y-6 pt-12 md:pt-0">
-            <svg className="w-10 h-10 mx-auto text-gold/40 mb-4" fill="currentColor" viewBox="0 0 24 24">
+          <div className="max-w-4xl text-center space-y-3 sm:space-y-4 md:space-y-6">
+            <svg className="w-7 h-7 md:w-10 md:h-10 mx-auto text-gold/40 mb-2 md:mb-4" fill="currentColor" viewBox="0 0 24 24">
               <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
             </svg>
-            <p className="text-3xl md:text-5xl font-serif italic leading-tight text-white">
+            <p className="text-xl sm:text-3xl md:text-5xl font-serif italic leading-snug md:leading-tight text-white">
               "Everything that is to be known already exists. We just need to talk to people who know it. Before ideas, comes knowledge. After knowledge, comes execution."
             </p>
           </div>
