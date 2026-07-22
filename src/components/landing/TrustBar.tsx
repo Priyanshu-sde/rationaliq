@@ -37,13 +37,13 @@ export function TrustBar({ logos = [] }: { logos?: any[] }) {
         <motion.div
           className="flex w-max items-center"
           animate={reduce ? undefined : { x: ['0%', '-50%'] }}
-          transition={{ ease: 'linear', duration: 40, repeat: Infinity }}
+          transition={{ ease: 'linear', duration: 120, repeat: Infinity }}
         >
           {/* Render exactly 2 identical halves to ensure a flawless -50% loop mathematically */}
           {[1, 2].map((half) => (
             <div key={half} className="flex items-center gap-16 md:gap-24 pr-16 md:pr-24">
               {repeatedLogos.map((logo, i) => (
-                <div key={`${logo._id || i}-${half}-${i}`} className="flex-shrink-0 opacity-70 grayscale transition-all hover:grayscale-0">
+                <div key={`${logo._id || i}-${half}-${i}`} className="flex-shrink-0 opacity-100">
                   {logo.url ? (
                     <a href={logo.url} target="_blank" rel="noopener noreferrer">
                       <img

@@ -147,7 +147,7 @@ export default async function ImpactPage() {
             Trusted By
           </h2>
           {logos?.length > 0 ? (
-            <div className="flex flex-wrap items-center justify-center gap-12 opacity-70 grayscale transition-all hover:grayscale-0">
+            <div className="flex flex-wrap items-center justify-center gap-12 opacity-100">
               {logos.map((logo: any, i: number) =>
                 logo.url ? (
                   <a key={i} href={logo.url} target="_blank" rel="noopener noreferrer">
