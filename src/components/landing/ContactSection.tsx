@@ -6,10 +6,11 @@ import { motion, useReducedMotion } from 'framer-motion'
 import { Calendar, Mail, Check, Loader2 } from 'lucide-react'
 
 const SERVICES = [
-  'Thought Leadership Content',
-  'Family Business Consulting',
-  'D2C Retail Strategy',
-  'Not sure yet',
+  'Family Business',
+  'Education',
+  'D2C Startups',
+  'Venture Capital',
+  'Other',
 ]
 
 type Status = 'idle' | 'loading' | 'success' | 'error'
@@ -30,7 +31,7 @@ export function ContactSection() {
   const [values, setValues] = useState({
     name: '',
     email: '',
-    service: SERVICES[3],
+    service: SERVICES[0],
     message: '',
     honeypot: '',
   })

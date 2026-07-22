@@ -5,15 +5,13 @@ import { Button } from '@/components/ui/Button'
 import { Card, CardContent } from '@/components/ui/Card'
 import { Input } from '@/components/ui/Input'
 import { Textarea } from '@/components/ui/Textarea'
-import { Calendar } from 'lucide-react'
-import { Reveal, AnimatedText, Magnetic, FloatingShape } from '@/components/anim'
+import { Mail } from 'lucide-react'
+import { Reveal, AnimatedText, FloatingShape } from '@/components/anim'
 
 export default function ContactPage() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
   const [errorMessage, setErrorMessage] = useState('')
-
-  const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL || 'https://calendly.com'
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -120,9 +118,10 @@ export default function ContactPage() {
                           name="service"
                           className="flex h-10 w-full rounded-md border border-white/[0.07] bg-[#0f111a] px-3 py-2 text-sm text-[#f1f5f9] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6366f1]"
                         >
-                          <option value="Thought Leadership">Thought Leadership</option>
-                          <option value="Family Business Consulting">Family Business Consulting</option>
-                          <option value="D2C Retail Strategy">D2C Retail Strategy</option>
+                          <option value="Family Business">Family Business</option>
+                          <option value="Education">Education</option>
+                          <option value="D2C Startups">D2C Startups</option>
+                          <option value="Venture Capital">Venture Capital</option>
                           <option value="Other">Other</option>
                         </select>
                       </div>
@@ -147,28 +146,17 @@ export default function ContactPage() {
             <Reveal direction="up" delay={0.12} className="flex flex-col gap-8">
               <div className="rounded-2xl border border-white/[0.07] bg-white/[0.02] p-8">
                 <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-full bg-white/[0.05]">
-                  <Calendar className="h-6 w-6 text-[#6366f1]" />
+                  <Mail className="h-6 w-6 text-[#6366f1]" />
                 </div>
-                <h3 className="mb-4 text-2xl font-bold text-[#f1f5f9]">Book a Consultation</h3>
+                <h3 className="mb-4 text-2xl font-bold text-[#f1f5f9]">Direct Contact</h3>
                 <p className="mb-6 text-[#94a3b8]">
-                  Prefer to speak directly? Schedule a discovery call at a time that works best for you.
+                  Prefer to reach out directly? Send an email and Hitesh will respond personally.
                 </p>
-                <Magnetic strength={0.2} className="w-full">
-                  <Button variant="outline" className="w-full border-white/[0.07] text-[#f1f5f9] hover:bg-white/[0.04]" asChild>
-                    <a href={calendlyUrl} target="_blank" rel="noopener noreferrer">
-                      Open Calendly
-                    </a>
-                  </Button>
-                </Magnetic>
-              </div>
-
-              <div className="p-8">
-                <h3 className="mb-4 text-xl font-bold text-[#f1f5f9]">Direct Contact</h3>
                 <div className="space-y-4 text-[#94a3b8]">
                   <p>
-                    <strong>Email:</strong>
+                    <strong className="text-[#f1f5f9]">Email:</strong>
                     <br />
-                    <a href="mailto:hitesh@rationaliq.in" className="link-underline text-[#6366f1]">
+                    <a href="mailto:hitesh@rationaliq.in" className="link-underline text-[#6366f1] text-lg font-medium">
                       hitesh@rationaliq.in
                     </a>
                   </p>

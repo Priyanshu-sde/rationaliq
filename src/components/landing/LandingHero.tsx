@@ -107,12 +107,12 @@ export function LandingHero() {
           custom={0.2}
           className="mb-6 md:mb-8"
         >
-          <Image 
-            src="/logo_with_name.png" 
-            alt="RationalIQ" 
-            width={300} 
-            height={80} 
-            className="h-12 md:h-16 w-auto object-contain mx-auto" 
+          <Image
+            src="/logo_with_name.png"
+            alt="RationalIQ"
+            width={300}
+            height={80}
+            className="h-12 md:h-16 w-auto object-contain mx-auto"
             priority
           />
         </motion.div>
@@ -148,11 +148,11 @@ export function LandingHero() {
           custom={1.1}
         >
           <a
-            href="mailto:hitesh@rationaliq.com"
+            href="mailto:hitesh@rationaliq.in"
             data-cursor-text="Click"
             className="btn-shimmer tier-2 press group inline-flex h-13 items-center gap-2.5 rounded-xl bg-(--indigo) px-8 text-sm font-semibold text-white shadow-[0_0_30px_rgba(99,102,241,0.25)] hover:shadow-[0_8px_40px_rgba(99,102,241,0.4)]"
           >
-            Email Hitesh
+            Send an email
             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
           </a>
           <Link

@@ -9,3 +9,5 @@ export const getTestimonialsQuery = groq`*[_type == "testimonial"] | order(_crea
 export const getMetricsQuery = groq`*[_type == "metric"] | order(order asc)`
 
 export const getClientLogosQuery = groq`*[_type == "clientLogo"] | order(_createdAt asc)`
+
+export const getTeamMembersQuery = groq`*[_type == "teamMember"] | order(order asc, _createdAt asc)`

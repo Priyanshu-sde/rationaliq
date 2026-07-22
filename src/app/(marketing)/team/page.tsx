@@ -2,13 +2,35 @@ import { Metadata } from "next"
 import Image from "next/image"
 import { JsonLd } from "@/components/JsonLd"
 import { Reveal, AnimatedText, Parallax, TiltCard, FloatingShape } from "@/components/anim"
+import { client } from "@/sanity/lib/client"
+import { getTeamMembersQuery } from "@/sanity/lib/queries"
+import { urlForImage } from "@/sanity/lib/image"
 
 export const metadata: Metadata = {
   title: "Team & Founder | RationalIQ",
   description: "Meet CA Hitesh Saiswani and the team behind RationalIQ.",
 }
 
-export default function TeamPage() {
+export const revalidate = 3600
+
+interface TeamMember {
+  _id: string
+  name: string
+  role: string
+  image?: any
+  bio?: string
+  linkedin?: string
+  twitter?: string
+}
+
+export default async function TeamPage() {
+  let teamMembers: TeamMember[] = []
+  try {
+    teamMembers = await client.fetch(getTeamMembersQuery)
+  } catch (error) {
+    console.warn("Could not fetch team members from Sanity")
+  }
+
   const personData = {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -134,36 +156,77 @@ export default function TeamPage() {
         </div>
       </section>
 
-      {/* Team grid */}
-      <section className="bg-white/[0.02] py-24 md:py-32">
-        <div className="container mx-auto px-4 md:px-6">
-          <AnimatedText
-            as="h2"
-            by="word"
-            onScroll
-            stagger={0.05}
-            className="mb-14 text-center font-serif text-3xl tracking-tight text-[#f1f5f9] sm:text-4xl"
-          >
-            The team behind the practice.
-          </AnimatedText>
-          <Reveal stagger={0.12} className="mx-auto grid max-w-5xl gap-8 md:grid-cols-3">
-            {[1, 2, 3].map((i) => (
-              <TiltCard
-                key={i}
-                max={6}
-                lift={6}
-                className="relative flex flex-col items-center rounded-2xl border border-white/[0.07] bg-white/[0.04] p-8 text-center"
-              >
-                <div className="mb-4 flex h-24 w-24 items-center justify-center rounded-full bg-white/[0.05]">
-                  <span className="text-xs text-[#94a3b8]">Photo</span>
-                </div>
-                <h4 className="font-serif text-lg font-bold text-[#f1f5f9]">TBD</h4>
-                <p className="text-sm text-[#94a3b8]">Role Title</p>
-              </TiltCard>
-            ))}
-          </Reveal>
-        </div>
-      </section>
+      {/* Team grid - rendered only when team members exist in Sanity */}
+      {teamMembers && teamMembers.length > 0 && (
+        <section className="bg-white/[0.02] py-24 md:py-32">
+          <div className="container mx-auto px-4 md:px-6">
+            <AnimatedText
+              as="h2"
+              by="word"
+              onScroll
+              stagger={0.05}
+              className="mb-14 text-center font-serif text-3xl tracking-tight text-[#f1f5f9] sm:text-4xl"
+            >
+              The team behind the practice.
+            </AnimatedText>
+            <Reveal stagger={0.12} className="mx-auto grid max-w-5xl gap-8 md:grid-cols-3">
+              {teamMembers.map((member) => (
+                <TiltCard
+                  key={member._id}
+                  max={6}
+                  lift={6}
+                  className="relative flex flex-col items-center rounded-2xl border border-white/[0.07] bg-white/[0.04] p-8 text-center"
+                >
+                  <div className="relative mb-4 h-24 w-24 overflow-hidden rounded-full border border-white/[0.1] bg-white/[0.05]">
+                    {member.image ? (
+                      <Image
+                        src={urlForImage(member.image)?.url() || ""}
+                        alt={member.name}
+                        fill
+                        className="object-cover"
+                        sizes="96px"
+                      />
+                    ) : (
+                      <div className="flex h-full w-full items-center justify-center text-xs text-[#94a3b8]">
+                        Photo
+                      </div>
+                    )}
+                  </div>
+                  <h4 className="font-serif text-lg font-bold text-[#f1f5f9]">{member.name}</h4>
+                  <p className="text-sm text-[#94a3b8]">{member.role}</p>
+                  {member.bio && (
+                    <p className="mt-3 text-xs leading-relaxed text-[#94a3b8]/80">{member.bio}</p>
+                  )}
+                  {(member.linkedin || member.twitter) && (
+                    <div className="mt-4 flex items-center justify-center gap-4 text-xs">
+                      {member.linkedin && (
+                        <a
+                          href={member.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="link-underline text-[#94a3b8] hover:text-[#6366f1]"
+                        >
+                          LinkedIn
+                        </a>
+                      )}
+                      {member.twitter && (
+                        <a
+                          href={member.twitter}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="link-underline text-[#94a3b8] hover:text-[#6366f1]"
+                        >
+                          Twitter / X
+                        </a>
+                      )}
+                    </div>
+                  )}
+                </TiltCard>
+              ))}
+            </Reveal>
+          </div>
+        </section>
+      )}
     </div>
   )
 }
