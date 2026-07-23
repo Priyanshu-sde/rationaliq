@@ -20,15 +20,15 @@ const dmSerif = DM_Serif_Display({
 });
 
 export const metadata: Metadata = {
-  title: "RationalIQ | Consulting for Startups, VCs & Family Businesses",
+  title: "RationalIQ | Next Gen Business IQ for Startups, Investors & Family Businesses",
   description: "RationalIQ | NextGen IQ for Family Businesses, Founders and Funders",
   openGraph: {
-    title: "RationalIQ | Consulting for Startups, VCs & Family Businesses",
+    title: "RationalIQ | Next Gen Business IQ for Startups, Investors & Family Businesses",
     description: "RationalIQ | NextGen IQ for Family Businesses, Founders and Funders",
   },
   twitter: {
     card: "summary_large_image",
-    title: "RationalIQ | Consulting for Startups, VCs & Family Businesses",
+    title: "RationalIQ | Next Gen Business IQ for Startups, Investors & Family Businesses",
     description: "RationalIQ | NextGen IQ for Family Businesses, Founders and Funders",
   },
 };

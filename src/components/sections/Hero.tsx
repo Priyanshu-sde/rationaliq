@@ -51,7 +51,7 @@ export function Hero() {
           <Reveal direction="up" distance={16}>
             <span className="inline-flex items-center gap-2 rounded-full border border-brand-border bg-white/70 px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-brand-primary backdrop-blur-sm">
               <span className="h-1.5 w-1.5 rounded-full bg-brand-accent" />
-              Consulting led by a Chartered Accountant
+              Next Gen Business IQ led by a Chartered Accountant
             </span>
           </Reveal>
 
@@ -75,7 +75,7 @@ export function Hero() {
 
           <Reveal direction="up" delay={0.2} className="mt-7 max-w-2xl">
             <p className="text-lg leading-8 text-brand-fg/75 md:text-xl">
-              RationalIQ is a specialized consulting practice led by CA Hitesh
+              RationalIQ is a Next Gen Business IQ practice led by CA Hitesh
               Saiswani - bringing rigorous professionalization, governance, and
               retail strategy to businesses navigating their most critical
               transitions.

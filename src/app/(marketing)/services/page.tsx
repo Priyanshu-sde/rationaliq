@@ -9,7 +9,7 @@ import { SERVICES as services } from "@/data/services"
 export const metadata: Metadata = {
   title: "Services | RationalIQ",
   description:
-    "Specialized consulting from RationalIQ - thought leadership for startups & VCs, family business consulting, and D2C retail strategy.",
+    "Next Gen Business IQ from RationalIQ - thought leadership for startups & investors, family business strategy, and D2C retail strategy.",
 }
 
 export default function ServicesPage() {
@@ -43,9 +43,9 @@ export default function ServicesPage() {
         />
         <div className="container relative mx-auto px-4 md:px-6">
           <div className="mx-auto max-w-3xl text-center">
-            <Reveal direction="up" distance={14}>
-              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[#d4a853]">
-                What we do
+            <Reveal direction="down">
+              <span className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-4 py-1.5 text-xs font-mono uppercase tracking-[0.25em] text-[#d4a853]">
+                Practice Areas
               </span>
             </Reveal>
             <AnimatedText
@@ -54,7 +54,7 @@ export default function ServicesPage() {
               stagger={0.05}
               className="mt-4 font-serif text-4xl tracking-tight text-[#f1f5f9] sm:text-5xl md:text-6xl"
             >
-              Consulting built for every transition.
+              Next Gen Business IQ for every transition.
             </AnimatedText>
             <Reveal direction="up" delay={0.15}>
               <p className="mx-auto mt-6 max-w-2xl text-lg text-[#94a3b8]">
