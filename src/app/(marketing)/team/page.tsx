@@ -140,7 +140,7 @@ export default async function TeamPage() {
                 <strong className="text-[#f1f5f9]">Sunicon Venture Capital Fund</strong> as an early investment team member. There, he facilitated startup funding and gained deep insight into how family business owners invest surplus capital. He also spearheaded content creation to establish the fund's thought leadership and attract top-tier founders.
               </p>
               <p>
-                In early 2024, he founded RationalIQ. Partnering with top education companies, he has produced over 100 hours of educational content covering finance, sales, and family business succession, driven by his core belief that content and education are inherently inseparable today.
+                In early 2024, he founded RationalIQ. Partnering with top education companies, he has produced over 700 hours of educational content covering finance, sales, and family business succession, driven by his core belief that content and education are inherently inseparable today.
               </p>
               <p>
                 Hitesh is a{" "}

@@ -145,7 +145,7 @@ export default async function ImpactPage() {
         {/* Client Logos Strip */}
         <Reveal direction="up" className="mx-auto max-w-5xl text-center">
           <h2 className="mb-8 text-sm font-bold uppercase tracking-widest text-[#94a3b8]">
-            Trusted By
+            Worked with
           </h2>
           {logos?.length > 0 ? (
             <div className="flex flex-wrap items-center justify-center gap-12 opacity-100">

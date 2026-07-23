@@ -3,13 +3,13 @@ import { LineChart } from "lucide-react"
 import { ServicePage, type ServiceContent } from "@/components/sections/ServicePage"
 
 export const metadata: Metadata = {
-  title: "Venture Capital Thought Leadership | RationalIQ",
+  title: "Investors & Personal Brands Thought Leadership | RationalIQ",
   description: "Build genuine thought leadership IPs for investors to attract top 1% founders through blunt truth, unique insight, and strategic positioning.",
 }
 
 const content: ServiceContent = {
-  eyebrow: "ALLOCATORS",
-  title: "Venture Capital",
+  eyebrow: "INVESTORS",
+  title: "Investors & Personal Brands",
   icon: LineChart,
   lead: "Get seen by top 1% founders through thought leadership IPs. And yes, content creation is not thought leadership.",
   challenge:

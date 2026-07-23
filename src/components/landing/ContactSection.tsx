@@ -9,7 +9,7 @@ const SERVICES = [
   'Family Business',
   'Education',
   'D2C Startups',
-  'Venture Capital',
+  'Investors & Personal Brands',
   'Other',
 ]
 

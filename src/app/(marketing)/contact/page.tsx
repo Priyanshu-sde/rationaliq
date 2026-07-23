@@ -121,7 +121,7 @@ export default function ContactPage() {
                           <option value="Family Business">Family Business</option>
                           <option value="Education">Education</option>
                           <option value="D2C Startups">D2C Startups</option>
-                          <option value="Venture Capital">Venture Capital</option>
+                          <option value="Investors & Personal Brands">Investors & Personal Brands</option>
                           <option value="Other">Other</option>
                         </select>
                       </div>

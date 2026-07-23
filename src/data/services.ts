@@ -28,7 +28,7 @@ export const SERVICES: Service[] = [
     tag: 'STEWARDS',
     audience: 'STEWARDS',
     blurb:
-      'Leverage the experience of a Chartered Accountant and Certified Family Business Advisor from FFI USA who was born in a business family as a one stop solution.',
+      'Leverage our experience led by a Chartered Accountant and Certified Family Business Advisor from FFI USA who was born in a business family as a one stop solution.',
     desc:
       'Leverage the experience of a Chartered Accountant and Certified Family Business Advisor from FFI USA who was born in a business family as a one stop solution.',
     body:
@@ -106,16 +106,16 @@ export const SERVICES: Service[] = [
   {
     id: 'vc',
     code: '04',
-    name: 'Venture Capital',
-    title: 'Venture Capital',
-    tag: 'ALLOCATORS',
-    audience: 'ALLOCATORS',
+    name: 'Investors & Personal Brands',
+    title: 'Investors & Personal Brands',
+    tag: 'INVESTORS',
+    audience: 'INVESTORS',
     blurb:
-      'Get seen by top 1% founders through thought leadership IPs. And yes, content creation is not thought leadership.',
+      'Get seen by top 1% of your audience through thought leadership IPs. And yes, content creation is not thought leadership.',
     desc:
-      'Get seen by top 1% founders through thought leadership IPs. And yes, content creation is not thought leadership.',
+      'Get seen by top 1% of your audience through thought leadership IPs. And yes, content creation is not thought leadership.',
     body:
-      'Get seen by top 1% founders through thought leadership IPs. And yes, content creation is not thought leadership.',
+      'Get seen by top 1% of your audience through thought leadership IPs. And yes, content creation is not thought leadership.',
     href: '/services/venture-capital',
     image: '/vc.jpg',
     color: '#f59e0b', // amber-500

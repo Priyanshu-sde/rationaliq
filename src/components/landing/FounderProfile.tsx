@@ -160,7 +160,7 @@ export function FounderProfile() {
                 This expertise led him to <strong className="font-semibold text-white">Sunicon Venture Capital Fund</strong> as an early investment team member. There, he facilitated startup funding and gained deep insight into how family business owners invest surplus capital. He also spearheaded content creation to establish the fund's thought leadership and attract top-tier founders.
               </p>
               <p>
-                In early 2024, he founded RationalIQ. Partnering with top education companies, he has produced over 100 hours of educational content covering finance, sales, and family business succession, driven by his core belief that content and education are inherently inseparable today.
+                In early 2024, he founded RationalIQ. Partnering with top education companies, he has produced over 700 hours of educational content covering finance, sales, and family business succession, driven by his core belief that content and education are inherently inseparable today.
               </p>
               <p>
                 Hitesh is a <strong className="font-semibold text-gold">Certified Family Business Advisor from the Family Firm Institute, USA</strong>, and has trained over 250 family business leaders in live sessions on succession planning, growth strategy, intergenerational conflict resolution, family constitutions, and next-gen coaching.

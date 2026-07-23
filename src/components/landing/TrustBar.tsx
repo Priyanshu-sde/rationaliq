@@ -22,7 +22,7 @@ export function TrustBar({ logos = [] }: { logos?: any[] }) {
   return (
     <section
       className="border-y border-(--border) bg-zinc-900/70 py-10 overflow-hidden select-none"
-      aria-label="Trusted By"
+      aria-label="Worked with"
     >
       <div className="mx-auto px-6 md:px-12 mb-8">
         <motion.h2
@@ -32,7 +32,7 @@ export function TrustBar({ logos = [] }: { logos?: any[] }) {
           viewport={{ once: true, margin: '-40px' }}
           transition={{ duration: 0.6, ease: 'easeOut' }}
         >
-          Trusted By
+          Worked with
         </motion.h2>
       </div>
 
