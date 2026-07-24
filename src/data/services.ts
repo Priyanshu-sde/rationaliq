@@ -30,9 +30,9 @@ export const SERVICES: Service[] = [
     blurb:
       'Leverage our experience led by a Chartered Accountant and Certified Family Business Advisor from FFI USA who was born in a business family as a one stop solution.',
     desc:
-      'Leverage the experience of a Chartered Accountant and Certified Family Business Advisor from FFI USA who was born in a business family as a one stop solution.',
+      'Leverage our experience led by a Chartered Accountant and Certified Family Business Advisor from FFI USA who was born in a business family as a one stop solution.',
     body:
-      'Leverage the experience of a Chartered Accountant and Certified Family Business Advisor from FFI USA who was born in a business family as a one stop solution.',
+      'Leverage our experience led by a Chartered Accountant and Certified Family Business Advisor from FFI USA who was born in a business family as a one stop solution.',
     href: '/services/family-businesses',
     image: '/family.jpg',
     color: '#fcd34d', // amber-300

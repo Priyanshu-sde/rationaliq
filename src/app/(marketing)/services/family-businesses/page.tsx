@@ -11,7 +11,7 @@ const content: ServiceContent = {
   eyebrow: "STEWARDS",
   title: "Family Business",
   icon: Network,
-  lead: "Leverage the experience of a Chartered Accountant and Certified Family Business Advisor from FFI USA who was born in a business family as a one stop solution.",
+  lead: "Leverage our experience led by a Chartered Accountant and Certified Family Business Advisor from FFI USA who was born in a business family as a one stop solution.",
   challenge:
     "Many successful family businesses struggle when transitioning from the founder to the next generation. Undefined succession plans, lack of formal governance, intergenerational conflict, and outdated wealth management strategies can threaten decades of hard work.",
   approach:
