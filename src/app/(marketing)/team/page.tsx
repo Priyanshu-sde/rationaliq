@@ -132,25 +132,20 @@ export default async function TeamPage() {
                 At 13, he learned the fundamentals of commerce-from interacting with customers and selling electronics, to processing consumer loan forms and managing logistics. Witnessing firsthand the complexities of understanding and managing financial data ultimately inspired his path into Chartered Accountancy.
               </p>
               <p>
-                During his CA articleship (2015–2018), he immersed himself in business, legal, and tax practices, approaching them through the dual lens of an accountant and an entrepreneur. Seeking experience beyond the family enterprise, he joined{" "}
-                <strong className="text-[#f1f5f9]">Grant Thornton and EY (2019–2022)</strong>, specializing in M&amp;A due diligence and family office investments into high-growth startups.
+                During his CA articleship (2015–2018), he immersed himself in business, legal, and tax practices, approaching them through the dual lens of an accountant and an entrepreneur. Seeking experience beyond the family enterprise, he joined Grant Thornton and EY (2019–2022), specializing in M&amp;A due diligence and family office investments into high-growth startups.
               </p>
               <p>
-                This expertise led him to{" "}
-                <strong className="text-[#f1f5f9]">Sunicon Venture Capital Fund</strong> as an early investment team member. There, he facilitated startup funding and gained deep insight into how family business owners invest surplus capital. He also spearheaded content creation to establish the fund's thought leadership and attract top-tier founders.
+                This expertise led him to Sunicon Venture Capital Fund as an early investment team member. There, he facilitated startup funding and gained deep insight into how family business owners invest surplus capital. He also spearheaded content creation to establish the fund's thought leadership and attract top-tier founders.
               </p>
               <p>
                 In early 2024, he founded RationalIQ. Partnering with top education companies, he has produced over 700 hours of educational content covering finance, sales, and family business succession, driven by his core belief that content and education are inherently inseparable today.
               </p>
               <p>
-                Hitesh is a{" "}
-                <strong className="text-[#d4a853]">Certified Family Business Advisor from the Family Firm Institute, USA</strong>, and has trained over 250 family business leaders in live sessions on succession planning, growth strategy, intergenerational conflict resolution, family constitutions, and next-gen coaching.
+                Hitesh is a Certified Family Business Advisor from the Family Firm Institute, USA, and has trained over 250 family business leaders in live sessions on succession planning, growth strategy, intergenerational conflict resolution, family constitutions, and next-gen coaching.
               </p>
-              <div className="mt-8 rounded-2xl border border-white/[0.07] bg-white/[0.02] p-6 italic text-[#f1f5f9]">
-                <p>
-                  "Notably, he helped architect the content strategy that grew a finance podcaster's channel from 330K to over 450K subscribers."
-                </p>
-              </div>
+              <p>
+                Notably, he helped architect the content strategy that grew a finance podcaster's channel from 330K to over 450K subscribers.
+              </p>
             </Reveal>
           </div>
         </div>

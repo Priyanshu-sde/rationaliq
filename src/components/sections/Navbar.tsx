@@ -14,7 +14,7 @@ const navLinks = [
   { name: 'Services', href: '/services' },
   { name: 'Team', href: '/team' },
   { name: 'Impact', href: '/impact' },
-  { name: 'Blog', href: '/blog' },
+  { name: 'Blogs & Case Studies', href: '/blog' },
 ]
 
 export function Navbar() {

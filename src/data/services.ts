@@ -69,7 +69,7 @@ export const SERVICES: Service[] = [
     glow: 'rgba(153, 246, 228, 0.13)',
     icon: BookOpen,
     points: [
-      'Industry readiness programs for students (Finance, Sales, Soft Skills & Communication)',
+      'Industry readiness programs for students/employees (Finance, Sales, Soft Skills & Communication)',
       'Customised & goal-based corporate training',
       'Practical & industry-ready educational content and curriculum',
       'Distribution of education content on YouTube or LMS',
@@ -126,7 +126,6 @@ export const SERVICES: Service[] = [
       'Thought leadership vs mass content creation',
       'Unique & counter-intuitive IP creation',
       'Top 1% founder attraction & positioning',
-      'Blunt truth industry authority',
     ],
   },
 ]

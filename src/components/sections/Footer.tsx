@@ -61,7 +61,7 @@ function InstagramIcon({ className }: { className?: string }) {
 const QUICK_LINKS = [
   { name: 'Services', href: '/services' },
   { name: 'About', href: '/team' },
-  { name: 'Blog', href: '/blog' },
+  { name: 'Blogs & Case Studies', href: '/blog' },
   { name: 'Contact', href: '/contact' },
 ]
 

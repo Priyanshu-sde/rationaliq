@@ -58,8 +58,8 @@ export default function ServicesPage() {
             </AnimatedText>
             <Reveal direction="up" delay={0.15}>
               <p className="mx-auto mt-6 max-w-2xl text-lg text-[#94a3b8]">
-                Four focused practices - each grounded in CA Hitesh Saiswani's
-                experience across retail, M&amp;A, and venture capital.
+                Four focused practices - each grounded in Deep's
+                experience across retail, M&amp;A, family business and investments.
               </p>
             </Reveal>
           </div>
