@@ -67,7 +67,7 @@ export default async function ImpactPage() {
 
         {/* Metrics Block - rendered only when data is returned from Sanity */}
         {hasMetrics && (
-          <Reveal stagger={0.12} className="mx-auto mb-32 grid max-w-4xl grid-cols-2 gap-8 md:grid-cols-3">
+          <Reveal stagger={0.12} className="mx-auto mb-32 grid max-w-4xl grid-cols-2 gap-8 md:grid-cols-2">
             {metrics.map((metric: any, i: number) => (
               <TiltCard
                 key={metric._id || i}

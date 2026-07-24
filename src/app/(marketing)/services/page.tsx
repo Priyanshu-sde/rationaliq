@@ -69,7 +69,7 @@ export default function ServicesPage() {
       {/* Service cards */}
       <section className="pb-24 md:pb-32">
         <div className="container mx-auto px-4 md:px-6">
-          <Reveal stagger={0.14} className="grid gap-8 md:grid-cols-3">
+          <Reveal stagger={0.14} className="grid gap-8 md:grid-cols-2">
             {services.map((s) => {
               const Icon = s.icon
               return (
