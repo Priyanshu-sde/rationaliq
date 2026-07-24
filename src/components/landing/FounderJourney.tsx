@@ -48,7 +48,7 @@ const MILESTONES: Milestone[] = [
   {
     period: 'Now',
     title: '250+ Leaders. One Mission.',
-    description: 'Today, RationalIQ advises family businesses, startups, and VC-backed companies on governance, Business SOPs, content, and strategy that build lasting authority. Not just for right now - for the next generation.',
+    description: 'Today, RationalIQ provides specialized Next Gen Business IQ across four practice areas: Family Businesses, Educational Institutions, D2C Startups, and Investors & Personal Brands—building lasting authority and growth for the next generation.',
     image: '/journey7.jpg',
     imageAlt: 'Strategic compass',
   },

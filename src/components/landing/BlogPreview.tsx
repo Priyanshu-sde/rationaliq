@@ -53,8 +53,13 @@ function readTime(post: BlogPreviewPost) {
  */
 export function BlogPreview({ posts }: { posts: BlogPreviewPost[] }) {
   const reduce = useReducedMotion()
-  const items = posts.length > 0 ? posts.slice(0, 3) : PLACEHOLDERS
-  const isPlaceholder = posts.length === 0
+
+  if (!posts || posts.length === 0) {
+    return null
+  }
+
+  const items = posts.slice(0, 3)
+  const isPlaceholder = false
   const [featured, ...rest] = items
 
   const cardEntrance = (i: number) => ({

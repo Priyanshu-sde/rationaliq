@@ -2,57 +2,16 @@
 
 import { useRef } from 'react'
 import { DraggableCardContainer, DraggableCardBody } from '@/components/ui/draggable-card'
+import { urlForImage } from '@/sanity/lib/image'
 
-const TESTIMONIALS = [
-  {
-    quote:
-      'Working with Hitesh gave our family business a governance framework we actually understand and use. The family constitution process alone resolved conflicts we’d been avoiding for years.',
-    name: 'Business Owner',
-    role: '3rd-gen Manufacturing Family',
-    gradient: 'linear-gradient(135deg, var(--amber), var(--gold))',
-  },
-  {
-    quote:
-      'The thought leadership content strategy Hitesh built for us moved us from unknown to quoted in our industry within 4 months.',
-    name: 'Founder',
-    role: 'Early-stage SaaS Startup',
-    gradient: 'linear-gradient(135deg, var(--indigo), var(--purple))',
-  },
-  {
-    quote:
-      'Hitesh’s understanding of the VC ecosystem made him invaluable when we were preparing our fundraising materials. He knows what investors are actually looking for.',
-    name: 'Founder',
-    role: 'D2C Brand',
-    gradient: 'linear-gradient(135deg, var(--emerald), var(--blue))',
-  },
-  {
-    quote:
-      'RationalIQ helped us navigate a complex intergenerational transition. Hitesh’s neutral, structured approach saved our family dynamic while ensuring business continuity.',
-    name: 'Managing Director',
-    role: '2nd-gen Retail Chain',
-    gradient: 'linear-gradient(135deg, var(--blue), var(--indigo))',
-  },
-  {
-    quote:
-      'The depth of insight Hitesh brings to offline expansion strategy is unparalleled. We successfully launched our physical footprint without the common pitfalls D2C brands face.',
-    name: 'CEO',
-    role: 'D2C FMCG Brand',
-    gradient: 'linear-gradient(135deg, var(--gold), var(--emerald))',
-  },
-  {
-    quote:
-      'Our next-gen leaders went through Hitesh’s coaching program. The shift in their strategic thinking and operational maturity has been incredible.',
-    name: 'Chairman',
-    role: 'Family Conglomerate',
-    gradient: 'linear-gradient(135deg, var(--purple), var(--amber))',
-  },
-  {
-    quote:
-      'His guidance on our M&A strategy was spot-on. RationalIQ doesn’t just give advice; they provide actionable frameworks that directly impact the bottom line.',
-    name: 'Partner',
-    role: 'Private Equity Firm',
-    gradient: 'linear-gradient(135deg, var(--emerald), var(--amber))',
-  },
+const GRADIENTS = [
+  'linear-gradient(135deg, var(--amber), var(--gold))',
+  'linear-gradient(135deg, var(--indigo), var(--purple))',
+  'linear-gradient(135deg, var(--emerald), var(--blue))',
+  'linear-gradient(135deg, var(--blue), var(--indigo))',
+  'linear-gradient(135deg, var(--gold), var(--emerald))',
+  'linear-gradient(135deg, var(--purple), var(--amber))',
+  'linear-gradient(135deg, var(--emerald), var(--amber))',
 ]
 
 const CARD_POSITIONS = [
@@ -66,10 +25,14 @@ const CARD_POSITIONS = [
 ]
 
 /**
- * Section 6 - Testimonials. Now using scattered draggable cards.
+ * Section 6 - Testimonials. Renders ONLY when Sanity returns testimonials data.
  */
-export function Testimonials() {
+export function Testimonials({ items }: { items?: any[] }) {
   const containerRef = useRef<any>(null)
+
+  if (!items || items.length === 0) {
+    return null
+  }
 
   return (
     <section className="relative bg-(--bg-base) py-24 md:py-36 overflow-hidden">
@@ -89,36 +52,52 @@ export function Testimonials() {
           Drag to explore
         </p>
 
-        {TESTIMONIALS.map((t, i) => (
-          <DraggableCardBody
-            key={t.role}
-            containerRef={containerRef}
-            className={CARD_POSITIONS[i % CARD_POSITIONS.length]}
-          >
-            <figure className="tier-2 relative flex h-full min-h-[300px] flex-col rounded-3xl border border-(--border-hover) bg-[#11131c] p-10 shadow-[0_24px_54px_rgba(0,0,0,0.6)]">
-              <span
-                className="font-display pointer-events-none absolute -top-4 left-6 select-none text-[7rem] leading-none text-(--indigo) opacity-30"
-                aria-hidden="true"
-              >
-                &ldquo;
-              </span>
-              <blockquote className="relative mt-8 flex-1 text-lg font-medium tracking-wide leading-[1.8] text-white pointer-events-none select-none">
-                {t.quote}
-              </blockquote>
-              <figcaption className="mt-8 flex items-center gap-3.5 pointer-events-none select-none">
+        {items.map((t, i) => {
+          const quote = t.quote || ''
+          const name = t.clientName || t.name || 'Client'
+          const role = t.clientRoleCompany || t.role || ''
+          const gradient = GRADIENTS[i % GRADIENTS.length]
+          const imgUrl = t.photo ? urlForImage(t.photo)?.url() : null
+
+          return (
+            <DraggableCardBody
+              key={t._id || i}
+              containerRef={containerRef}
+              className={CARD_POSITIONS[i % CARD_POSITIONS.length]}
+            >
+              <figure className="tier-2 relative flex h-full min-h-[300px] flex-col rounded-3xl border border-(--border-hover) bg-[#11131c] p-10 shadow-[0_24px_54px_rgba(0,0,0,0.6)]">
                 <span
-                  className="h-11 w-11 shrink-0 rounded-full"
-                  style={{ background: t.gradient }}
+                  className="font-display pointer-events-none absolute -top-4 left-6 select-none text-[7rem] leading-none text-(--indigo) opacity-30"
                   aria-hidden="true"
-                />
-                <span>
-                  <span className="block text-sm font-semibold text-(--text-primary)">{t.name}</span>
-                  <span className="block text-xs text-(--text-secondary)">{t.role}</span>
+                >
+                  &ldquo;
                 </span>
-              </figcaption>
-            </figure>
-          </DraggableCardBody>
-        ))}
+                <blockquote className="relative mt-8 flex-1 text-lg font-medium tracking-wide leading-[1.8] text-white pointer-events-none select-none">
+                  {quote}
+                </blockquote>
+                <figcaption className="mt-8 flex items-center gap-3.5 pointer-events-none select-none">
+                  {imgUrl ? (
+                    <img
+                      src={imgUrl}
+                      alt={name}
+                      className="h-11 w-11 shrink-0 rounded-full object-cover"
+                    />
+                  ) : (
+                    <span
+                      className="h-11 w-11 shrink-0 rounded-full"
+                      style={{ background: gradient }}
+                      aria-hidden="true"
+                    />
+                  )}
+                  <span>
+                    <span className="block text-sm font-semibold text-(--text-primary)">{name}</span>
+                    {role && <span className="block text-xs text-(--text-secondary)">{role}</span>}
+                  </span>
+                </figcaption>
+              </figure>
+            </DraggableCardBody>
+          )
+        })}
       </DraggableCardContainer>
     </section>
   )
