@@ -108,7 +108,7 @@ export function LandingHero() {
           className="mb-6 md:mb-8"
         >
           <Image
-            src="/logo_with_name.png"
+            src="/light_logo.png"
             alt="RationalIQ"
             width={300}
             height={80}

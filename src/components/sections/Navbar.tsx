@@ -28,7 +28,7 @@ export function Navbar() {
     const onScroll = () => {
       const y = window.scrollY
       setScrolled(y > 12)
-      
+
       if (pathname === '/') {
         const wh = window.innerHeight
         if (y < wh * 0.5) {
@@ -47,10 +47,10 @@ export function Navbar() {
         if (y > lastY.current && y > 240) setHidden(true)
         else setHidden(false)
       }
-      
+
       lastY.current = y
     }
-    
+
     // Initial check
     onScroll()
 
@@ -89,12 +89,12 @@ export function Navbar() {
           )}
         >
           <Link href="/" className="group flex items-center">
-            <Image 
-              src="/logo_with_name.png" 
-              alt="RationalIQ" 
-              width={200} 
-              height={50} 
-              className="h-10 w-auto object-contain" 
+            <Image
+              src="/light_logo_text.png"
+              alt="RationalIQ"
+              width={200}
+              height={50}
+              className="h-10 w-auto object-contain"
             />
           </Link>
 
