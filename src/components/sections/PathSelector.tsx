@@ -81,7 +81,7 @@ export function PathSelector() {
     >
       <div className="relative pt-12 pb-6 px-4 md:absolute md:top-24 md:left-12 md:p-0 md:z-40 md:pointer-events-none">
         <p className="text-[10px] font-mono uppercase tracking-[0.3em] text-white/50">
-          Direction 01 / RationalIQ
+          RationalIQ
         </p>
         <h1 className="mt-3 font-serif italic text-3xl md:text-5xl text-balance max-w-[14ch] text-white">
           Get Started: Choose your path.
@@ -172,15 +172,7 @@ export function PathSelector() {
                       }}>
                       {a.blurb}
                     </p>
-                    <div
-                      className="mt-8 flex items-center gap-3 text-xs font-mono uppercase tracking-[0.25em] text-white"
-                    >
-                      Enter portal
-                      <span
-                        className="block h-px w-8 transition-all"
-                        style={{ backgroundColor: a.color }}
-                      />
-                    </div>
+
                   </div>
                 </div>
               </div>
@@ -190,18 +182,18 @@ export function PathSelector() {
       </main>
 
       <footer className="absolute bottom-4 md:bottom-6 inset-x-0 z-40 flex flex-col items-center justify-center pointer-events-none gap-3">
-        <span className="hidden md:block text-[10px] font-mono uppercase tracking-[0.35em] text-white/40">
+        <span className="hidden md:block text-[10px] font-mono uppercase tracking-[0.35em] text-white/80 drop-shadow-md">
           Hover to focus / Click to enter
         </span>
-        <span className="md:hidden text-[10px] font-mono uppercase tracking-[0.35em] text-white/40">
+        <span className="md:hidden text-[10px] font-mono uppercase tracking-[0.35em] text-white/80 drop-shadow-md">
           Tap to enter
         </span>
         
-        <div className="flex flex-col items-center gap-1.5 opacity-60">
-          <span className="text-[9px] font-mono uppercase tracking-[0.25em] text-white/50">Scroll for more</span>
+        <div className="flex flex-col items-center gap-1.5 opacity-100 drop-shadow-md">
+          <span className="text-[9px] font-mono uppercase tracking-[0.25em] text-white/90">Scroll for more</span>
           <div className="animate-bounce mt-1">
-            <Mouse className="hidden md:block w-4 h-4 text-white/50" />
-            <ChevronDown className="md:hidden w-4 h-4 text-white/50" />
+            <Mouse className="hidden md:block w-4 h-4 text-white/90" />
+            <ChevronDown className="md:hidden w-4 h-4 text-white/90" />
           </div>
         </div>
       </footer>
