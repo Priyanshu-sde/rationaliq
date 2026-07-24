@@ -24,9 +24,9 @@ const portableTextComponents: PortableTextComponents = {
   block: {
     normal: ({ children }) => {
       if (isChildrenEmpty(children)) {
-        return <p className="min-h-[1.5em] whitespace-pre-wrap">&nbsp;</p>
+        return <p className="min-h-[1.5em] whitespace-pre-wrap !mb-8">&nbsp;</p>
       }
-      return <p className="whitespace-pre-wrap">{children}</p>
+      return <p className="whitespace-pre-wrap !mb-8">{children}</p>
     },
     h1: ({ children }) => <h1 className="whitespace-pre-wrap">{children}</h1>,
     h2: ({ children }) => <h2 className="whitespace-pre-wrap">{children}</h2>,
