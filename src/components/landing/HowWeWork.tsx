@@ -8,28 +8,28 @@ const STEPS = [
     num: '01',
     title: 'Listen',
     body: 'A confidential conversation to understand where you are - no pitch, no pressure.',
-    deskX: 15, deskY: 62.5,
+    deskX: 15, deskY: 56.67,
     deskStyle: { top: '30px', left: '50%', transform: 'translateX(-50%)', textAlign: 'center' as const },
   },
   {
     num: '02',
     title: 'Diagnose',
     body: 'A clear, honest assessment of the gap between where you are and where you want to be.',
-    deskX: 45, deskY: 55.68,
+    deskX: 45, deskY: 49.41,
     deskStyle: { top: '30px', left: '50%', transform: 'translateX(-50%)', textAlign: 'center' as const },
   },
   {
     num: '03',
     title: 'Build',
     body: 'A tailored plan - governance framework, content system, or retail strategy.',
-    deskX: 67.5, deskY: 39.83,
+    deskX: 67.5, deskY: 32.49,
     deskStyle: { top: '30px', left: '50%', transform: 'translateX(-50%)', textAlign: 'center' as const },
   },
   {
     num: '04',
     title: 'Sustain',
     body: 'Ongoing support so the system keeps working after the engagement ends.',
-    deskX: 90, deskY: 12.5,
+    deskX: 90, deskY: 3.33,
     deskStyle: { top: '30px', left: '50%', transform: 'translateX(-50%)', textAlign: 'center' as const },
   },
 ]
@@ -132,13 +132,13 @@ export function HowWeWork() {
           </div>
 
           {/* Desktop Interactive Graph Curve */}
-          <div className="hidden md:block relative w-full h-[45vh] min-h-[300px] max-h-[500px] mb-24 border-l border-b border-white/10 rounded-bl-sm">
+          <div className="hidden md:block relative w-full h-[55vh] min-h-[400px] max-h-[600px] mb-8 border-l border-b border-white/10 rounded-bl-sm">
              {/* Axis Labels */}
              <span className="absolute -left-8 top-1/2 -rotate-90 -translate-x-1/2 -translate-y-1/2 text-[10px] tracking-widest text-white/30 uppercase font-mono">Value & Impact</span>
              <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-[10px] tracking-widest text-white/30 uppercase font-mono">Time & Integration</span>
 
              {/* SVG Graph Desktop */}
-             <svg viewBox="0 0 1000 800" className="absolute inset-0 w-full h-full overflow-visible" preserveAspectRatio="none">
+             <svg viewBox="0 0 1000 750" className="absolute inset-0 w-full h-full overflow-visible" preserveAspectRatio="none">
                 <defs>
                    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
                      <feGaussianBlur stdDeviation="12" result="blur" />
@@ -154,7 +154,7 @@ export function HowWeWork() {
                 </defs>
                 <path 
                   ref={pathDeskRef}
-                  d="M 150 500 C 400 500, 650 400, 900 100" 
+                  d="M 150 425 C 400 425, 650 325, 900 25" 
                   fill="none" 
                   stroke="url(#lineGrad)" 
                   strokeWidth="4" 
