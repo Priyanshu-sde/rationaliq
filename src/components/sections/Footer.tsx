@@ -132,7 +132,7 @@ export function Footer() {
             </p>
             <div className="mt-6 flex flex-col gap-3 sm:flex-row">
               <Link
-                href="/contact"
+                href="/contact#contact-form"
                 className="tier-2 press inline-flex h-11 items-center justify-center gap-2 rounded-xl bg-[#6366F1] px-5 text-sm font-semibold text-white hover:shadow-[0_8px_30px_rgba(99,102,241,0.35)]"
               >
                 <Calendar className="h-4 w-4" aria-hidden="true" />

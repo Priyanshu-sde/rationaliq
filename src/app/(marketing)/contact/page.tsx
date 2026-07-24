@@ -89,7 +89,7 @@ export default function ContactPage() {
             </Reveal>
           </div>
 
-          <div className="grid items-start gap-12 md:grid-cols-2">
+          <div id="contact-form" className="grid items-start gap-12 md:grid-cols-2">
             <Reveal direction="up">
               <Card className="border-white/[0.07] bg-white/[0.02]">
                 <CardContent className="p-8">
