@@ -161,8 +161,8 @@ export function Navbar() {
                 'text-base font-medium transition-colors',
                 dark
                   ? isActive(link)
-                    ? 'text-[#F1F5F9]'
-                    : 'text-[#94A3B8]'
+                    ? 'text-white'
+                    : 'text-white/80'
                   : isActive(link)
                     ? 'text-brand-primary'
                     : 'text-brand-fg/80'

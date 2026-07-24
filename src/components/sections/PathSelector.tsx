@@ -3,6 +3,7 @@
 import { useRef, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { Mouse, ChevronDown } from 'lucide-react'
 import { gsap } from '@/components/anim/gsap'
 import { useIsomorphicLayoutEffect } from '@/components/anim/gsap'
 import { cn } from '@/lib/utils'
@@ -13,6 +14,8 @@ export function PathSelector() {
   const [active, setActive] = useState<number | null>(null)
 
   useIsomorphicLayoutEffect(() => {
+    if (typeof window !== 'undefined' && window.innerWidth < 768) return;
+
     const ctx = gsap.context(() => {
       // Simulate pinning the landing page content so PathSelector slides over it
       gsap.fromTo('.landing-content',
@@ -74,19 +77,19 @@ export function PathSelector() {
   return (
     <section
       ref={containerRef}
-      className="relative z-[100] min-h-[100svh] md:h-[100svh] w-full bg-[#0a0a0e] overflow-hidden font-sans flex flex-col md:block"
+      className="relative z-[100] min-h-[100svh] md:h-[100svh] w-full bg-[#0a0a0e] md:overflow-hidden font-sans flex flex-col md:block"
     >
-      <div className="absolute top-24 left-8 md:left-12 z-40 pointer-events-none">
+      <div className="relative pt-12 pb-6 px-4 md:absolute md:top-24 md:left-12 md:p-0 md:z-40 md:pointer-events-none">
         <p className="text-[10px] font-mono uppercase tracking-[0.3em] text-white/50">
           Direction 01 / RationalIQ
         </p>
-        <h1 className="mt-3 font-serif italic text-4xl md:text-5xl text-balance max-w-[14ch] text-white">
+        <h1 className="mt-3 font-serif italic text-3xl md:text-5xl text-balance max-w-[14ch] text-white">
           Get Started: Choose your path.
         </h1>
       </div>
 
       <main
-        className="h-full w-full flex flex-col md:flex-row flex-1"
+        className="md:h-full w-full grid grid-cols-2 md:flex md:flex-row flex-1"
         onMouseLeave={() => setActive(null)}
       >
         {paths.map((a, i) => {
@@ -100,14 +103,15 @@ export function PathSelector() {
               data-i={i}
               onMouseEnter={() => setActive(i)}
               className={cn(
-                "group relative overflow-hidden border-b md:border-b-0 md:border-r border-white/5 last:border-b-0 md:last:border-r-0 cursor-pointer transition-[flex-basis,filter,opacity] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]",
-                "min-h-[250px] md:min-h-0" // Ensure they don't squash on mobile
+                "group relative overflow-hidden border-b border-r md:border-b-0 border-white/5 cursor-pointer transition-[flex-basis,filter,opacity] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]",
+                "h-[35svh] md:h-auto md:min-h-0", // fixed height on mobile grid
+                "md:[flex-basis:var(--desktop-flex-basis)] md:[filter:var(--desktop-filter)] md:[opacity:var(--desktop-opacity)]"
               )}
               style={{
-                flexBasis: isActive ? "48%" : isDim ? "17.33%" : "25%",
-                filter: isDim ? "grayscale(0.5)" : "none",
-                opacity: isDim ? 0.55 : 1,
-              }}
+                "--desktop-flex-basis": isActive ? "48%" : isDim ? "17.33%" : "25%",
+                "--desktop-filter": isDim ? "grayscale(0.5)" : "none",
+                "--desktop-opacity": isDim ? 0.55 : 1,
+              } as React.CSSProperties}
             >
               <Image
                 src={a.image}
@@ -124,40 +128,43 @@ export function PathSelector() {
                 }}
               />
               <div
-                className="absolute inset-x-0 bottom-0 h-2/3 opacity-70 mix-blend-screen transition-opacity duration-700"
+                className="absolute inset-x-0 bottom-0 h-3/4 opacity-100 md:opacity-70 mix-blend-screen transition-opacity duration-700 md:[opacity:var(--desktop-overlay-opacity)]"
                 style={{
-                  background: `radial-gradient(ellipse at bottom, ${a.color}55, transparent 70%)`,
-                  opacity: isActive ? 0.8 : 0,
-                }}
+                  background: `radial-gradient(ellipse at bottom, ${a.color}88, transparent 70%)`,
+                  "--desktop-overlay-opacity": isActive ? 0.8 : 0,
+                } as React.CSSProperties}
               />
-              <div className="relative z-10 h-full flex flex-col justify-between p-8 md:p-12">
+              <div className="relative z-10 h-full flex flex-col justify-between p-4 md:p-12">
                 <div className="flex items-start justify-between">
                   <span
-                    className="text-[10px] font-mono uppercase tracking-[0.3em]"
-                    style={{ color: isActive ? a.color : 'rgba(255,255,255,0.4)' }}
+                    className="text-[9px] md:text-[10px] font-mono uppercase tracking-[0.2em] md:tracking-[0.3em] md:[color:var(--desktop-code-color)]"
+                    style={{ 
+                      color: a.color,
+                      "--desktop-code-color": isActive ? a.color : 'rgba(255,255,255,0.4)'
+                    } as React.CSSProperties}
                   >
                     {a.code}
                   </span>
-                  <span className="text-[10px] font-mono uppercase tracking-[0.3em] text-white/40">
+                  <span className="hidden md:block text-[10px] font-mono uppercase tracking-[0.3em] text-white/40">
                     {a.tag}
                   </span>
                 </div>
                 <div>
                   <h2
-                    className="font-serif italic leading-[0.95] transition-all duration-500"
+                    className="font-serif italic leading-[1.1] md:leading-[0.95] transition-all duration-500 text-[clamp(1.5rem,5vw,2rem)] md:[font-size:var(--desktop-font-size)]"
                     style={{
-                      fontSize: isActive ? "clamp(3rem, 6vw, 5.5rem)" : "clamp(2rem, 3.2vw, 3.5rem)",
+                      "--desktop-font-size": isActive ? "clamp(3rem, 6vw, 5.5rem)" : "clamp(2rem, 3.2vw, 3.5rem)",
                       color: "white",
-                    }}
+                    } as React.CSSProperties}
                   >
                     {a.name}
                   </h2>
                   <div
-                    className="overflow-hidden transition-[max-height,opacity] duration-700 ease-out md:max-h-0 md:opacity-0 group-hover:md:max-h-[320px] group-hover:md:opacity-100"
+                    className="overflow-hidden transition-[max-height,opacity] duration-700 ease-out hidden md:block md:max-h-0 md:opacity-0 group-hover:md:max-h-[320px] group-hover:md:opacity-100 md:[max-height:var(--desktop-max-height)] md:[opacity:var(--desktop-opacity)]"
                     style={{
-                      maxHeight: typeof window !== 'undefined' && window.innerWidth < 768 ? '320px' : (isActive ? 320 : 0),
-                      opacity: typeof window !== 'undefined' && window.innerWidth < 768 ? 1 : (isActive ? 1 : 0),
-                    }}
+                      "--desktop-max-height": isActive ? "320px" : "0px",
+                      "--desktop-opacity": isActive ? 1 : 0,
+                    } as React.CSSProperties}
                   >
                     <p className="mt-6 max-w-md font-medium drop-shadow-md leading-relaxed text-sm md:text-base"
                       style={{
@@ -182,10 +189,21 @@ export function PathSelector() {
         })}
       </main>
 
-      <footer className="absolute bottom-6 inset-x-0 z-40 flex justify-center pointer-events-none">
-        <span className="text-[10px] font-mono uppercase tracking-[0.35em] text-white/40">
+      <footer className="absolute bottom-4 md:bottom-6 inset-x-0 z-40 flex flex-col items-center justify-center pointer-events-none gap-3">
+        <span className="hidden md:block text-[10px] font-mono uppercase tracking-[0.35em] text-white/40">
           Hover to focus / Click to enter
         </span>
+        <span className="md:hidden text-[10px] font-mono uppercase tracking-[0.35em] text-white/40">
+          Tap to enter
+        </span>
+        
+        <div className="flex flex-col items-center gap-1.5 opacity-60">
+          <span className="text-[9px] font-mono uppercase tracking-[0.25em] text-white/50">Scroll for more</span>
+          <div className="animate-bounce mt-1">
+            <Mouse className="hidden md:block w-4 h-4 text-white/50" />
+            <ChevronDown className="md:hidden w-4 h-4 text-white/50" />
+          </div>
+        </div>
       </footer>
     </section>
   )
