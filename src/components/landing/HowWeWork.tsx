@@ -8,29 +8,29 @@ const STEPS = [
     num: '01',
     title: 'Listen',
     body: 'A confidential conversation to understand where you are - no pitch, no pressure.',
-    deskX: 15, deskY: 83.33,
+    deskX: 15, deskY: 62.5,
     deskStyle: { top: '30px', left: '50%', transform: 'translateX(-50%)', textAlign: 'center' as const },
   },
   {
     num: '02',
     title: 'Diagnose',
     body: 'A clear, honest assessment of the gap between where you are and where you want to be.',
-    deskX: 45, deskY: 74.26,
+    deskX: 45, deskY: 55.68,
     deskStyle: { top: '30px', left: '50%', transform: 'translateX(-50%)', textAlign: 'center' as const },
   },
   {
     num: '03',
     title: 'Build',
     body: 'A tailored plan - governance framework, content system, or retail strategy.',
-    deskX: 67.5, deskY: 53.11,
-    deskStyle: { bottom: '30px', left: '50%', transform: 'translateX(-50%)', textAlign: 'center' as const },
+    deskX: 67.5, deskY: 39.83,
+    deskStyle: { top: '30px', left: '50%', transform: 'translateX(-50%)', textAlign: 'center' as const },
   },
   {
     num: '04',
     title: 'Sustain',
     body: 'Ongoing support so the system keeps working after the engagement ends.',
-    deskX: 90, deskY: 16.66,
-    deskStyle: { right: '30px', top: '50%', transform: 'translateY(-50%)', textAlign: 'right' as const },
+    deskX: 90, deskY: 12.5,
+    deskStyle: { top: '30px', left: '50%', transform: 'translateX(-50%)', textAlign: 'center' as const },
   },
 ]
 
@@ -108,7 +108,7 @@ export function HowWeWork() {
         
         <div className="relative z-10 w-full max-w-[1200px] px-6 md:px-12 flex flex-col items-start justify-center h-full py-8 md:py-0">
           
-          <div className="mb-8 md:mb-16 shrink-0 relative z-20">
+          <div className="mb-6 md:mb-10 shrink-0 relative z-20">
              <p className="text-label text-(--gold)">The Process</p>
              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-3 text-(--text-primary)">
                 The Exponential<br/> Growth Curve.
@@ -132,13 +132,13 @@ export function HowWeWork() {
           </div>
 
           {/* Desktop Interactive Graph Curve */}
-          <div className="hidden md:block relative w-full aspect-[21/9] border-l border-b border-white/10 rounded-bl-sm">
+          <div className="hidden md:block relative w-full h-[45vh] min-h-[300px] max-h-[500px] mb-24 border-l border-b border-white/10 rounded-bl-sm">
              {/* Axis Labels */}
              <span className="absolute -left-8 top-1/2 -rotate-90 -translate-x-1/2 -translate-y-1/2 text-[10px] tracking-widest text-white/30 uppercase font-mono">Value & Impact</span>
              <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 text-[10px] tracking-widest text-white/30 uppercase font-mono">Time & Integration</span>
 
              {/* SVG Graph Desktop */}
-             <svg viewBox="0 0 1000 600" className="absolute inset-0 w-full h-full overflow-visible" preserveAspectRatio="none">
+             <svg viewBox="0 0 1000 800" className="absolute inset-0 w-full h-full overflow-visible" preserveAspectRatio="none">
                 <defs>
                    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
                      <feGaussianBlur stdDeviation="12" result="blur" />

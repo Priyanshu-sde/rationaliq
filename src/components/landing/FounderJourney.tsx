@@ -68,7 +68,7 @@ export function FounderJourney() {
             <span className="italic">skin in the game.</span>
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg text-white/70">
-            Hitesh didn\'t study business from the outside. He grew up inside one.
+            Hitesh didn&apos;t study business from the outside. He grew up inside one.
           </p>
         </div>
       </div>
