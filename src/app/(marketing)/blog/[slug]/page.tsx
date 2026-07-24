@@ -2,7 +2,39 @@ import { client } from "@/sanity/lib/client"
 import { getPostBySlugQuery, getPostsQuery } from "@/sanity/lib/queries"
 import { urlForImage } from "@/sanity/lib/image"
 import { notFound } from "next/navigation"
-import { PortableText } from "@portabletext/react"
+import { PortableText, PortableTextComponents } from "@portabletext/react"
+
+function isChildrenEmpty(children: React.ReactNode): boolean {
+  if (children === null || children === undefined || children === '') return true
+  if (typeof children === 'string') return children.trim() === ''
+  if (Array.isArray(children)) {
+    if (children.length === 0) return true
+    return children.every((child) => isChildrenEmpty(child))
+  }
+  if (typeof children === 'object' && children !== null && 'props' in children) {
+    const props = (children as any).props
+    if (props && 'children' in props) {
+      return isChildrenEmpty(props.children)
+    }
+  }
+  return false
+}
+
+const portableTextComponents: PortableTextComponents = {
+  block: {
+    normal: ({ children }) => {
+      if (isChildrenEmpty(children)) {
+        return <p className="min-h-[1.5em] whitespace-pre-wrap">&nbsp;</p>
+      }
+      return <p className="whitespace-pre-wrap">{children}</p>
+    },
+    h1: ({ children }) => <h1 className="whitespace-pre-wrap">{children}</h1>,
+    h2: ({ children }) => <h2 className="whitespace-pre-wrap">{children}</h2>,
+    h3: ({ children }) => <h3 className="whitespace-pre-wrap">{children}</h3>,
+    h4: ({ children }) => <h4 className="whitespace-pre-wrap">{children}</h4>,
+    blockquote: ({ children }) => <blockquote className="whitespace-pre-wrap">{children}</blockquote>,
+  },
+}
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import { Metadata } from "next"
@@ -115,7 +147,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
           <Reveal direction="up" className="prose prose-invert prose-lg max-w-none prose-headings:font-serif prose-headings:text-[#f1f5f9] prose-p:text-[#94a3b8] prose-a:text-[#6366f1] hover:prose-a:text-[#6366f1]/80">
             {post.body ? (
-              <PortableText value={post.body} />
+              <PortableText value={post.body} components={portableTextComponents} />
             ) : (
               <p>No content available.</p>
             )}
