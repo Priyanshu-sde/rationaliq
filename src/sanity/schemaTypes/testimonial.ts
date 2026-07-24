@@ -38,7 +38,7 @@ export const testimonial = defineType({
       options: {
         list: [
           { title: 'Thought Leadership', value: 'thought-leadership' },
-          { title: 'Family Business Consulting', value: 'family-business' },
+          { title: 'Family Business NextGen IQ', value: 'family-business' },
           { title: 'D2C Retail Strategy', value: 'd2c-retail' },
           { title: 'General', value: 'general' },
         ],

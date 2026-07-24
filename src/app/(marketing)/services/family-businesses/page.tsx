@@ -3,7 +3,7 @@ import { Network } from "lucide-react"
 import { ServicePage, type ServiceContent } from "@/components/sections/ServicePage"
 
 export const metadata: Metadata = {
-  title: "Family Business Consulting | RationalIQ",
+  title: "Family Business NextGen IQ | RationalIQ",
   description: "Navigate succession planning, establish family constitutions, and bridge the gap between traditional operations and modern growth strategies.",
 }
 
