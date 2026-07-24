@@ -3,12 +3,53 @@
 import { motion, useReducedMotion } from 'framer-motion'
 import { CountUp } from '@/components/anim'
 
-const STATS = [
+export interface ImpactStatItem {
+  _id?: string
+  label: string
+  value: string | number
+  suffix?: string
+  prefix?: string
+}
+
+const DEFAULT_STATS: ImpactStatItem[] = [
   { value: 250, suffix: '+', label: 'Family Business Leaders Trained' },
   { value: 5, suffix: 'M+', label: 'Impressions generated on social media' },
   { value: 10, suffix: '+', label: 'Years of experience' },
   { value: 700, suffix: '+', label: 'Hours of training content delivered' },
 ]
+
+function parseStatValue(item: ImpactStatItem) {
+  let valStr = String(item.value ?? '')
+  if (item.suffix && !valStr.endsWith(item.suffix)) {
+    valStr += item.suffix
+  }
+  if (item.prefix && !valStr.startsWith(item.prefix)) {
+    valStr = item.prefix + valStr
+  }
+
+  const str = valStr.trim()
+  const match = str.match(/^([^\d.]*)(\d+(?:\.\d+)?)(.*)$/)
+
+  if (!match) {
+    const num = parseFloat(str)
+    if (!isNaN(num)) {
+      return { numericValue: num, prefix: item.prefix || '', suffix: item.suffix || '', decimals: 0 }
+    }
+    return { numericValue: 0, prefix: item.prefix || '', suffix: str, decimals: 0 }
+  }
+
+  const [, prefix, numStr, suffix] = match
+  const numericValue = parseFloat(numStr)
+  const decimalIndex = numStr.indexOf('.')
+  const decimals = decimalIndex >= 0 ? numStr.length - decimalIndex - 1 : 0
+
+  return {
+    numericValue,
+    prefix: prefix || '',
+    suffix: suffix || '',
+    decimals,
+  }
+}
 
 /** Faint network-graph texture behind the stat grid. */
 function NetworkTexture() {
@@ -39,10 +80,11 @@ function NetworkTexture() {
 /**
  * Section 5 - Impact Numbers. A 2×2 grid of counters with hairline
  * dividers and a soft indigo bloom. Suffixes appear only after each
- * count settles.
+ * count settles. Accepts metrics dynamically from Sanity.
  */
-export function ImpactStats() {
+export function ImpactStats({ items }: { items?: ImpactStatItem[] }) {
   const reduce = useReducedMotion()
+  const statsList = items && items.length > 0 ? items : DEFAULT_STATS
 
   return (
     <section className="relative overflow-hidden bg-(--bg-base) py-24 md:py-36">
@@ -65,30 +107,33 @@ export function ImpactStats() {
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
-          {STATS.map((s, i) => (
-            <div
-              key={s.label}
-              className={`flex flex-col justify-center px-8 py-12 md:px-14 md:py-16 ${
-                i % 2 === 1 ? 'border-t border-(--border) sm:border-t-0 sm:border-l' : ''
-              } ${i >= 2 ? 'border-t border-(--border)' : ''}`}
-            >
-              <p className="font-display leading-none text-(--text-primary)" style={{ fontSize: 'clamp(4rem, 9vw, 8rem)' }}>
-                <CountUp value={s.value} duration={2} />
-                {s.suffix && (
-                  <motion.span
-                    className="text-(--indigo)"
-                    initial={reduce ? undefined : { opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: reduce ? 0 : 2, duration: 0.4 }}
-                  >
-                    {s.suffix}
-                  </motion.span>
-                )}
-              </p>
-              <p className="mt-4 text-[0.85rem] text-(--text-secondary)">{s.label}</p>
-            </div>
-          ))}
+          {statsList.map((s, i) => {
+            const parsed = parseStatValue(s)
+            return (
+              <div
+                key={s._id || s.label}
+                className={`flex flex-col justify-center px-8 py-12 md:px-14 md:py-16 ${
+                  i % 2 === 1 ? 'border-t border-(--border) sm:border-t-0 sm:border-l' : ''
+                } ${i >= 2 ? 'border-t border-(--border)' : ''}`}
+              >
+                <p className="font-display leading-none text-(--text-primary)" style={{ fontSize: 'clamp(4rem, 9vw, 8rem)' }}>
+                  <CountUp value={parsed.numericValue} prefix={parsed.prefix} decimals={parsed.decimals} duration={2} />
+                  {parsed.suffix && (
+                    <motion.span
+                      className="text-(--indigo)"
+                      initial={reduce ? undefined : { opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: reduce ? 0 : 2, duration: 0.4 }}
+                    >
+                      {parsed.suffix}
+                    </motion.span>
+                  )}
+                </p>
+                <p className="mt-4 text-[0.85rem] text-(--text-secondary)">{s.label}</p>
+              </div>
+            )
+          })}
         </motion.div>
       </div>
     </section>

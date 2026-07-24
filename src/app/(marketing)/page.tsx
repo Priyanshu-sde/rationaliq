@@ -1,7 +1,7 @@
 import { PathSelector } from "@/components/sections/PathSelector"
 import { JsonLd } from "@/components/JsonLd"
 import { client } from "@/sanity/lib/client"
-import { getPostsQuery, getClientLogosQuery, getTestimonialsQuery } from "@/sanity/lib/queries"
+import { getPostsQuery, getClientLogosQuery, getTestimonialsQuery, getMetricsQuery } from "@/sanity/lib/queries"
 import { IntroLoader } from "@/components/landing/IntroLoader"
 import { LandingHero } from "@/components/landing/LandingHero"
 import { TrustBar } from "@/components/landing/TrustBar"
@@ -20,15 +20,18 @@ export default async function Home() {
   let posts: BlogPreviewPost[] = []
   let logos: any[] = []
   let testimonials: any[] = []
+  let metrics: any[] = []
   try {
     const data = await Promise.all([
       client.fetch(getPostsQuery),
       client.fetch(getClientLogosQuery),
-      client.fetch(getTestimonialsQuery)
+      client.fetch(getTestimonialsQuery),
+      client.fetch(getMetricsQuery),
     ])
     posts = data[0]
     logos = data[1]
     testimonials = data[2]
+    metrics = data[3]
   } catch {
     console.warn(
       "Could not fetch data (likely missing Sanity credentials during build)"
@@ -58,7 +61,7 @@ export default async function Home() {
         <FounderJourney />
         <FounderProfile />
         <HowWeWork />
-        <ImpactStats />
+        <ImpactStats items={metrics} />
         <Testimonials items={testimonials} />
         <BlogPreview posts={posts ?? []} />
         <ContactSection />
