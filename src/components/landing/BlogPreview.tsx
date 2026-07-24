@@ -87,7 +87,7 @@ export function BlogPreview({ posts }: { posts: BlogPreviewPost[] }) {
         <div className="mb-16 flex flex-wrap items-end justify-between gap-6">
           <div>
             <p className="text-label text-(--gold)">Fresh thinking</p>
-            <h2 className="font-display text-section mt-5 text-(--text-primary)">
+            <h2 className="font-display text-section mt-5 text-white">
               From the desk
               <br />
               of Hitesh.
@@ -95,7 +95,7 @@ export function BlogPreview({ posts }: { posts: BlogPreviewPost[] }) {
           </div>
           <Link
             href="/blog"
-            className="tier-1 group inline-flex items-center gap-2 pb-2 text-sm font-medium text-(--text-secondary) hover:text-(--text-primary)"
+            className="tier-1 group inline-flex items-center gap-2 pb-2 text-sm font-medium text-white/70 hover:text-white"
           >
             View all posts
             <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" aria-hidden="true" />
@@ -134,15 +134,15 @@ export function BlogPreview({ posts }: { posts: BlogPreviewPost[] }) {
                   <span className="h-1.5 w-1.5 rounded-full bg-(--indigo)" aria-hidden="true" />
                   Insights
                 </p>
-                <h3 className="font-display mt-4 text-[1.2rem] leading-snug text-(--text-primary)">
+                <h3 className="font-display mt-4 text-[1.2rem] leading-snug text-white">
                   {featured.title}
                 </h3>
                 {featured.excerpt && (
-                  <p className="mt-3 text-sm leading-relaxed text-(--text-secondary)">
+                  <p className="mt-3 text-sm leading-relaxed text-white/70">
                     {featured.excerpt}
                   </p>
                 )}
-                <p className="mt-auto pt-6 text-xs text-(--text-muted)">
+                <p className="mt-auto pt-6 text-xs text-white/50">
                   {formatDate(featured.publishedAt) ?? 'Coming soon'} &middot; {readTime(featured)}
                 </p>
               </div>
@@ -161,10 +161,10 @@ export function BlogPreview({ posts }: { posts: BlogPreviewPost[] }) {
                     <span className="h-1.5 w-1.5 rounded-full bg-(--gold)" aria-hidden="true" />
                     Insights
                   </p>
-                  <h3 className="font-display mt-3.5 text-base leading-snug text-(--text-primary)">
+                  <h3 className="font-display mt-3.5 text-base leading-snug text-white">
                     {post.title}
                   </h3>
-                  <p className="mt-auto pt-5 text-xs text-(--text-muted)">
+                  <p className="mt-auto pt-5 text-xs text-white/50">
                     {formatDate(post.publishedAt) ?? 'Coming soon'} &middot; {readTime(post)}
                   </p>
                 </Link>
