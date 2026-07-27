@@ -132,7 +132,7 @@ export default async function TeamPage() {
                 At 13, he learned the fundamentals of commerce-from interacting with customers and selling electronics, to processing consumer loan forms and managing logistics. Witnessing firsthand the complexities of understanding and managing financial data ultimately inspired his path into Chartered Accountancy.
               </p>
               <p>
-                During his CA articleship (2015–2018), he immersed himself in business, legal, and tax practices, approaching them through the dual lens of an accountant and an entrepreneur. Seeking experience beyond the family enterprise, he joined Grant Thornton and EY (2019–2022), specializing in M&amp;A due diligence and family office investments into high-growth startups.
+                During his CA articleship (2016–2018), he immersed himself in business, legal, and tax practices, approaching them through the dual lens of an accountant and an entrepreneur. Seeking experience beyond the family enterprise, he joined Grant Thornton and EY (2019–2022), specializing in M&amp;A due diligence and family office investments into high-growth startups.
               </p>
               <p>
                 This expertise led him to Sunicon Venture Capital Fund as an early investment team member. There, he facilitated startup funding and gained deep insight into how family business owners invest surplus capital. He also spearheaded content creation to establish the fund's thought leadership and attract top-tier founders.

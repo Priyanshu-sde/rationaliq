@@ -58,7 +58,7 @@ export default function ServicesPage() {
             </AnimatedText>
             <Reveal direction="up" delay={0.15}>
               <p className="mx-auto mt-6 max-w-2xl text-lg text-[#94a3b8]">
-                Four focused practices - each grounded in Deep's
+                Four focused practices - each grounded in Deep
                 experience across retail, M&amp;A, family business and investments.
               </p>
             </Reveal>
@@ -100,7 +100,7 @@ export default function ServicesPage() {
                     href={s.href}
                     className="tier-1 mt-8 inline-flex items-center text-sm font-medium text-[#6366f1] hover:text-[#8b5cf6]"
                   >
-                    Explore service
+                    Explore Services
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform duration-300 group-hover:translate-x-1.5" />
                   </Link>
                 </TiltCard>

@@ -56,5 +56,5 @@ export function CountUp({
     return () => ctx.revert()
   }, [value, prefix, suffix, duration, decimals])
 
-  return <span ref={ref} className={className}>{prefix}0{suffix}</span>
+  return <span ref={ref} className={className}>{prefix}{value}{suffix}</span>
 }
