@@ -182,19 +182,12 @@ export function PathSelector() {
       </main>
 
       <footer className="absolute bottom-4 md:bottom-6 inset-x-0 z-40 flex flex-col items-center justify-center pointer-events-none gap-3">
-        <span className="hidden md:block text-[10px] font-mono uppercase tracking-[0.35em] text-white/80 drop-shadow-md">
-          Hover to focus / Click to enter
-        </span>
-        <span className="md:hidden text-[10px] font-mono uppercase tracking-[0.35em] text-white/80 drop-shadow-md">
-          Tap to enter
-        </span>
-        
         <div className="flex flex-col items-center gap-1.5 opacity-100 drop-shadow-md">
-          <span className="text-[9px] font-mono uppercase tracking-[0.25em] text-white/90">Scroll for more</span>
           <div className="animate-bounce mt-1">
             <Mouse className="hidden md:block w-4 h-4 text-white/90" />
             <ChevronDown className="md:hidden w-4 h-4 text-white/90" />
           </div>
+          <span className="text-[9px] font-mono uppercase tracking-[0.25em] text-white/90 mt-1">Scroll for more</span>
         </div>
       </footer>
     </section>
