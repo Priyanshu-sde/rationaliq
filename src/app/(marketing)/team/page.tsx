@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation"
 import { Metadata } from "next"
 import Image from "next/image"
 import { JsonLd } from "@/components/JsonLd"
@@ -24,6 +25,7 @@ interface TeamMember {
 }
 
 export default async function TeamPage() {
+  notFound();
   let teamMembers: TeamMember[] = []
   try {
     teamMembers = await client.fetch(getTeamMembersQuery)

@@ -12,7 +12,7 @@ import { usePathname } from 'next/navigation'
 const navLinks = [
   { name: 'Home', href: '/' },
   { name: 'Services', href: '/services' },
-  { name: 'Team', href: '/team' },
+  // { name: 'Team', href: '/team' },
   { name: 'Impact', href: '/impact' },
   { name: 'Blogs & Case Studies', href: '/blog' },
 ]
