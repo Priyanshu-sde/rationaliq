@@ -20,7 +20,7 @@ const content: ServiceContent = {
     { strong: "Thought Leadership vs Mass Content", text: "Moving beyond clickbaity, hook-heavy content scripts to build genuine authority that creates believers, not just casual viewers." },
     { strong: "Unique & Counter-Intuitive IPs", text: "Creating intellectual properties that expand industry boundaries and showcase your deep IQ and EQ." },
     { strong: "Attracting Your Audience", text: "Positioning investors with insight so your audience naturally prefer and seek out your firm." },
-    { strong: "Blunt Truth Authority", text: "Leading your industry by speaking the blunt truth with superior, differentiated perspectives." },
+    { strong: "YT / IG / LinkedIn / Reddit", text: "IP Intelligence customized for each platform." },
   ],
   ctaTitle: "Ready to build true thought leadership?",
   ctaText: "Let's translate your insights into an intellectual property that attracts your audience.",

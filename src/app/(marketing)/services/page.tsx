@@ -9,7 +9,7 @@ import { SERVICES as services } from "@/data/services"
 export const metadata: Metadata = {
   title: "Services | RationalIQ",
   description:
-    "Next Gen Business IQ from RationalIQ - thought leadership for startups & investors, family business strategy, and D2C retail strategy.",
+    "Delivering Next Gen Business IQ from RationalIQ - thought leadership for startups & investors, family business strategy, and D2C retail strategy.",
 }
 
 export default function ServicesPage() {
@@ -54,7 +54,7 @@ export default function ServicesPage() {
               stagger={0.05}
               className="mt-4 font-serif text-4xl tracking-tight text-[#f1f5f9] sm:text-5xl md:text-6xl"
             >
-              Next Gen Business IQ for every transition.
+              Delivering Next Gen Business IQ for every transition.
             </AnimatedText>
             <Reveal direction="up" delay={0.15}>
               <p className="mx-auto mt-6 max-w-2xl text-lg text-[#94a3b8]">
