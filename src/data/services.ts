@@ -106,10 +106,10 @@ export const SERVICES: Service[] = [
   {
     id: 'vc',
     code: '04',
-    name: 'Investors & Personal Brands',
-    title: 'Investors & Personal Brands',
-    tag: 'INVESTORS',
-    audience: 'INVESTORS',
+    name: 'Brands and IPs',
+    title: 'Brands and IPs',
+    tag: 'BRANDS AND IPS',
+    audience: 'BRANDS AND IPS',
     blurb:
       'Get seen by top 1% of your audience through thought leadership IPs. And yes, content creation is not thought leadership.',
     desc:

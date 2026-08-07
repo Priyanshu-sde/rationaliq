@@ -9,7 +9,7 @@ import { SERVICES as services } from "@/data/services"
 export const metadata: Metadata = {
   title: "Services | RationalIQ",
   description:
-    "Delivering Next Gen Business IQ from RationalIQ - thought leadership for startups & investors, family business strategy, and D2C retail strategy.",
+    "Delivering Next Gen Business IQ from RationalIQ - thought leadership for startups & brands, IPs, family business strategy, and D2C retail strategy.",
 }
 
 export default function ServicesPage() {
